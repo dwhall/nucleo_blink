@@ -1,3 +1,7 @@
+#Simplest:
+#proc rawoutput(s: string) = discard
+#proc panic(s: string) = discard
+
 proc printf(frmt: cstring) {.varargs, importc, header: "<stdio.h>", cdecl.}
 proc exit(code: int) {.importc, header: "<stdlib.h>", cdecl.}
 
