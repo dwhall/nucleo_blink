@@ -1,7 +1,7 @@
 # This file is auto-generated.  Edits will be lost if the tool is run again.
 #
 # Tool:                 svd2nim
-# Tool version:         0.5.1-dev-f56b7f7
+# Tool version:         0.5.2-dev-4037c43
 # Tool args:            @["STM32F446_v1_7.svd"]
 # Input file:           STM32F446_v1_7.svd
 # Input file version:   1.7
@@ -5338,7 +5338,7 @@ type
   DCMI_CWSIZE_Fields* = distinct uint32
   DCMI_DR_Fields* = distinct uint32
 
-proc read*(reg: DCMI_CR_Type): DCMI_CR_Fields {.inline.} =
+proc read*(reg: static DCMI_CR_Type): DCMI_CR_Fields {.inline.} =
   volatileLoad(cast[ptr DCMI_CR_Fields](reg.loc))
 
 proc write*(reg: DCMI_CR_Type, val: DCMI_CR_Fields) {.inline.} =
@@ -5364,13 +5364,13 @@ template modifyIt*(reg: DCMI_CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DCMI_SR_Type): DCMI_SR_Fields {.inline.} =
+proc read*(reg: static DCMI_SR_Type): DCMI_SR_Fields {.inline.} =
   volatileLoad(cast[ptr DCMI_SR_Fields](reg.loc))
 
-proc read*(reg: DCMI_RIS_Type): DCMI_RIS_Fields {.inline.} =
+proc read*(reg: static DCMI_RIS_Type): DCMI_RIS_Fields {.inline.} =
   volatileLoad(cast[ptr DCMI_RIS_Fields](reg.loc))
 
-proc read*(reg: DCMI_IER_Type): DCMI_IER_Fields {.inline.} =
+proc read*(reg: static DCMI_IER_Type): DCMI_IER_Fields {.inline.} =
   volatileLoad(cast[ptr DCMI_IER_Fields](reg.loc))
 
 proc write*(reg: DCMI_IER_Type, val: DCMI_IER_Fields) {.inline.} =
@@ -5391,7 +5391,7 @@ template modifyIt*(reg: DCMI_IER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DCMI_MIS_Type): DCMI_MIS_Fields {.inline.} =
+proc read*(reg: static DCMI_MIS_Type): DCMI_MIS_Fields {.inline.} =
   volatileLoad(cast[ptr DCMI_MIS_Fields](reg.loc))
 
 proc write*(reg: DCMI_ICR_Type, val: DCMI_ICR_Fields) {.inline.} =
@@ -5406,7 +5406,7 @@ proc write*(reg: DCMI_ICR_Type, LINE_ISC: bool = false, VSYNC_ISC: bool = false,
   x.setMask((FRAME_ISC.uint32 shl 0).masked(0 .. 0))
   reg.write x.DCMI_ICR_Fields
 
-proc read*(reg: DCMI_ESCR_Type): DCMI_ESCR_Fields {.inline.} =
+proc read*(reg: static DCMI_ESCR_Type): DCMI_ESCR_Fields {.inline.} =
   volatileLoad(cast[ptr DCMI_ESCR_Fields](reg.loc))
 
 proc write*(reg: DCMI_ESCR_Type, val: DCMI_ESCR_Fields) {.inline.} =
@@ -5426,7 +5426,7 @@ template modifyIt*(reg: DCMI_ESCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DCMI_ESUR_Type): DCMI_ESUR_Fields {.inline.} =
+proc read*(reg: static DCMI_ESUR_Type): DCMI_ESUR_Fields {.inline.} =
   volatileLoad(cast[ptr DCMI_ESUR_Fields](reg.loc))
 
 proc write*(reg: DCMI_ESUR_Type, val: DCMI_ESUR_Fields) {.inline.} =
@@ -5446,7 +5446,7 @@ template modifyIt*(reg: DCMI_ESUR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DCMI_CWSTRT_Type): DCMI_CWSTRT_Fields {.inline.} =
+proc read*(reg: static DCMI_CWSTRT_Type): DCMI_CWSTRT_Fields {.inline.} =
   volatileLoad(cast[ptr DCMI_CWSTRT_Fields](reg.loc))
 
 proc write*(reg: DCMI_CWSTRT_Type, val: DCMI_CWSTRT_Fields) {.inline.} =
@@ -5464,7 +5464,7 @@ template modifyIt*(reg: DCMI_CWSTRT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DCMI_CWSIZE_Type): DCMI_CWSIZE_Fields {.inline.} =
+proc read*(reg: static DCMI_CWSIZE_Type): DCMI_CWSIZE_Fields {.inline.} =
   volatileLoad(cast[ptr DCMI_CWSIZE_Fields](reg.loc))
 
 proc write*(reg: DCMI_CWSIZE_Type, val: DCMI_CWSIZE_Fields) {.inline.} =
@@ -5482,7 +5482,7 @@ template modifyIt*(reg: DCMI_CWSIZE_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DCMI_DR_Type): DCMI_DR_Fields {.inline.} =
+proc read*(reg: static DCMI_DR_Type): DCMI_DR_Fields {.inline.} =
   volatileLoad(cast[ptr DCMI_DR_Fields](reg.loc))
 
 func CAPTURE*(r: DCMI_CR_Fields): bool {.inline.} =
@@ -5858,7 +5858,7 @@ type
   FMC_SDRTR_Fields* = distinct uint32
   FMC_SDSR_Fields* = distinct uint32
 
-proc read*(reg: FMC_BCR1_Type): FMC_BCR1_Fields {.inline.} =
+proc read*(reg: static FMC_BCR1_Type): FMC_BCR1_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BCR1_Fields](reg.loc))
 
 proc write*(reg: FMC_BCR1_Type, val: FMC_BCR1_Fields) {.inline.} =
@@ -5888,7 +5888,7 @@ template modifyIt*(reg: FMC_BCR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BTR1_Type): FMC_BTR1_Fields {.inline.} =
+proc read*(reg: static FMC_BTR1_Type): FMC_BTR1_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BTR1_Fields](reg.loc))
 
 proc write*(reg: FMC_BTR1_Type, val: FMC_BTR1_Fields) {.inline.} =
@@ -5911,7 +5911,7 @@ template modifyIt*(reg: FMC_BTR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BCR2_Type): FMC_BCR2_Fields {.inline.} =
+proc read*(reg: static FMC_BCR2_Type): FMC_BCR2_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BCR2_Fields](reg.loc))
 
 proc write*(reg: FMC_BCR2_Type, val: FMC_BCR2_Fields) {.inline.} =
@@ -5941,7 +5941,7 @@ template modifyIt*(reg: FMC_BCR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BTR2_Type): FMC_BTR2_Fields {.inline.} =
+proc read*(reg: static FMC_BTR2_Type): FMC_BTR2_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BTR2_Fields](reg.loc))
 
 proc write*(reg: FMC_BTR2_Type, val: FMC_BTR2_Fields) {.inline.} =
@@ -5964,7 +5964,7 @@ template modifyIt*(reg: FMC_BTR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BCR3_Type): FMC_BCR3_Fields {.inline.} =
+proc read*(reg: static FMC_BCR3_Type): FMC_BCR3_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BCR3_Fields](reg.loc))
 
 proc write*(reg: FMC_BCR3_Type, val: FMC_BCR3_Fields) {.inline.} =
@@ -5994,7 +5994,7 @@ template modifyIt*(reg: FMC_BCR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BTR3_Type): FMC_BTR3_Fields {.inline.} =
+proc read*(reg: static FMC_BTR3_Type): FMC_BTR3_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BTR3_Fields](reg.loc))
 
 proc write*(reg: FMC_BTR3_Type, val: FMC_BTR3_Fields) {.inline.} =
@@ -6017,7 +6017,7 @@ template modifyIt*(reg: FMC_BTR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BCR4_Type): FMC_BCR4_Fields {.inline.} =
+proc read*(reg: static FMC_BCR4_Type): FMC_BCR4_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BCR4_Fields](reg.loc))
 
 proc write*(reg: FMC_BCR4_Type, val: FMC_BCR4_Fields) {.inline.} =
@@ -6047,7 +6047,7 @@ template modifyIt*(reg: FMC_BCR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BTR4_Type): FMC_BTR4_Fields {.inline.} =
+proc read*(reg: static FMC_BTR4_Type): FMC_BTR4_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BTR4_Fields](reg.loc))
 
 proc write*(reg: FMC_BTR4_Type, val: FMC_BTR4_Fields) {.inline.} =
@@ -6070,7 +6070,7 @@ template modifyIt*(reg: FMC_BTR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_PCR2_Type): FMC_PCR2_Fields {.inline.} =
+proc read*(reg: static FMC_PCR2_Type): FMC_PCR2_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_PCR2_Fields](reg.loc))
 
 proc write*(reg: FMC_PCR2_Type, val: FMC_PCR2_Fields) {.inline.} =
@@ -6094,7 +6094,7 @@ template modifyIt*(reg: FMC_PCR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_SR2_Type): FMC_SR2_Fields {.inline.} =
+proc read*(reg: static FMC_SR2_Type): FMC_SR2_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_SR2_Fields](reg.loc))
 
 proc write*(reg: FMC_SR2_Type, val: FMC_SR2_Fields) {.inline.} =
@@ -6116,7 +6116,7 @@ template modifyIt*(reg: FMC_SR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_PMEM2_Type): FMC_PMEM2_Fields {.inline.} =
+proc read*(reg: static FMC_PMEM2_Type): FMC_PMEM2_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_PMEM2_Fields](reg.loc))
 
 proc write*(reg: FMC_PMEM2_Type, val: FMC_PMEM2_Fields) {.inline.} =
@@ -6136,7 +6136,7 @@ template modifyIt*(reg: FMC_PMEM2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_PATT2_Type): FMC_PATT2_Fields {.inline.} =
+proc read*(reg: static FMC_PATT2_Type): FMC_PATT2_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_PATT2_Fields](reg.loc))
 
 proc write*(reg: FMC_PATT2_Type, val: FMC_PATT2_Fields) {.inline.} =
@@ -6156,10 +6156,10 @@ template modifyIt*(reg: FMC_PATT2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_ECCR2_Type): uint32 {.inline.} =
+proc read*(reg: static FMC_ECCR2_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
-proc read*(reg: FMC_PCR3_Type): FMC_PCR3_Fields {.inline.} =
+proc read*(reg: static FMC_PCR3_Type): FMC_PCR3_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_PCR3_Fields](reg.loc))
 
 proc write*(reg: FMC_PCR3_Type, val: FMC_PCR3_Fields) {.inline.} =
@@ -6183,7 +6183,7 @@ template modifyIt*(reg: FMC_PCR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_SR3_Type): FMC_SR3_Fields {.inline.} =
+proc read*(reg: static FMC_SR3_Type): FMC_SR3_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_SR3_Fields](reg.loc))
 
 proc write*(reg: FMC_SR3_Type, val: FMC_SR3_Fields) {.inline.} =
@@ -6205,7 +6205,7 @@ template modifyIt*(reg: FMC_SR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_PMEM3_Type): FMC_PMEM3_Fields {.inline.} =
+proc read*(reg: static FMC_PMEM3_Type): FMC_PMEM3_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_PMEM3_Fields](reg.loc))
 
 proc write*(reg: FMC_PMEM3_Type, val: FMC_PMEM3_Fields) {.inline.} =
@@ -6225,7 +6225,7 @@ template modifyIt*(reg: FMC_PMEM3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_PATT3_Type): FMC_PATT3_Fields {.inline.} =
+proc read*(reg: static FMC_PATT3_Type): FMC_PATT3_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_PATT3_Fields](reg.loc))
 
 proc write*(reg: FMC_PATT3_Type, val: FMC_PATT3_Fields) {.inline.} =
@@ -6245,10 +6245,10 @@ template modifyIt*(reg: FMC_PATT3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_ECCR3_Type): uint32 {.inline.} =
+proc read*(reg: static FMC_ECCR3_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
-proc read*(reg: FMC_PCR4_Type): FMC_PCR4_Fields {.inline.} =
+proc read*(reg: static FMC_PCR4_Type): FMC_PCR4_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_PCR4_Fields](reg.loc))
 
 proc write*(reg: FMC_PCR4_Type, val: FMC_PCR4_Fields) {.inline.} =
@@ -6272,7 +6272,7 @@ template modifyIt*(reg: FMC_PCR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_SR4_Type): FMC_SR4_Fields {.inline.} =
+proc read*(reg: static FMC_SR4_Type): FMC_SR4_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_SR4_Fields](reg.loc))
 
 proc write*(reg: FMC_SR4_Type, val: FMC_SR4_Fields) {.inline.} =
@@ -6294,7 +6294,7 @@ template modifyIt*(reg: FMC_SR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_PMEM4_Type): FMC_PMEM4_Fields {.inline.} =
+proc read*(reg: static FMC_PMEM4_Type): FMC_PMEM4_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_PMEM4_Fields](reg.loc))
 
 proc write*(reg: FMC_PMEM4_Type, val: FMC_PMEM4_Fields) {.inline.} =
@@ -6314,7 +6314,7 @@ template modifyIt*(reg: FMC_PMEM4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_PATT4_Type): FMC_PATT4_Fields {.inline.} =
+proc read*(reg: static FMC_PATT4_Type): FMC_PATT4_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_PATT4_Fields](reg.loc))
 
 proc write*(reg: FMC_PATT4_Type, val: FMC_PATT4_Fields) {.inline.} =
@@ -6334,7 +6334,7 @@ template modifyIt*(reg: FMC_PATT4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_PIO4_Type): FMC_PIO4_Fields {.inline.} =
+proc read*(reg: static FMC_PIO4_Type): FMC_PIO4_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_PIO4_Fields](reg.loc))
 
 proc write*(reg: FMC_PIO4_Type, val: FMC_PIO4_Fields) {.inline.} =
@@ -6354,7 +6354,7 @@ template modifyIt*(reg: FMC_PIO4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BWTR1_Type): FMC_BWTR1_Fields {.inline.} =
+proc read*(reg: static FMC_BWTR1_Type): FMC_BWTR1_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BWTR1_Fields](reg.loc))
 
 proc write*(reg: FMC_BWTR1_Type, val: FMC_BWTR1_Fields) {.inline.} =
@@ -6376,7 +6376,7 @@ template modifyIt*(reg: FMC_BWTR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BWTR2_Type): FMC_BWTR2_Fields {.inline.} =
+proc read*(reg: static FMC_BWTR2_Type): FMC_BWTR2_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BWTR2_Fields](reg.loc))
 
 proc write*(reg: FMC_BWTR2_Type, val: FMC_BWTR2_Fields) {.inline.} =
@@ -6398,7 +6398,7 @@ template modifyIt*(reg: FMC_BWTR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BWTR3_Type): FMC_BWTR3_Fields {.inline.} =
+proc read*(reg: static FMC_BWTR3_Type): FMC_BWTR3_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BWTR3_Fields](reg.loc))
 
 proc write*(reg: FMC_BWTR3_Type, val: FMC_BWTR3_Fields) {.inline.} =
@@ -6420,7 +6420,7 @@ template modifyIt*(reg: FMC_BWTR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_BWTR4_Type): FMC_BWTR4_Fields {.inline.} =
+proc read*(reg: static FMC_BWTR4_Type): FMC_BWTR4_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_BWTR4_Fields](reg.loc))
 
 proc write*(reg: FMC_BWTR4_Type, val: FMC_BWTR4_Fields) {.inline.} =
@@ -6442,7 +6442,7 @@ template modifyIt*(reg: FMC_BWTR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_SDCR1_Type): FMC_SDCR1_Fields {.inline.} =
+proc read*(reg: static FMC_SDCR1_Type): FMC_SDCR1_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_SDCR1_Fields](reg.loc))
 
 proc write*(reg: FMC_SDCR1_Type, val: FMC_SDCR1_Fields) {.inline.} =
@@ -6467,7 +6467,7 @@ template modifyIt*(reg: FMC_SDCR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_SDCR2_Type): FMC_SDCR2_Fields {.inline.} =
+proc read*(reg: static FMC_SDCR2_Type): FMC_SDCR2_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_SDCR2_Fields](reg.loc))
 
 proc write*(reg: FMC_SDCR2_Type, val: FMC_SDCR2_Fields) {.inline.} =
@@ -6492,7 +6492,7 @@ template modifyIt*(reg: FMC_SDCR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_SDTR1_Type): FMC_SDTR1_Fields {.inline.} =
+proc read*(reg: static FMC_SDTR1_Type): FMC_SDTR1_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_SDTR1_Fields](reg.loc))
 
 proc write*(reg: FMC_SDTR1_Type, val: FMC_SDTR1_Fields) {.inline.} =
@@ -6515,7 +6515,7 @@ template modifyIt*(reg: FMC_SDTR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_SDTR2_Type): FMC_SDTR2_Fields {.inline.} =
+proc read*(reg: static FMC_SDTR2_Type): FMC_SDTR2_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_SDTR2_Fields](reg.loc))
 
 proc write*(reg: FMC_SDTR2_Type, val: FMC_SDTR2_Fields) {.inline.} =
@@ -6538,7 +6538,7 @@ template modifyIt*(reg: FMC_SDTR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_SDCMR_Type): FMC_SDCMR_Fields {.inline.} =
+proc read*(reg: static FMC_SDCMR_Type): FMC_SDCMR_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_SDCMR_Fields](reg.loc))
 
 proc write*(reg: FMC_SDCMR_Type, val: FMC_SDCMR_Fields) {.inline.} =
@@ -6559,7 +6559,7 @@ template modifyIt*(reg: FMC_SDCMR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_SDRTR_Type): FMC_SDRTR_Fields {.inline.} =
+proc read*(reg: static FMC_SDRTR_Type): FMC_SDRTR_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_SDRTR_Fields](reg.loc))
 
 proc write*(reg: FMC_SDRTR_Type, val: FMC_SDRTR_Fields) {.inline.} =
@@ -6578,7 +6578,7 @@ template modifyIt*(reg: FMC_SDRTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMC_SDSR_Type): FMC_SDSR_Fields {.inline.} =
+proc read*(reg: static FMC_SDSR_Type): FMC_SDSR_Fields {.inline.} =
   volatileLoad(cast[ptr FMC_SDSR_Fields](reg.loc))
 
 func CCLKEN*(r: FMC_BCR1_Fields): bool {.inline.} =
@@ -8558,10 +8558,10 @@ type
   DBG_DBGMCU_APB1_FZ_Fields* = distinct uint32
   DBG_DBGMCU_APB2_FZ_Fields* = distinct uint32
 
-proc read*(reg: DBG_DBGMCU_IDCODE_Type): DBG_DBGMCU_IDCODE_Fields {.inline.} =
+proc read*(reg: static DBG_DBGMCU_IDCODE_Type): DBG_DBGMCU_IDCODE_Fields {.inline.} =
   volatileLoad(cast[ptr DBG_DBGMCU_IDCODE_Fields](reg.loc))
 
-proc read*(reg: DBG_DBGMCU_CR_Type): DBG_DBGMCU_CR_Fields {.inline.} =
+proc read*(reg: static DBG_DBGMCU_CR_Type): DBG_DBGMCU_CR_Fields {.inline.} =
   volatileLoad(cast[ptr DBG_DBGMCU_CR_Fields](reg.loc))
 
 proc write*(reg: DBG_DBGMCU_CR_Type, val: DBG_DBGMCU_CR_Fields) {.inline.} =
@@ -8582,7 +8582,7 @@ template modifyIt*(reg: DBG_DBGMCU_CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DBG_DBGMCU_APB1_FZ_Type): DBG_DBGMCU_APB1_FZ_Fields {.inline.} =
+proc read*(reg: static DBG_DBGMCU_APB1_FZ_Type): DBG_DBGMCU_APB1_FZ_Fields {.inline.} =
   volatileLoad(cast[ptr DBG_DBGMCU_APB1_FZ_Fields](reg.loc))
 
 proc write*(reg: DBG_DBGMCU_APB1_FZ_Type, val: DBG_DBGMCU_APB1_FZ_Fields) {.inline.} =
@@ -8616,7 +8616,7 @@ template modifyIt*(reg: DBG_DBGMCU_APB1_FZ_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DBG_DBGMCU_APB2_FZ_Type): DBG_DBGMCU_APB2_FZ_Fields {.inline.} =
+proc read*(reg: static DBG_DBGMCU_APB2_FZ_Type): DBG_DBGMCU_APB2_FZ_Fields {.inline.} =
   volatileLoad(cast[ptr DBG_DBGMCU_APB2_FZ_Fields](reg.loc))
 
 proc write*(reg: DBG_DBGMCU_APB2_FZ_Type, val: DBG_DBGMCU_APB2_FZ_Fields) {.inline.} =
@@ -8925,13 +8925,13 @@ type
   DMA2_S7NDTR_Fields* = distinct uint32
   DMA2_S7FCR_Fields* = distinct uint32
 
-proc read*(reg: DMA2_LISR_Type): DMA2_LISR_Fields {.inline.} =
+proc read*(reg: static DMA2_LISR_Type): DMA2_LISR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_LISR_Fields](reg.loc))
 
-proc read*(reg: DMA2_HISR_Type): DMA2_HISR_Fields {.inline.} =
+proc read*(reg: static DMA2_HISR_Type): DMA2_HISR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_HISR_Fields](reg.loc))
 
-proc read*(reg: DMA2_LIFCR_Type): DMA2_LIFCR_Fields {.inline.} =
+proc read*(reg: static DMA2_LIFCR_Type): DMA2_LIFCR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_LIFCR_Fields](reg.loc))
 
 proc write*(reg: DMA2_LIFCR_Type, val: DMA2_LIFCR_Fields) {.inline.} =
@@ -8967,7 +8967,7 @@ template modifyIt*(reg: DMA2_LIFCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_HIFCR_Type): DMA2_HIFCR_Fields {.inline.} =
+proc read*(reg: static DMA2_HIFCR_Type): DMA2_HIFCR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_HIFCR_Fields](reg.loc))
 
 proc write*(reg: DMA2_HIFCR_Type, val: DMA2_HIFCR_Fields) {.inline.} =
@@ -9003,7 +9003,7 @@ template modifyIt*(reg: DMA2_HIFCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S0CR_Type): DMA2_S0CR_Fields {.inline.} =
+proc read*(reg: static DMA2_S0CR_Type): DMA2_S0CR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S0CR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S0CR_Type, val: DMA2_S0CR_Fields) {.inline.} =
@@ -9038,7 +9038,7 @@ template modifyIt*(reg: DMA2_S0CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S0NDTR_Type): DMA2_S0NDTR_Fields {.inline.} =
+proc read*(reg: static DMA2_S0NDTR_Type): DMA2_S0NDTR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S0NDTR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S0NDTR_Type, val: DMA2_S0NDTR_Fields) {.inline.} =
@@ -9055,7 +9055,7 @@ template modifyIt*(reg: DMA2_S0NDTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S0PAR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S0PAR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S0PAR_Type, val: uint32) {.inline.} =
@@ -9067,7 +9067,7 @@ template modifyIt*(reg: DMA2_S0PAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S0M0AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S0M0AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S0M0AR_Type, val: uint32) {.inline.} =
@@ -9079,7 +9079,7 @@ template modifyIt*(reg: DMA2_S0M0AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S0M1AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S0M1AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S0M1AR_Type, val: uint32) {.inline.} =
@@ -9091,7 +9091,7 @@ template modifyIt*(reg: DMA2_S0M1AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S0FCR_Type): DMA2_S0FCR_Fields {.inline.} =
+proc read*(reg: static DMA2_S0FCR_Type): DMA2_S0FCR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S0FCR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S0FCR_Type, val: DMA2_S0FCR_Fields) {.inline.} =
@@ -9110,7 +9110,7 @@ template modifyIt*(reg: DMA2_S0FCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S1CR_Type): DMA2_S1CR_Fields {.inline.} =
+proc read*(reg: static DMA2_S1CR_Type): DMA2_S1CR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S1CR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S1CR_Type, val: DMA2_S1CR_Fields) {.inline.} =
@@ -9146,7 +9146,7 @@ template modifyIt*(reg: DMA2_S1CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S1NDTR_Type): DMA2_S1NDTR_Fields {.inline.} =
+proc read*(reg: static DMA2_S1NDTR_Type): DMA2_S1NDTR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S1NDTR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S1NDTR_Type, val: DMA2_S1NDTR_Fields) {.inline.} =
@@ -9163,7 +9163,7 @@ template modifyIt*(reg: DMA2_S1NDTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S1PAR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S1PAR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S1PAR_Type, val: uint32) {.inline.} =
@@ -9175,7 +9175,7 @@ template modifyIt*(reg: DMA2_S1PAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S1M0AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S1M0AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S1M0AR_Type, val: uint32) {.inline.} =
@@ -9187,7 +9187,7 @@ template modifyIt*(reg: DMA2_S1M0AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S1M1AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S1M1AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S1M1AR_Type, val: uint32) {.inline.} =
@@ -9199,7 +9199,7 @@ template modifyIt*(reg: DMA2_S1M1AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S1FCR_Type): DMA2_S1FCR_Fields {.inline.} =
+proc read*(reg: static DMA2_S1FCR_Type): DMA2_S1FCR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S1FCR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S1FCR_Type, val: DMA2_S1FCR_Fields) {.inline.} =
@@ -9218,7 +9218,7 @@ template modifyIt*(reg: DMA2_S1FCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S2CR_Type): DMA2_S2CR_Fields {.inline.} =
+proc read*(reg: static DMA2_S2CR_Type): DMA2_S2CR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S2CR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S2CR_Type, val: DMA2_S2CR_Fields) {.inline.} =
@@ -9254,7 +9254,7 @@ template modifyIt*(reg: DMA2_S2CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S2NDTR_Type): DMA2_S2NDTR_Fields {.inline.} =
+proc read*(reg: static DMA2_S2NDTR_Type): DMA2_S2NDTR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S2NDTR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S2NDTR_Type, val: DMA2_S2NDTR_Fields) {.inline.} =
@@ -9271,7 +9271,7 @@ template modifyIt*(reg: DMA2_S2NDTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S2PAR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S2PAR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S2PAR_Type, val: uint32) {.inline.} =
@@ -9283,7 +9283,7 @@ template modifyIt*(reg: DMA2_S2PAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S2M0AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S2M0AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S2M0AR_Type, val: uint32) {.inline.} =
@@ -9295,7 +9295,7 @@ template modifyIt*(reg: DMA2_S2M0AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S2M1AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S2M1AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S2M1AR_Type, val: uint32) {.inline.} =
@@ -9307,7 +9307,7 @@ template modifyIt*(reg: DMA2_S2M1AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S2FCR_Type): DMA2_S2FCR_Fields {.inline.} =
+proc read*(reg: static DMA2_S2FCR_Type): DMA2_S2FCR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S2FCR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S2FCR_Type, val: DMA2_S2FCR_Fields) {.inline.} =
@@ -9326,7 +9326,7 @@ template modifyIt*(reg: DMA2_S2FCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S3CR_Type): DMA2_S3CR_Fields {.inline.} =
+proc read*(reg: static DMA2_S3CR_Type): DMA2_S3CR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S3CR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S3CR_Type, val: DMA2_S3CR_Fields) {.inline.} =
@@ -9362,7 +9362,7 @@ template modifyIt*(reg: DMA2_S3CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S3NDTR_Type): DMA2_S3NDTR_Fields {.inline.} =
+proc read*(reg: static DMA2_S3NDTR_Type): DMA2_S3NDTR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S3NDTR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S3NDTR_Type, val: DMA2_S3NDTR_Fields) {.inline.} =
@@ -9379,7 +9379,7 @@ template modifyIt*(reg: DMA2_S3NDTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S3PAR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S3PAR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S3PAR_Type, val: uint32) {.inline.} =
@@ -9391,7 +9391,7 @@ template modifyIt*(reg: DMA2_S3PAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S3M0AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S3M0AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S3M0AR_Type, val: uint32) {.inline.} =
@@ -9403,7 +9403,7 @@ template modifyIt*(reg: DMA2_S3M0AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S3M1AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S3M1AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S3M1AR_Type, val: uint32) {.inline.} =
@@ -9415,7 +9415,7 @@ template modifyIt*(reg: DMA2_S3M1AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S3FCR_Type): DMA2_S3FCR_Fields {.inline.} =
+proc read*(reg: static DMA2_S3FCR_Type): DMA2_S3FCR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S3FCR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S3FCR_Type, val: DMA2_S3FCR_Fields) {.inline.} =
@@ -9434,7 +9434,7 @@ template modifyIt*(reg: DMA2_S3FCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S4CR_Type): DMA2_S4CR_Fields {.inline.} =
+proc read*(reg: static DMA2_S4CR_Type): DMA2_S4CR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S4CR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S4CR_Type, val: DMA2_S4CR_Fields) {.inline.} =
@@ -9470,7 +9470,7 @@ template modifyIt*(reg: DMA2_S4CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S4NDTR_Type): DMA2_S4NDTR_Fields {.inline.} =
+proc read*(reg: static DMA2_S4NDTR_Type): DMA2_S4NDTR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S4NDTR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S4NDTR_Type, val: DMA2_S4NDTR_Fields) {.inline.} =
@@ -9487,7 +9487,7 @@ template modifyIt*(reg: DMA2_S4NDTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S4PAR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S4PAR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S4PAR_Type, val: uint32) {.inline.} =
@@ -9499,7 +9499,7 @@ template modifyIt*(reg: DMA2_S4PAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S4M0AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S4M0AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S4M0AR_Type, val: uint32) {.inline.} =
@@ -9511,7 +9511,7 @@ template modifyIt*(reg: DMA2_S4M0AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S4M1AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S4M1AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S4M1AR_Type, val: uint32) {.inline.} =
@@ -9523,7 +9523,7 @@ template modifyIt*(reg: DMA2_S4M1AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S4FCR_Type): DMA2_S4FCR_Fields {.inline.} =
+proc read*(reg: static DMA2_S4FCR_Type): DMA2_S4FCR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S4FCR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S4FCR_Type, val: DMA2_S4FCR_Fields) {.inline.} =
@@ -9542,7 +9542,7 @@ template modifyIt*(reg: DMA2_S4FCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S5CR_Type): DMA2_S5CR_Fields {.inline.} =
+proc read*(reg: static DMA2_S5CR_Type): DMA2_S5CR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S5CR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S5CR_Type, val: DMA2_S5CR_Fields) {.inline.} =
@@ -9578,7 +9578,7 @@ template modifyIt*(reg: DMA2_S5CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S5NDTR_Type): DMA2_S5NDTR_Fields {.inline.} =
+proc read*(reg: static DMA2_S5NDTR_Type): DMA2_S5NDTR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S5NDTR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S5NDTR_Type, val: DMA2_S5NDTR_Fields) {.inline.} =
@@ -9595,7 +9595,7 @@ template modifyIt*(reg: DMA2_S5NDTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S5PAR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S5PAR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S5PAR_Type, val: uint32) {.inline.} =
@@ -9607,7 +9607,7 @@ template modifyIt*(reg: DMA2_S5PAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S5M0AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S5M0AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S5M0AR_Type, val: uint32) {.inline.} =
@@ -9619,7 +9619,7 @@ template modifyIt*(reg: DMA2_S5M0AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S5M1AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S5M1AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S5M1AR_Type, val: uint32) {.inline.} =
@@ -9631,7 +9631,7 @@ template modifyIt*(reg: DMA2_S5M1AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S5FCR_Type): DMA2_S5FCR_Fields {.inline.} =
+proc read*(reg: static DMA2_S5FCR_Type): DMA2_S5FCR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S5FCR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S5FCR_Type, val: DMA2_S5FCR_Fields) {.inline.} =
@@ -9650,7 +9650,7 @@ template modifyIt*(reg: DMA2_S5FCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S6CR_Type): DMA2_S6CR_Fields {.inline.} =
+proc read*(reg: static DMA2_S6CR_Type): DMA2_S6CR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S6CR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S6CR_Type, val: DMA2_S6CR_Fields) {.inline.} =
@@ -9686,7 +9686,7 @@ template modifyIt*(reg: DMA2_S6CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S6NDTR_Type): DMA2_S6NDTR_Fields {.inline.} =
+proc read*(reg: static DMA2_S6NDTR_Type): DMA2_S6NDTR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S6NDTR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S6NDTR_Type, val: DMA2_S6NDTR_Fields) {.inline.} =
@@ -9703,7 +9703,7 @@ template modifyIt*(reg: DMA2_S6NDTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S6PAR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S6PAR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S6PAR_Type, val: uint32) {.inline.} =
@@ -9715,7 +9715,7 @@ template modifyIt*(reg: DMA2_S6PAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S6M0AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S6M0AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S6M0AR_Type, val: uint32) {.inline.} =
@@ -9727,7 +9727,7 @@ template modifyIt*(reg: DMA2_S6M0AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S6M1AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S6M1AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S6M1AR_Type, val: uint32) {.inline.} =
@@ -9739,7 +9739,7 @@ template modifyIt*(reg: DMA2_S6M1AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S6FCR_Type): DMA2_S6FCR_Fields {.inline.} =
+proc read*(reg: static DMA2_S6FCR_Type): DMA2_S6FCR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S6FCR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S6FCR_Type, val: DMA2_S6FCR_Fields) {.inline.} =
@@ -9758,7 +9758,7 @@ template modifyIt*(reg: DMA2_S6FCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S7CR_Type): DMA2_S7CR_Fields {.inline.} =
+proc read*(reg: static DMA2_S7CR_Type): DMA2_S7CR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S7CR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S7CR_Type, val: DMA2_S7CR_Fields) {.inline.} =
@@ -9794,7 +9794,7 @@ template modifyIt*(reg: DMA2_S7CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S7NDTR_Type): DMA2_S7NDTR_Fields {.inline.} =
+proc read*(reg: static DMA2_S7NDTR_Type): DMA2_S7NDTR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S7NDTR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S7NDTR_Type, val: DMA2_S7NDTR_Fields) {.inline.} =
@@ -9811,7 +9811,7 @@ template modifyIt*(reg: DMA2_S7NDTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S7PAR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S7PAR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S7PAR_Type, val: uint32) {.inline.} =
@@ -9823,7 +9823,7 @@ template modifyIt*(reg: DMA2_S7PAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S7M0AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S7M0AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S7M0AR_Type, val: uint32) {.inline.} =
@@ -9835,7 +9835,7 @@ template modifyIt*(reg: DMA2_S7M0AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S7M1AR_Type): uint32 {.inline.} =
+proc read*(reg: static DMA2_S7M1AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: DMA2_S7M1AR_Type, val: uint32) {.inline.} =
@@ -9847,7 +9847,7 @@ template modifyIt*(reg: DMA2_S7M1AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DMA2_S7FCR_Type): DMA2_S7FCR_Fields {.inline.} =
+proc read*(reg: static DMA2_S7FCR_Type): DMA2_S7FCR_Fields {.inline.} =
   volatileLoad(cast[ptr DMA2_S7FCR_Fields](reg.loc))
 
 proc write*(reg: DMA2_S7FCR_Type, val: DMA2_S7FCR_Fields) {.inline.} =
@@ -12118,7 +12118,7 @@ type
   RCC_CKGATENR_Fields* = distinct uint32
   RCC_DCKCFGR2_Fields* = distinct uint32
 
-proc read*(reg: RCC_CR_Type): RCC_CR_Fields {.inline.} =
+proc read*(reg: static RCC_CR_Type): RCC_CR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_CR_Fields](reg.loc))
 
 proc write*(reg: RCC_CR_Type, val: RCC_CR_Fields) {.inline.} =
@@ -12141,7 +12141,7 @@ template modifyIt*(reg: RCC_CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_PLLCFGR_Type): RCC_PLLCFGR_Fields {.inline.} =
+proc read*(reg: static RCC_PLLCFGR_Type): RCC_PLLCFGR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_PLLCFGR_Fields](reg.loc))
 
 proc write*(reg: RCC_PLLCFGR_Type, val: RCC_PLLCFGR_Fields) {.inline.} =
@@ -12179,7 +12179,7 @@ template modifyIt*(reg: RCC_PLLCFGR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_CFGR_Type): RCC_CFGR_Fields {.inline.} =
+proc read*(reg: static RCC_CFGR_Type): RCC_CFGR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_CFGR_Fields](reg.loc))
 
 proc write*(reg: RCC_CFGR_Type, val: RCC_CFGR_Fields) {.inline.} =
@@ -12206,7 +12206,7 @@ template modifyIt*(reg: RCC_CFGR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_CIR_Type): RCC_CIR_Fields {.inline.} =
+proc read*(reg: static RCC_CIR_Type): RCC_CIR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_CIR_Fields](reg.loc))
 
 proc write*(reg: RCC_CIR_Type, val: RCC_CIR_Fields) {.inline.} =
@@ -12237,7 +12237,7 @@ template modifyIt*(reg: RCC_CIR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_AHB1RSTR_Type): RCC_AHB1RSTR_Fields {.inline.} =
+proc read*(reg: static RCC_AHB1RSTR_Type): RCC_AHB1RSTR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_AHB1RSTR_Fields](reg.loc))
 
 proc write*(reg: RCC_AHB1RSTR_Type, val: RCC_AHB1RSTR_Fields) {.inline.} =
@@ -12265,7 +12265,7 @@ template modifyIt*(reg: RCC_AHB1RSTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_AHB2RSTR_Type): RCC_AHB2RSTR_Fields {.inline.} =
+proc read*(reg: static RCC_AHB2RSTR_Type): RCC_AHB2RSTR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_AHB2RSTR_Fields](reg.loc))
 
 proc write*(reg: RCC_AHB2RSTR_Type, val: RCC_AHB2RSTR_Fields) {.inline.} =
@@ -12283,7 +12283,7 @@ template modifyIt*(reg: RCC_AHB2RSTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_AHB3RSTR_Type): RCC_AHB3RSTR_Fields {.inline.} =
+proc read*(reg: static RCC_AHB3RSTR_Type): RCC_AHB3RSTR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_AHB3RSTR_Fields](reg.loc))
 
 proc write*(reg: RCC_AHB3RSTR_Type, val: RCC_AHB3RSTR_Fields) {.inline.} =
@@ -12301,7 +12301,7 @@ template modifyIt*(reg: RCC_AHB3RSTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_APB1RSTR_Type): RCC_APB1RSTR_Fields {.inline.} =
+proc read*(reg: static RCC_APB1RSTR_Type): RCC_APB1RSTR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_APB1RSTR_Fields](reg.loc))
 
 proc write*(reg: RCC_APB1RSTR_Type, val: RCC_APB1RSTR_Fields) {.inline.} =
@@ -12342,7 +12342,7 @@ template modifyIt*(reg: RCC_APB1RSTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_APB2RSTR_Type): RCC_APB2RSTR_Fields {.inline.} =
+proc read*(reg: static RCC_APB2RSTR_Type): RCC_APB2RSTR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_APB2RSTR_Fields](reg.loc))
 
 proc write*(reg: RCC_APB2RSTR_Type, val: RCC_APB2RSTR_Fields) {.inline.} =
@@ -12372,7 +12372,7 @@ template modifyIt*(reg: RCC_APB2RSTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_AHB1ENR_Type): RCC_AHB1ENR_Fields {.inline.} =
+proc read*(reg: static RCC_AHB1ENR_Type): RCC_AHB1ENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_AHB1ENR_Fields](reg.loc))
 
 proc write*(reg: RCC_AHB1ENR_Type, val: RCC_AHB1ENR_Fields) {.inline.} =
@@ -12402,7 +12402,7 @@ template modifyIt*(reg: RCC_AHB1ENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_AHB2ENR_Type): RCC_AHB2ENR_Fields {.inline.} =
+proc read*(reg: static RCC_AHB2ENR_Type): RCC_AHB2ENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_AHB2ENR_Fields](reg.loc))
 
 proc write*(reg: RCC_AHB2ENR_Type, val: RCC_AHB2ENR_Fields) {.inline.} =
@@ -12420,7 +12420,7 @@ template modifyIt*(reg: RCC_AHB2ENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_AHB3ENR_Type): RCC_AHB3ENR_Fields {.inline.} =
+proc read*(reg: static RCC_AHB3ENR_Type): RCC_AHB3ENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_AHB3ENR_Fields](reg.loc))
 
 proc write*(reg: RCC_AHB3ENR_Type, val: RCC_AHB3ENR_Fields) {.inline.} =
@@ -12438,7 +12438,7 @@ template modifyIt*(reg: RCC_AHB3ENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_APB1ENR_Type): RCC_APB1ENR_Fields {.inline.} =
+proc read*(reg: static RCC_APB1ENR_Type): RCC_APB1ENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_APB1ENR_Fields](reg.loc))
 
 proc write*(reg: RCC_APB1ENR_Type, val: RCC_APB1ENR_Fields) {.inline.} =
@@ -12480,7 +12480,7 @@ template modifyIt*(reg: RCC_APB1ENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_APB2ENR_Type): RCC_APB2ENR_Fields {.inline.} =
+proc read*(reg: static RCC_APB2ENR_Type): RCC_APB2ENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_APB2ENR_Fields](reg.loc))
 
 proc write*(reg: RCC_APB2ENR_Type, val: RCC_APB2ENR_Fields) {.inline.} =
@@ -12512,7 +12512,7 @@ template modifyIt*(reg: RCC_APB2ENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_AHB1LPENR_Type): RCC_AHB1LPENR_Fields {.inline.} =
+proc read*(reg: static RCC_AHB1LPENR_Type): RCC_AHB1LPENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_AHB1LPENR_Fields](reg.loc))
 
 proc write*(reg: RCC_AHB1LPENR_Type, val: RCC_AHB1LPENR_Fields) {.inline.} =
@@ -12545,7 +12545,7 @@ template modifyIt*(reg: RCC_AHB1LPENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_AHB2LPENR_Type): RCC_AHB2LPENR_Fields {.inline.} =
+proc read*(reg: static RCC_AHB2LPENR_Type): RCC_AHB2LPENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_AHB2LPENR_Fields](reg.loc))
 
 proc write*(reg: RCC_AHB2LPENR_Type, val: RCC_AHB2LPENR_Fields) {.inline.} =
@@ -12563,7 +12563,7 @@ template modifyIt*(reg: RCC_AHB2LPENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_AHB3LPENR_Type): RCC_AHB3LPENR_Fields {.inline.} =
+proc read*(reg: static RCC_AHB3LPENR_Type): RCC_AHB3LPENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_AHB3LPENR_Fields](reg.loc))
 
 proc write*(reg: RCC_AHB3LPENR_Type, val: RCC_AHB3LPENR_Fields) {.inline.} =
@@ -12581,7 +12581,7 @@ template modifyIt*(reg: RCC_AHB3LPENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_APB1LPENR_Type): RCC_APB1LPENR_Fields {.inline.} =
+proc read*(reg: static RCC_APB1LPENR_Type): RCC_APB1LPENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_APB1LPENR_Fields](reg.loc))
 
 proc write*(reg: RCC_APB1LPENR_Type, val: RCC_APB1LPENR_Fields) {.inline.} =
@@ -12623,7 +12623,7 @@ template modifyIt*(reg: RCC_APB1LPENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_APB2LPENR_Type): RCC_APB2LPENR_Fields {.inline.} =
+proc read*(reg: static RCC_APB2LPENR_Type): RCC_APB2LPENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_APB2LPENR_Fields](reg.loc))
 
 proc write*(reg: RCC_APB2LPENR_Type, val: RCC_APB2LPENR_Fields) {.inline.} =
@@ -12655,7 +12655,7 @@ template modifyIt*(reg: RCC_APB2LPENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_BDCR_Type): RCC_BDCR_Fields {.inline.} =
+proc read*(reg: static RCC_BDCR_Type): RCC_BDCR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_BDCR_Fields](reg.loc))
 
 proc write*(reg: RCC_BDCR_Type, val: RCC_BDCR_Fields) {.inline.} =
@@ -12677,7 +12677,7 @@ template modifyIt*(reg: RCC_BDCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_CSR_Type): RCC_CSR_Fields {.inline.} =
+proc read*(reg: static RCC_CSR_Type): RCC_CSR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_CSR_Fields](reg.loc))
 
 proc write*(reg: RCC_CSR_Type, val: RCC_CSR_Fields) {.inline.} =
@@ -12702,7 +12702,7 @@ template modifyIt*(reg: RCC_CSR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_SSCGR_Type): RCC_SSCGR_Fields {.inline.} =
+proc read*(reg: static RCC_SSCGR_Type): RCC_SSCGR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_SSCGR_Fields](reg.loc))
 
 proc write*(reg: RCC_SSCGR_Type, val: RCC_SSCGR_Fields) {.inline.} =
@@ -12722,7 +12722,7 @@ template modifyIt*(reg: RCC_SSCGR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_PLLI2SCFGR_Type): RCC_PLLI2SCFGR_Fields {.inline.} =
+proc read*(reg: static RCC_PLLI2SCFGR_Type): RCC_PLLI2SCFGR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_PLLI2SCFGR_Fields](reg.loc))
 
 proc write*(reg: RCC_PLLI2SCFGR_Type, val: RCC_PLLI2SCFGR_Fields) {.inline.} =
@@ -12743,7 +12743,7 @@ template modifyIt*(reg: RCC_PLLI2SCFGR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_PLLSAICFGR_Type): RCC_PLLSAICFGR_Fields {.inline.} =
+proc read*(reg: static RCC_PLLSAICFGR_Type): RCC_PLLSAICFGR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_PLLSAICFGR_Fields](reg.loc))
 
 proc write*(reg: RCC_PLLSAICFGR_Type, val: RCC_PLLSAICFGR_Fields) {.inline.} =
@@ -12763,7 +12763,7 @@ template modifyIt*(reg: RCC_PLLSAICFGR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_DCKCFGR_Type): RCC_DCKCFGR_Fields {.inline.} =
+proc read*(reg: static RCC_DCKCFGR_Type): RCC_DCKCFGR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_DCKCFGR_Fields](reg.loc))
 
 proc write*(reg: RCC_DCKCFGR_Type, val: RCC_DCKCFGR_Fields) {.inline.} =
@@ -12786,7 +12786,7 @@ template modifyIt*(reg: RCC_DCKCFGR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_CKGATENR_Type): RCC_CKGATENR_Fields {.inline.} =
+proc read*(reg: static RCC_CKGATENR_Type): RCC_CKGATENR_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_CKGATENR_Fields](reg.loc))
 
 proc write*(reg: RCC_CKGATENR_Type, val: RCC_CKGATENR_Fields) {.inline.} =
@@ -12809,7 +12809,7 @@ template modifyIt*(reg: RCC_CKGATENR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RCC_DCKCFGR2_Type): RCC_DCKCFGR2_Fields {.inline.} =
+proc read*(reg: static RCC_DCKCFGR2_Type): RCC_DCKCFGR2_Fields {.inline.} =
   volatileLoad(cast[ptr RCC_DCKCFGR2_Fields](reg.loc))
 
 proc write*(reg: RCC_DCKCFGR2_Type, val: RCC_DCKCFGR2_Fields) {.inline.} =
@@ -15389,7 +15389,7 @@ type
   GPIOH_AFRL_Fields* = distinct uint32
   GPIOH_AFRH_Fields* = distinct uint32
 
-proc read*(reg: GPIOH_MODER_Type): GPIOH_MODER_Fields {.inline.} =
+proc read*(reg: static GPIOH_MODER_Type): GPIOH_MODER_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOH_MODER_Fields](reg.loc))
 
 proc write*(reg: GPIOH_MODER_Type, val: GPIOH_MODER_Fields) {.inline.} =
@@ -15421,7 +15421,7 @@ template modifyIt*(reg: GPIOH_MODER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOH_OTYPER_Type): GPIOH_OTYPER_Fields {.inline.} =
+proc read*(reg: static GPIOH_OTYPER_Type): GPIOH_OTYPER_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOH_OTYPER_Fields](reg.loc))
 
 proc write*(reg: GPIOH_OTYPER_Type, val: GPIOH_OTYPER_Fields) {.inline.} =
@@ -15453,7 +15453,7 @@ template modifyIt*(reg: GPIOH_OTYPER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOH_OSPEEDR_Type): GPIOH_OSPEEDR_Fields {.inline.} =
+proc read*(reg: static GPIOH_OSPEEDR_Type): GPIOH_OSPEEDR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOH_OSPEEDR_Fields](reg.loc))
 
 proc write*(reg: GPIOH_OSPEEDR_Type, val: GPIOH_OSPEEDR_Fields) {.inline.} =
@@ -15485,7 +15485,7 @@ template modifyIt*(reg: GPIOH_OSPEEDR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOH_PUPDR_Type): GPIOH_PUPDR_Fields {.inline.} =
+proc read*(reg: static GPIOH_PUPDR_Type): GPIOH_PUPDR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOH_PUPDR_Fields](reg.loc))
 
 proc write*(reg: GPIOH_PUPDR_Type, val: GPIOH_PUPDR_Fields) {.inline.} =
@@ -15517,10 +15517,10 @@ template modifyIt*(reg: GPIOH_PUPDR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOH_IDR_Type): GPIOH_IDR_Fields {.inline.} =
+proc read*(reg: static GPIOH_IDR_Type): GPIOH_IDR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOH_IDR_Fields](reg.loc))
 
-proc read*(reg: GPIOH_ODR_Type): GPIOH_ODR_Fields {.inline.} =
+proc read*(reg: static GPIOH_ODR_Type): GPIOH_ODR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOH_ODR_Fields](reg.loc))
 
 proc write*(reg: GPIOH_ODR_Type, val: GPIOH_ODR_Fields) {.inline.} =
@@ -15591,7 +15591,7 @@ proc write*(reg: GPIOH_BSRR_Type, BR15: bool = false, BR14: bool = false, BR13: 
   x.setMask((BS0.uint32 shl 0).masked(0 .. 0))
   reg.write x.GPIOH_BSRR_Fields
 
-proc read*(reg: GPIOH_LCKR_Type): GPIOH_LCKR_Fields {.inline.} =
+proc read*(reg: static GPIOH_LCKR_Type): GPIOH_LCKR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOH_LCKR_Fields](reg.loc))
 
 proc write*(reg: GPIOH_LCKR_Type, val: GPIOH_LCKR_Fields) {.inline.} =
@@ -15624,7 +15624,7 @@ template modifyIt*(reg: GPIOH_LCKR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOH_AFRL_Type): GPIOH_AFRL_Fields {.inline.} =
+proc read*(reg: static GPIOH_AFRL_Type): GPIOH_AFRL_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOH_AFRL_Fields](reg.loc))
 
 proc write*(reg: GPIOH_AFRL_Type, val: GPIOH_AFRL_Fields) {.inline.} =
@@ -15648,7 +15648,7 @@ template modifyIt*(reg: GPIOH_AFRL_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOH_AFRH_Type): GPIOH_AFRH_Fields {.inline.} =
+proc read*(reg: static GPIOH_AFRH_Type): GPIOH_AFRH_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOH_AFRH_Fields](reg.loc))
 
 proc write*(reg: GPIOH_AFRH_Type, val: GPIOH_AFRH_Fields) {.inline.} =
@@ -16941,7 +16941,7 @@ type
   GPIOB_AFRL_Fields* = distinct uint32
   GPIOB_AFRH_Fields* = distinct uint32
 
-proc read*(reg: GPIOB_MODER_Type): GPIOB_MODER_Fields {.inline.} =
+proc read*(reg: static GPIOB_MODER_Type): GPIOB_MODER_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOB_MODER_Fields](reg.loc))
 
 proc write*(reg: GPIOB_MODER_Type, val: GPIOB_MODER_Fields) {.inline.} =
@@ -16973,7 +16973,7 @@ template modifyIt*(reg: GPIOB_MODER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOB_OTYPER_Type): GPIOB_OTYPER_Fields {.inline.} =
+proc read*(reg: static GPIOB_OTYPER_Type): GPIOB_OTYPER_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOB_OTYPER_Fields](reg.loc))
 
 proc write*(reg: GPIOB_OTYPER_Type, val: GPIOB_OTYPER_Fields) {.inline.} =
@@ -17005,7 +17005,7 @@ template modifyIt*(reg: GPIOB_OTYPER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOB_OSPEEDR_Type): GPIOB_OSPEEDR_Fields {.inline.} =
+proc read*(reg: static GPIOB_OSPEEDR_Type): GPIOB_OSPEEDR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOB_OSPEEDR_Fields](reg.loc))
 
 proc write*(reg: GPIOB_OSPEEDR_Type, val: GPIOB_OSPEEDR_Fields) {.inline.} =
@@ -17037,7 +17037,7 @@ template modifyIt*(reg: GPIOB_OSPEEDR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOB_PUPDR_Type): GPIOB_PUPDR_Fields {.inline.} =
+proc read*(reg: static GPIOB_PUPDR_Type): GPIOB_PUPDR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOB_PUPDR_Fields](reg.loc))
 
 proc write*(reg: GPIOB_PUPDR_Type, val: GPIOB_PUPDR_Fields) {.inline.} =
@@ -17069,10 +17069,10 @@ template modifyIt*(reg: GPIOB_PUPDR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOB_IDR_Type): GPIOB_IDR_Fields {.inline.} =
+proc read*(reg: static GPIOB_IDR_Type): GPIOB_IDR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOB_IDR_Fields](reg.loc))
 
-proc read*(reg: GPIOB_ODR_Type): GPIOB_ODR_Fields {.inline.} =
+proc read*(reg: static GPIOB_ODR_Type): GPIOB_ODR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOB_ODR_Fields](reg.loc))
 
 proc write*(reg: GPIOB_ODR_Type, val: GPIOB_ODR_Fields) {.inline.} =
@@ -17143,7 +17143,7 @@ proc write*(reg: GPIOB_BSRR_Type, BR15: bool = false, BR14: bool = false, BR13: 
   x.setMask((BS0.uint32 shl 0).masked(0 .. 0))
   reg.write x.GPIOB_BSRR_Fields
 
-proc read*(reg: GPIOB_LCKR_Type): GPIOB_LCKR_Fields {.inline.} =
+proc read*(reg: static GPIOB_LCKR_Type): GPIOB_LCKR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOB_LCKR_Fields](reg.loc))
 
 proc write*(reg: GPIOB_LCKR_Type, val: GPIOB_LCKR_Fields) {.inline.} =
@@ -17176,7 +17176,7 @@ template modifyIt*(reg: GPIOB_LCKR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOB_AFRL_Type): GPIOB_AFRL_Fields {.inline.} =
+proc read*(reg: static GPIOB_AFRL_Type): GPIOB_AFRL_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOB_AFRL_Fields](reg.loc))
 
 proc write*(reg: GPIOB_AFRL_Type, val: GPIOB_AFRL_Fields) {.inline.} =
@@ -17200,7 +17200,7 @@ template modifyIt*(reg: GPIOB_AFRL_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOB_AFRH_Type): GPIOB_AFRH_Fields {.inline.} =
+proc read*(reg: static GPIOB_AFRH_Type): GPIOB_AFRH_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOB_AFRH_Fields](reg.loc))
 
 proc write*(reg: GPIOB_AFRH_Type, val: GPIOB_AFRH_Fields) {.inline.} =
@@ -18493,7 +18493,7 @@ type
   GPIOA_AFRL_Fields* = distinct uint32
   GPIOA_AFRH_Fields* = distinct uint32
 
-proc read*(reg: GPIOA_MODER_Type): GPIOA_MODER_Fields {.inline.} =
+proc read*(reg: static GPIOA_MODER_Type): GPIOA_MODER_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOA_MODER_Fields](reg.loc))
 
 proc write*(reg: GPIOA_MODER_Type, val: GPIOA_MODER_Fields) {.inline.} =
@@ -18525,7 +18525,7 @@ template modifyIt*(reg: GPIOA_MODER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOA_OTYPER_Type): GPIOA_OTYPER_Fields {.inline.} =
+proc read*(reg: static GPIOA_OTYPER_Type): GPIOA_OTYPER_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOA_OTYPER_Fields](reg.loc))
 
 proc write*(reg: GPIOA_OTYPER_Type, val: GPIOA_OTYPER_Fields) {.inline.} =
@@ -18557,7 +18557,7 @@ template modifyIt*(reg: GPIOA_OTYPER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOA_OSPEEDR_Type): GPIOA_OSPEEDR_Fields {.inline.} =
+proc read*(reg: static GPIOA_OSPEEDR_Type): GPIOA_OSPEEDR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOA_OSPEEDR_Fields](reg.loc))
 
 proc write*(reg: GPIOA_OSPEEDR_Type, val: GPIOA_OSPEEDR_Fields) {.inline.} =
@@ -18589,7 +18589,7 @@ template modifyIt*(reg: GPIOA_OSPEEDR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOA_PUPDR_Type): GPIOA_PUPDR_Fields {.inline.} =
+proc read*(reg: static GPIOA_PUPDR_Type): GPIOA_PUPDR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOA_PUPDR_Fields](reg.loc))
 
 proc write*(reg: GPIOA_PUPDR_Type, val: GPIOA_PUPDR_Fields) {.inline.} =
@@ -18621,10 +18621,10 @@ template modifyIt*(reg: GPIOA_PUPDR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOA_IDR_Type): GPIOA_IDR_Fields {.inline.} =
+proc read*(reg: static GPIOA_IDR_Type): GPIOA_IDR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOA_IDR_Fields](reg.loc))
 
-proc read*(reg: GPIOA_ODR_Type): GPIOA_ODR_Fields {.inline.} =
+proc read*(reg: static GPIOA_ODR_Type): GPIOA_ODR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOA_ODR_Fields](reg.loc))
 
 proc write*(reg: GPIOA_ODR_Type, val: GPIOA_ODR_Fields) {.inline.} =
@@ -18695,7 +18695,7 @@ proc write*(reg: GPIOA_BSRR_Type, BR15: bool = false, BR14: bool = false, BR13: 
   x.setMask((BS0.uint32 shl 0).masked(0 .. 0))
   reg.write x.GPIOA_BSRR_Fields
 
-proc read*(reg: GPIOA_LCKR_Type): GPIOA_LCKR_Fields {.inline.} =
+proc read*(reg: static GPIOA_LCKR_Type): GPIOA_LCKR_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOA_LCKR_Fields](reg.loc))
 
 proc write*(reg: GPIOA_LCKR_Type, val: GPIOA_LCKR_Fields) {.inline.} =
@@ -18728,7 +18728,7 @@ template modifyIt*(reg: GPIOA_LCKR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOA_AFRL_Type): GPIOA_AFRL_Fields {.inline.} =
+proc read*(reg: static GPIOA_AFRL_Type): GPIOA_AFRL_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOA_AFRL_Fields](reg.loc))
 
 proc write*(reg: GPIOA_AFRL_Type, val: GPIOA_AFRL_Fields) {.inline.} =
@@ -18752,7 +18752,7 @@ template modifyIt*(reg: GPIOA_AFRL_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: GPIOA_AFRH_Type): GPIOA_AFRH_Fields {.inline.} =
+proc read*(reg: static GPIOA_AFRH_Type): GPIOA_AFRH_Fields {.inline.} =
   volatileLoad(cast[ptr GPIOA_AFRH_Fields](reg.loc))
 
 proc write*(reg: GPIOA_AFRH_Type, val: GPIOA_AFRH_Fields) {.inline.} =
@@ -20042,7 +20042,7 @@ type
   SYSCFG_EXTICR4_Fields* = distinct uint32
   SYSCFG_CMPCR_Fields* = distinct uint32
 
-proc read*(reg: SYSCFG_MEMRM_Type): SYSCFG_MEMRM_Fields {.inline.} =
+proc read*(reg: static SYSCFG_MEMRM_Type): SYSCFG_MEMRM_Fields {.inline.} =
   volatileLoad(cast[ptr SYSCFG_MEMRM_Fields](reg.loc))
 
 proc write*(reg: SYSCFG_MEMRM_Type, val: SYSCFG_MEMRM_Fields) {.inline.} =
@@ -20061,7 +20061,7 @@ template modifyIt*(reg: SYSCFG_MEMRM_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SYSCFG_PMC_Type): SYSCFG_PMC_Fields {.inline.} =
+proc read*(reg: static SYSCFG_PMC_Type): SYSCFG_PMC_Fields {.inline.} =
   volatileLoad(cast[ptr SYSCFG_PMC_Fields](reg.loc))
 
 proc write*(reg: SYSCFG_PMC_Type, val: SYSCFG_PMC_Fields) {.inline.} =
@@ -20081,7 +20081,7 @@ template modifyIt*(reg: SYSCFG_PMC_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SYSCFG_EXTICR1_Type): SYSCFG_EXTICR1_Fields {.inline.} =
+proc read*(reg: static SYSCFG_EXTICR1_Type): SYSCFG_EXTICR1_Fields {.inline.} =
   volatileLoad(cast[ptr SYSCFG_EXTICR1_Fields](reg.loc))
 
 proc write*(reg: SYSCFG_EXTICR1_Type, val: SYSCFG_EXTICR1_Fields) {.inline.} =
@@ -20101,7 +20101,7 @@ template modifyIt*(reg: SYSCFG_EXTICR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SYSCFG_EXTICR2_Type): SYSCFG_EXTICR2_Fields {.inline.} =
+proc read*(reg: static SYSCFG_EXTICR2_Type): SYSCFG_EXTICR2_Fields {.inline.} =
   volatileLoad(cast[ptr SYSCFG_EXTICR2_Fields](reg.loc))
 
 proc write*(reg: SYSCFG_EXTICR2_Type, val: SYSCFG_EXTICR2_Fields) {.inline.} =
@@ -20121,7 +20121,7 @@ template modifyIt*(reg: SYSCFG_EXTICR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SYSCFG_EXTICR3_Type): SYSCFG_EXTICR3_Fields {.inline.} =
+proc read*(reg: static SYSCFG_EXTICR3_Type): SYSCFG_EXTICR3_Fields {.inline.} =
   volatileLoad(cast[ptr SYSCFG_EXTICR3_Fields](reg.loc))
 
 proc write*(reg: SYSCFG_EXTICR3_Type, val: SYSCFG_EXTICR3_Fields) {.inline.} =
@@ -20141,7 +20141,7 @@ template modifyIt*(reg: SYSCFG_EXTICR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SYSCFG_EXTICR4_Type): SYSCFG_EXTICR4_Fields {.inline.} =
+proc read*(reg: static SYSCFG_EXTICR4_Type): SYSCFG_EXTICR4_Fields {.inline.} =
   volatileLoad(cast[ptr SYSCFG_EXTICR4_Fields](reg.loc))
 
 proc write*(reg: SYSCFG_EXTICR4_Type, val: SYSCFG_EXTICR4_Fields) {.inline.} =
@@ -20161,7 +20161,7 @@ template modifyIt*(reg: SYSCFG_EXTICR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SYSCFG_CMPCR_Type): SYSCFG_CMPCR_Fields {.inline.} =
+proc read*(reg: static SYSCFG_CMPCR_Type): SYSCFG_CMPCR_Fields {.inline.} =
   volatileLoad(cast[ptr SYSCFG_CMPCR_Fields](reg.loc))
 
 func MEM_MODE*(r: SYSCFG_MEMRM_Fields): uint32 {.inline.} =
@@ -20388,7 +20388,7 @@ type
   SPI1_I2SCFGR_Fields* = distinct uint32
   SPI1_I2SPR_Fields* = distinct uint32
 
-proc read*(reg: SPI1_CR1_Type): SPI1_CR1_Fields {.inline.} =
+proc read*(reg: static SPI1_CR1_Type): SPI1_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr SPI1_CR1_Fields](reg.loc))
 
 proc write*(reg: SPI1_CR1_Type, val: SPI1_CR1_Fields) {.inline.} =
@@ -20418,7 +20418,7 @@ template modifyIt*(reg: SPI1_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SPI1_CR2_Type): SPI1_CR2_Fields {.inline.} =
+proc read*(reg: static SPI1_CR2_Type): SPI1_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr SPI1_CR2_Fields](reg.loc))
 
 proc write*(reg: SPI1_CR2_Type, val: SPI1_CR2_Fields) {.inline.} =
@@ -20441,7 +20441,7 @@ template modifyIt*(reg: SPI1_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SPI1_SR_Type): SPI1_SR_Fields {.inline.} =
+proc read*(reg: static SPI1_SR_Type): SPI1_SR_Fields {.inline.} =
   volatileLoad(cast[ptr SPI1_SR_Fields](reg.loc))
 
 proc write*(reg: SPI1_SR_Type, val: SPI1_SR_Fields) {.inline.} =
@@ -20458,7 +20458,7 @@ template modifyIt*(reg: SPI1_SR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SPI1_DR_Type): SPI1_DR_Fields {.inline.} =
+proc read*(reg: static SPI1_DR_Type): SPI1_DR_Fields {.inline.} =
   volatileLoad(cast[ptr SPI1_DR_Fields](reg.loc))
 
 proc write*(reg: SPI1_DR_Type, val: SPI1_DR_Fields) {.inline.} =
@@ -20475,7 +20475,7 @@ template modifyIt*(reg: SPI1_DR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SPI1_CRCPR_Type): SPI1_CRCPR_Fields {.inline.} =
+proc read*(reg: static SPI1_CRCPR_Type): SPI1_CRCPR_Fields {.inline.} =
   volatileLoad(cast[ptr SPI1_CRCPR_Fields](reg.loc))
 
 proc write*(reg: SPI1_CRCPR_Type, val: SPI1_CRCPR_Fields) {.inline.} =
@@ -20492,13 +20492,13 @@ template modifyIt*(reg: SPI1_CRCPR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SPI1_RXCRCR_Type): SPI1_RXCRCR_Fields {.inline.} =
+proc read*(reg: static SPI1_RXCRCR_Type): SPI1_RXCRCR_Fields {.inline.} =
   volatileLoad(cast[ptr SPI1_RXCRCR_Fields](reg.loc))
 
-proc read*(reg: SPI1_TXCRCR_Type): SPI1_TXCRCR_Fields {.inline.} =
+proc read*(reg: static SPI1_TXCRCR_Type): SPI1_TXCRCR_Fields {.inline.} =
   volatileLoad(cast[ptr SPI1_TXCRCR_Fields](reg.loc))
 
-proc read*(reg: SPI1_I2SCFGR_Type): SPI1_I2SCFGR_Fields {.inline.} =
+proc read*(reg: static SPI1_I2SCFGR_Type): SPI1_I2SCFGR_Fields {.inline.} =
   volatileLoad(cast[ptr SPI1_I2SCFGR_Fields](reg.loc))
 
 proc write*(reg: SPI1_I2SCFGR_Type, val: SPI1_I2SCFGR_Fields) {.inline.} =
@@ -20522,7 +20522,7 @@ template modifyIt*(reg: SPI1_I2SCFGR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SPI1_I2SPR_Type): SPI1_I2SPR_Fields {.inline.} =
+proc read*(reg: static SPI1_I2SPR_Type): SPI1_I2SPR_Fields {.inline.} =
   volatileLoad(cast[ptr SPI1_I2SPR_Fields](reg.loc))
 
 proc write*(reg: SPI1_I2SPR_Type, val: SPI1_I2SPR_Fields) {.inline.} =
@@ -20906,7 +20906,7 @@ type
   ADC1_JDR4_Fields* = distinct uint32
   ADC1_DR_Fields* = distinct uint32
 
-proc read*(reg: ADC1_SR_Type): ADC1_SR_Fields {.inline.} =
+proc read*(reg: static ADC1_SR_Type): ADC1_SR_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_SR_Fields](reg.loc))
 
 proc write*(reg: ADC1_SR_Type, val: ADC1_SR_Fields) {.inline.} =
@@ -20928,7 +20928,7 @@ template modifyIt*(reg: ADC1_SR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_CR1_Type): ADC1_CR1_Fields {.inline.} =
+proc read*(reg: static ADC1_CR1_Type): ADC1_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_CR1_Fields](reg.loc))
 
 proc write*(reg: ADC1_CR1_Type, val: ADC1_CR1_Fields) {.inline.} =
@@ -20958,7 +20958,7 @@ template modifyIt*(reg: ADC1_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_CR2_Type): ADC1_CR2_Fields {.inline.} =
+proc read*(reg: static ADC1_CR2_Type): ADC1_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_CR2_Fields](reg.loc))
 
 proc write*(reg: ADC1_CR2_Type, val: ADC1_CR2_Fields) {.inline.} =
@@ -20986,7 +20986,7 @@ template modifyIt*(reg: ADC1_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_SMPR1_Type): uint32 {.inline.} =
+proc read*(reg: static ADC1_SMPR1_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: ADC1_SMPR1_Type, val: uint32) {.inline.} =
@@ -20998,7 +20998,7 @@ template modifyIt*(reg: ADC1_SMPR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_SMPR2_Type): uint32 {.inline.} =
+proc read*(reg: static ADC1_SMPR2_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: ADC1_SMPR2_Type, val: uint32) {.inline.} =
@@ -21010,7 +21010,7 @@ template modifyIt*(reg: ADC1_SMPR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_JOFR1_Type): ADC1_JOFR1_Fields {.inline.} =
+proc read*(reg: static ADC1_JOFR1_Type): ADC1_JOFR1_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_JOFR1_Fields](reg.loc))
 
 proc write*(reg: ADC1_JOFR1_Type, val: ADC1_JOFR1_Fields) {.inline.} =
@@ -21027,7 +21027,7 @@ template modifyIt*(reg: ADC1_JOFR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_JOFR2_Type): ADC1_JOFR2_Fields {.inline.} =
+proc read*(reg: static ADC1_JOFR2_Type): ADC1_JOFR2_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_JOFR2_Fields](reg.loc))
 
 proc write*(reg: ADC1_JOFR2_Type, val: ADC1_JOFR2_Fields) {.inline.} =
@@ -21044,7 +21044,7 @@ template modifyIt*(reg: ADC1_JOFR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_JOFR3_Type): ADC1_JOFR3_Fields {.inline.} =
+proc read*(reg: static ADC1_JOFR3_Type): ADC1_JOFR3_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_JOFR3_Fields](reg.loc))
 
 proc write*(reg: ADC1_JOFR3_Type, val: ADC1_JOFR3_Fields) {.inline.} =
@@ -21061,7 +21061,7 @@ template modifyIt*(reg: ADC1_JOFR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_JOFR4_Type): ADC1_JOFR4_Fields {.inline.} =
+proc read*(reg: static ADC1_JOFR4_Type): ADC1_JOFR4_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_JOFR4_Fields](reg.loc))
 
 proc write*(reg: ADC1_JOFR4_Type, val: ADC1_JOFR4_Fields) {.inline.} =
@@ -21078,7 +21078,7 @@ template modifyIt*(reg: ADC1_JOFR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_HTR_Type): ADC1_HTR_Fields {.inline.} =
+proc read*(reg: static ADC1_HTR_Type): ADC1_HTR_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_HTR_Fields](reg.loc))
 
 proc write*(reg: ADC1_HTR_Type, val: ADC1_HTR_Fields) {.inline.} =
@@ -21095,7 +21095,7 @@ template modifyIt*(reg: ADC1_HTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_LTR_Type): ADC1_LTR_Fields {.inline.} =
+proc read*(reg: static ADC1_LTR_Type): ADC1_LTR_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_LTR_Fields](reg.loc))
 
 proc write*(reg: ADC1_LTR_Type, val: ADC1_LTR_Fields) {.inline.} =
@@ -21112,7 +21112,7 @@ template modifyIt*(reg: ADC1_LTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_SQR1_Type): ADC1_SQR1_Fields {.inline.} =
+proc read*(reg: static ADC1_SQR1_Type): ADC1_SQR1_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_SQR1_Fields](reg.loc))
 
 proc write*(reg: ADC1_SQR1_Type, val: ADC1_SQR1_Fields) {.inline.} =
@@ -21133,7 +21133,7 @@ template modifyIt*(reg: ADC1_SQR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_SQR2_Type): ADC1_SQR2_Fields {.inline.} =
+proc read*(reg: static ADC1_SQR2_Type): ADC1_SQR2_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_SQR2_Fields](reg.loc))
 
 proc write*(reg: ADC1_SQR2_Type, val: ADC1_SQR2_Fields) {.inline.} =
@@ -21155,7 +21155,7 @@ template modifyIt*(reg: ADC1_SQR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_SQR3_Type): ADC1_SQR3_Fields {.inline.} =
+proc read*(reg: static ADC1_SQR3_Type): ADC1_SQR3_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_SQR3_Fields](reg.loc))
 
 proc write*(reg: ADC1_SQR3_Type, val: ADC1_SQR3_Fields) {.inline.} =
@@ -21177,7 +21177,7 @@ template modifyIt*(reg: ADC1_SQR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_JSQR_Type): ADC1_JSQR_Fields {.inline.} =
+proc read*(reg: static ADC1_JSQR_Type): ADC1_JSQR_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_JSQR_Fields](reg.loc))
 
 proc write*(reg: ADC1_JSQR_Type, val: ADC1_JSQR_Fields) {.inline.} =
@@ -21198,19 +21198,19 @@ template modifyIt*(reg: ADC1_JSQR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: ADC1_JDR1_Type): ADC1_JDR1_Fields {.inline.} =
+proc read*(reg: static ADC1_JDR1_Type): ADC1_JDR1_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_JDR1_Fields](reg.loc))
 
-proc read*(reg: ADC1_JDR2_Type): ADC1_JDR2_Fields {.inline.} =
+proc read*(reg: static ADC1_JDR2_Type): ADC1_JDR2_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_JDR2_Fields](reg.loc))
 
-proc read*(reg: ADC1_JDR3_Type): ADC1_JDR3_Fields {.inline.} =
+proc read*(reg: static ADC1_JDR3_Type): ADC1_JDR3_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_JDR3_Fields](reg.loc))
 
-proc read*(reg: ADC1_JDR4_Type): ADC1_JDR4_Fields {.inline.} =
+proc read*(reg: static ADC1_JDR4_Type): ADC1_JDR4_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_JDR4_Fields](reg.loc))
 
-proc read*(reg: ADC1_DR_Type): ADC1_DR_Fields {.inline.} =
+proc read*(reg: static ADC1_DR_Type): ADC1_DR_Fields {.inline.} =
   volatileLoad(cast[ptr ADC1_DR_Fields](reg.loc))
 
 func OVR*(r: ADC1_SR_Fields): bool {.inline.} =
@@ -21777,7 +21777,7 @@ type
   USART6_CR3_Fields* = distinct uint32
   USART6_GTPR_Fields* = distinct uint32
 
-proc read*(reg: USART6_SR_Type): USART6_SR_Fields {.inline.} =
+proc read*(reg: static USART6_SR_Type): USART6_SR_Fields {.inline.} =
   volatileLoad(cast[ptr USART6_SR_Fields](reg.loc))
 
 proc write*(reg: USART6_SR_Type, val: USART6_SR_Fields) {.inline.} =
@@ -21797,7 +21797,7 @@ template modifyIt*(reg: USART6_SR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: USART6_DR_Type): USART6_DR_Fields {.inline.} =
+proc read*(reg: static USART6_DR_Type): USART6_DR_Fields {.inline.} =
   volatileLoad(cast[ptr USART6_DR_Fields](reg.loc))
 
 proc write*(reg: USART6_DR_Type, val: USART6_DR_Fields) {.inline.} =
@@ -21814,7 +21814,7 @@ template modifyIt*(reg: USART6_DR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: USART6_BRR_Type): USART6_BRR_Fields {.inline.} =
+proc read*(reg: static USART6_BRR_Type): USART6_BRR_Fields {.inline.} =
   volatileLoad(cast[ptr USART6_BRR_Fields](reg.loc))
 
 proc write*(reg: USART6_BRR_Type, val: USART6_BRR_Fields) {.inline.} =
@@ -21832,7 +21832,7 @@ template modifyIt*(reg: USART6_BRR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: USART6_CR1_Type): USART6_CR1_Fields {.inline.} =
+proc read*(reg: static USART6_CR1_Type): USART6_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr USART6_CR1_Fields](reg.loc))
 
 proc write*(reg: USART6_CR1_Type, val: USART6_CR1_Fields) {.inline.} =
@@ -21863,7 +21863,7 @@ template modifyIt*(reg: USART6_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: USART6_CR2_Type): USART6_CR2_Fields {.inline.} =
+proc read*(reg: static USART6_CR2_Type): USART6_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr USART6_CR2_Fields](reg.loc))
 
 proc write*(reg: USART6_CR2_Type, val: USART6_CR2_Fields) {.inline.} =
@@ -21888,7 +21888,7 @@ template modifyIt*(reg: USART6_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: USART6_CR3_Type): USART6_CR3_Fields {.inline.} =
+proc read*(reg: static USART6_CR3_Type): USART6_CR3_Fields {.inline.} =
   volatileLoad(cast[ptr USART6_CR3_Fields](reg.loc))
 
 proc write*(reg: USART6_CR3_Type, val: USART6_CR3_Fields) {.inline.} =
@@ -21916,7 +21916,7 @@ template modifyIt*(reg: USART6_CR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: USART6_GTPR_Type): USART6_GTPR_Fields {.inline.} =
+proc read*(reg: static USART6_GTPR_Type): USART6_GTPR_Fields {.inline.} =
   volatileLoad(cast[ptr USART6_GTPR_Fields](reg.loc))
 
 proc write*(reg: USART6_GTPR_Type, val: USART6_GTPR_Fields) {.inline.} =
@@ -22373,7 +22373,7 @@ type
   DAC_DOR2_Fields* = distinct uint32
   DAC_SR_Fields* = distinct uint32
 
-proc read*(reg: DAC_CR_Type): DAC_CR_Fields {.inline.} =
+proc read*(reg: static DAC_CR_Type): DAC_CR_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_CR_Fields](reg.loc))
 
 proc write*(reg: DAC_CR_Type, val: DAC_CR_Fields) {.inline.} =
@@ -22414,7 +22414,7 @@ proc write*(reg: DAC_SWTRIGR_Type, SWTRIG2: bool = false, SWTRIG1: bool = false)
   x.setMask((SWTRIG1.uint32 shl 0).masked(0 .. 0))
   reg.write x.DAC_SWTRIGR_Fields
 
-proc read*(reg: DAC_DHR12R1_Type): DAC_DHR12R1_Fields {.inline.} =
+proc read*(reg: static DAC_DHR12R1_Type): DAC_DHR12R1_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DHR12R1_Fields](reg.loc))
 
 proc write*(reg: DAC_DHR12R1_Type, val: DAC_DHR12R1_Fields) {.inline.} =
@@ -22431,7 +22431,7 @@ template modifyIt*(reg: DAC_DHR12R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DAC_DHR12L1_Type): DAC_DHR12L1_Fields {.inline.} =
+proc read*(reg: static DAC_DHR12L1_Type): DAC_DHR12L1_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DHR12L1_Fields](reg.loc))
 
 proc write*(reg: DAC_DHR12L1_Type, val: DAC_DHR12L1_Fields) {.inline.} =
@@ -22448,7 +22448,7 @@ template modifyIt*(reg: DAC_DHR12L1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DAC_DHR8R1_Type): DAC_DHR8R1_Fields {.inline.} =
+proc read*(reg: static DAC_DHR8R1_Type): DAC_DHR8R1_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DHR8R1_Fields](reg.loc))
 
 proc write*(reg: DAC_DHR8R1_Type, val: DAC_DHR8R1_Fields) {.inline.} =
@@ -22465,7 +22465,7 @@ template modifyIt*(reg: DAC_DHR8R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DAC_DHR12R2_Type): DAC_DHR12R2_Fields {.inline.} =
+proc read*(reg: static DAC_DHR12R2_Type): DAC_DHR12R2_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DHR12R2_Fields](reg.loc))
 
 proc write*(reg: DAC_DHR12R2_Type, val: DAC_DHR12R2_Fields) {.inline.} =
@@ -22482,7 +22482,7 @@ template modifyIt*(reg: DAC_DHR12R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DAC_DHR12L2_Type): DAC_DHR12L2_Fields {.inline.} =
+proc read*(reg: static DAC_DHR12L2_Type): DAC_DHR12L2_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DHR12L2_Fields](reg.loc))
 
 proc write*(reg: DAC_DHR12L2_Type, val: DAC_DHR12L2_Fields) {.inline.} =
@@ -22499,7 +22499,7 @@ template modifyIt*(reg: DAC_DHR12L2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DAC_DHR8R2_Type): DAC_DHR8R2_Fields {.inline.} =
+proc read*(reg: static DAC_DHR8R2_Type): DAC_DHR8R2_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DHR8R2_Fields](reg.loc))
 
 proc write*(reg: DAC_DHR8R2_Type, val: DAC_DHR8R2_Fields) {.inline.} =
@@ -22516,7 +22516,7 @@ template modifyIt*(reg: DAC_DHR8R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DAC_DHR12RD_Type): DAC_DHR12RD_Fields {.inline.} =
+proc read*(reg: static DAC_DHR12RD_Type): DAC_DHR12RD_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DHR12RD_Fields](reg.loc))
 
 proc write*(reg: DAC_DHR12RD_Type, val: DAC_DHR12RD_Fields) {.inline.} =
@@ -22534,7 +22534,7 @@ template modifyIt*(reg: DAC_DHR12RD_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DAC_DHR12LD_Type): DAC_DHR12LD_Fields {.inline.} =
+proc read*(reg: static DAC_DHR12LD_Type): DAC_DHR12LD_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DHR12LD_Fields](reg.loc))
 
 proc write*(reg: DAC_DHR12LD_Type, val: DAC_DHR12LD_Fields) {.inline.} =
@@ -22552,7 +22552,7 @@ template modifyIt*(reg: DAC_DHR12LD_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DAC_DHR8RD_Type): DAC_DHR8RD_Fields {.inline.} =
+proc read*(reg: static DAC_DHR8RD_Type): DAC_DHR8RD_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DHR8RD_Fields](reg.loc))
 
 proc write*(reg: DAC_DHR8RD_Type, val: DAC_DHR8RD_Fields) {.inline.} =
@@ -22570,13 +22570,13 @@ template modifyIt*(reg: DAC_DHR8RD_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: DAC_DOR1_Type): DAC_DOR1_Fields {.inline.} =
+proc read*(reg: static DAC_DOR1_Type): DAC_DOR1_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DOR1_Fields](reg.loc))
 
-proc read*(reg: DAC_DOR2_Type): DAC_DOR2_Fields {.inline.} =
+proc read*(reg: static DAC_DOR2_Type): DAC_DOR2_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_DOR2_Fields](reg.loc))
 
-proc read*(reg: DAC_SR_Type): DAC_SR_Fields {.inline.} =
+proc read*(reg: static DAC_SR_Type): DAC_SR_Fields {.inline.} =
   volatileLoad(cast[ptr DAC_SR_Fields](reg.loc))
 
 proc write*(reg: DAC_SR_Type, val: DAC_SR_Fields) {.inline.} =
@@ -22895,7 +22895,7 @@ type
   FMPI2C_RXDR_Fields* = distinct uint32
   FMPI2C_TXDR_Fields* = distinct uint32
 
-proc read*(reg: FMPI2C_CR1_Type): FMPI2C_CR1_Fields {.inline.} =
+proc read*(reg: static FMPI2C_CR1_Type): FMPI2C_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr FMPI2C_CR1_Fields](reg.loc))
 
 proc write*(reg: FMPI2C_CR1_Type, val: FMPI2C_CR1_Fields) {.inline.} =
@@ -22930,7 +22930,7 @@ template modifyIt*(reg: FMPI2C_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMPI2C_CR2_Type): FMPI2C_CR2_Fields {.inline.} =
+proc read*(reg: static FMPI2C_CR2_Type): FMPI2C_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr FMPI2C_CR2_Fields](reg.loc))
 
 proc write*(reg: FMPI2C_CR2_Type, val: FMPI2C_CR2_Fields) {.inline.} =
@@ -22959,7 +22959,7 @@ template modifyIt*(reg: FMPI2C_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMPI2C_OAR1_Type): FMPI2C_OAR1_Fields {.inline.} =
+proc read*(reg: static FMPI2C_OAR1_Type): FMPI2C_OAR1_Fields {.inline.} =
   volatileLoad(cast[ptr FMPI2C_OAR1_Fields](reg.loc))
 
 proc write*(reg: FMPI2C_OAR1_Type, val: FMPI2C_OAR1_Fields) {.inline.} =
@@ -22980,7 +22980,7 @@ template modifyIt*(reg: FMPI2C_OAR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMPI2C_OAR2_Type): FMPI2C_OAR2_Fields {.inline.} =
+proc read*(reg: static FMPI2C_OAR2_Type): FMPI2C_OAR2_Fields {.inline.} =
   volatileLoad(cast[ptr FMPI2C_OAR2_Fields](reg.loc))
 
 proc write*(reg: FMPI2C_OAR2_Type, val: FMPI2C_OAR2_Fields) {.inline.} =
@@ -22999,7 +22999,7 @@ template modifyIt*(reg: FMPI2C_OAR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMPI2C_TIMINGR_Type): FMPI2C_TIMINGR_Fields {.inline.} =
+proc read*(reg: static FMPI2C_TIMINGR_Type): FMPI2C_TIMINGR_Fields {.inline.} =
   volatileLoad(cast[ptr FMPI2C_TIMINGR_Fields](reg.loc))
 
 proc write*(reg: FMPI2C_TIMINGR_Type, val: FMPI2C_TIMINGR_Fields) {.inline.} =
@@ -23020,7 +23020,7 @@ template modifyIt*(reg: FMPI2C_TIMINGR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMPI2C_TIMEOUTR_Type): FMPI2C_TIMEOUTR_Fields {.inline.} =
+proc read*(reg: static FMPI2C_TIMEOUTR_Type): FMPI2C_TIMEOUTR_Fields {.inline.} =
   volatileLoad(cast[ptr FMPI2C_TIMEOUTR_Fields](reg.loc))
 
 proc write*(reg: FMPI2C_TIMEOUTR_Type, val: FMPI2C_TIMEOUTR_Fields) {.inline.} =
@@ -23041,7 +23041,7 @@ template modifyIt*(reg: FMPI2C_TIMEOUTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FMPI2C_ISR_Type): FMPI2C_ISR_Fields {.inline.} =
+proc read*(reg: static FMPI2C_ISR_Type): FMPI2C_ISR_Fields {.inline.} =
   volatileLoad(cast[ptr FMPI2C_ISR_Fields](reg.loc))
 
 proc write*(reg: FMPI2C_ICR_Type, val: FMPI2C_ICR_Fields) {.inline.} =
@@ -23060,13 +23060,13 @@ proc write*(reg: FMPI2C_ICR_Type, ADDRCF: bool = false, NACKCF: bool = false, ST
   x.setMask((ALERTCF.uint32 shl 13).masked(13 .. 13))
   reg.write x.FMPI2C_ICR_Fields
 
-proc read*(reg: FMPI2C_PECR_Type): FMPI2C_PECR_Fields {.inline.} =
+proc read*(reg: static FMPI2C_PECR_Type): FMPI2C_PECR_Fields {.inline.} =
   volatileLoad(cast[ptr FMPI2C_PECR_Fields](reg.loc))
 
-proc read*(reg: FMPI2C_RXDR_Type): FMPI2C_RXDR_Fields {.inline.} =
+proc read*(reg: static FMPI2C_RXDR_Type): FMPI2C_RXDR_Fields {.inline.} =
   volatileLoad(cast[ptr FMPI2C_RXDR_Fields](reg.loc))
 
-proc read*(reg: FMPI2C_TXDR_Type): FMPI2C_TXDR_Fields {.inline.} =
+proc read*(reg: static FMPI2C_TXDR_Type): FMPI2C_TXDR_Fields {.inline.} =
   volatileLoad(cast[ptr FMPI2C_TXDR_Fields](reg.loc))
 
 func PECEN*(r: FMPI2C_CR1_Fields): bool {.inline.} =
@@ -23645,7 +23645,7 @@ type
   I2C3_TRISE_Fields* = distinct uint32
   I2C3_FLTR_Fields* = distinct uint32
 
-proc read*(reg: I2C3_CR1_Type): I2C3_CR1_Fields {.inline.} =
+proc read*(reg: static I2C3_CR1_Type): I2C3_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr I2C3_CR1_Fields](reg.loc))
 
 proc write*(reg: I2C3_CR1_Type, val: I2C3_CR1_Fields) {.inline.} =
@@ -23675,7 +23675,7 @@ template modifyIt*(reg: I2C3_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: I2C3_CR2_Type): I2C3_CR2_Fields {.inline.} =
+proc read*(reg: static I2C3_CR2_Type): I2C3_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr I2C3_CR2_Fields](reg.loc))
 
 proc write*(reg: I2C3_CR2_Type, val: I2C3_CR2_Fields) {.inline.} =
@@ -23697,7 +23697,7 @@ template modifyIt*(reg: I2C3_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: I2C3_OAR1_Type): I2C3_OAR1_Fields {.inline.} =
+proc read*(reg: static I2C3_OAR1_Type): I2C3_OAR1_Fields {.inline.} =
   volatileLoad(cast[ptr I2C3_OAR1_Fields](reg.loc))
 
 proc write*(reg: I2C3_OAR1_Type, val: I2C3_OAR1_Fields) {.inline.} =
@@ -23717,7 +23717,7 @@ template modifyIt*(reg: I2C3_OAR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: I2C3_OAR2_Type): I2C3_OAR2_Fields {.inline.} =
+proc read*(reg: static I2C3_OAR2_Type): I2C3_OAR2_Fields {.inline.} =
   volatileLoad(cast[ptr I2C3_OAR2_Fields](reg.loc))
 
 proc write*(reg: I2C3_OAR2_Type, val: I2C3_OAR2_Fields) {.inline.} =
@@ -23735,7 +23735,7 @@ template modifyIt*(reg: I2C3_OAR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: I2C3_DR_Type): I2C3_DR_Fields {.inline.} =
+proc read*(reg: static I2C3_DR_Type): I2C3_DR_Fields {.inline.} =
   volatileLoad(cast[ptr I2C3_DR_Fields](reg.loc))
 
 proc write*(reg: I2C3_DR_Type, val: I2C3_DR_Fields) {.inline.} =
@@ -23752,7 +23752,7 @@ template modifyIt*(reg: I2C3_DR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: I2C3_SR1_Type): I2C3_SR1_Fields {.inline.} =
+proc read*(reg: static I2C3_SR1_Type): I2C3_SR1_Fields {.inline.} =
   volatileLoad(cast[ptr I2C3_SR1_Fields](reg.loc))
 
 proc write*(reg: I2C3_SR1_Type, val: I2C3_SR1_Fields) {.inline.} =
@@ -23775,10 +23775,10 @@ template modifyIt*(reg: I2C3_SR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: I2C3_SR2_Type): I2C3_SR2_Fields {.inline.} =
+proc read*(reg: static I2C3_SR2_Type): I2C3_SR2_Fields {.inline.} =
   volatileLoad(cast[ptr I2C3_SR2_Fields](reg.loc))
 
-proc read*(reg: I2C3_CCR_Type): I2C3_CCR_Fields {.inline.} =
+proc read*(reg: static I2C3_CCR_Type): I2C3_CCR_Fields {.inline.} =
   volatileLoad(cast[ptr I2C3_CCR_Fields](reg.loc))
 
 proc write*(reg: I2C3_CCR_Type, val: I2C3_CCR_Fields) {.inline.} =
@@ -23797,7 +23797,7 @@ template modifyIt*(reg: I2C3_CCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: I2C3_TRISE_Type): I2C3_TRISE_Fields {.inline.} =
+proc read*(reg: static I2C3_TRISE_Type): I2C3_TRISE_Fields {.inline.} =
   volatileLoad(cast[ptr I2C3_TRISE_Fields](reg.loc))
 
 proc write*(reg: I2C3_TRISE_Type, val: I2C3_TRISE_Fields) {.inline.} =
@@ -23814,7 +23814,7 @@ template modifyIt*(reg: I2C3_TRISE_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: I2C3_FLTR_Type): I2C3_FLTR_Fields {.inline.} =
+proc read*(reg: static I2C3_FLTR_Type): I2C3_FLTR_Fields {.inline.} =
   volatileLoad(cast[ptr I2C3_FLTR_Fields](reg.loc))
 
 proc write*(reg: I2C3_FLTR_Type, val: I2C3_FLTR_Fields) {.inline.} =
@@ -24251,7 +24251,7 @@ proc write*(reg: IWDG_KR_Type, KEY: uint32 = 0) =
   x.setMask((KEY shl 0).masked(0 .. 15))
   reg.write x.IWDG_KR_Fields
 
-proc read*(reg: IWDG_PR_Type): IWDG_PR_Fields {.inline.} =
+proc read*(reg: static IWDG_PR_Type): IWDG_PR_Fields {.inline.} =
   volatileLoad(cast[ptr IWDG_PR_Fields](reg.loc))
 
 proc write*(reg: IWDG_PR_Type, val: IWDG_PR_Fields) {.inline.} =
@@ -24268,7 +24268,7 @@ template modifyIt*(reg: IWDG_PR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: IWDG_RLR_Type): IWDG_RLR_Fields {.inline.} =
+proc read*(reg: static IWDG_RLR_Type): IWDG_RLR_Fields {.inline.} =
   volatileLoad(cast[ptr IWDG_RLR_Fields](reg.loc))
 
 proc write*(reg: IWDG_RLR_Type, val: IWDG_RLR_Fields) {.inline.} =
@@ -24285,7 +24285,7 @@ template modifyIt*(reg: IWDG_RLR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: IWDG_SR_Type): IWDG_SR_Fields {.inline.} =
+proc read*(reg: static IWDG_SR_Type): IWDG_SR_Fields {.inline.} =
   volatileLoad(cast[ptr IWDG_SR_Fields](reg.loc))
 
 proc `KEY=`*(r: var IWDG_KR_Fields, val: uint32) {.inline.} =
@@ -24323,7 +24323,7 @@ type
   WWDG_CFR_Fields* = distinct uint32
   WWDG_SR_Fields* = distinct uint32
 
-proc read*(reg: WWDG_CR_Type): WWDG_CR_Fields {.inline.} =
+proc read*(reg: static WWDG_CR_Type): WWDG_CR_Fields {.inline.} =
   volatileLoad(cast[ptr WWDG_CR_Fields](reg.loc))
 
 proc write*(reg: WWDG_CR_Type, val: WWDG_CR_Fields) {.inline.} =
@@ -24341,7 +24341,7 @@ template modifyIt*(reg: WWDG_CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: WWDG_CFR_Type): WWDG_CFR_Fields {.inline.} =
+proc read*(reg: static WWDG_CFR_Type): WWDG_CFR_Fields {.inline.} =
   volatileLoad(cast[ptr WWDG_CFR_Fields](reg.loc))
 
 proc write*(reg: WWDG_CFR_Type, val: WWDG_CFR_Fields) {.inline.} =
@@ -24361,7 +24361,7 @@ template modifyIt*(reg: WWDG_CFR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: WWDG_SR_Type): WWDG_SR_Fields {.inline.} =
+proc read*(reg: static WWDG_SR_Type): WWDG_SR_Fields {.inline.} =
   volatileLoad(cast[ptr WWDG_SR_Fields](reg.loc))
 
 proc write*(reg: WWDG_SR_Type, val: WWDG_SR_Fields) {.inline.} =
@@ -24462,7 +24462,7 @@ type
   RTC_ALRMASSR_Fields* = distinct uint32
   RTC_ALRMBSSR_Fields* = distinct uint32
 
-proc read*(reg: RTC_TR_Type): RTC_TR_Fields {.inline.} =
+proc read*(reg: static RTC_TR_Type): RTC_TR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_TR_Fields](reg.loc))
 
 proc write*(reg: RTC_TR_Type, val: RTC_TR_Fields) {.inline.} =
@@ -24485,7 +24485,7 @@ template modifyIt*(reg: RTC_TR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_DR_Type): RTC_DR_Fields {.inline.} =
+proc read*(reg: static RTC_DR_Type): RTC_DR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_DR_Fields](reg.loc))
 
 proc write*(reg: RTC_DR_Type, val: RTC_DR_Fields) {.inline.} =
@@ -24508,7 +24508,7 @@ template modifyIt*(reg: RTC_DR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_CR_Type): RTC_CR_Fields {.inline.} =
+proc read*(reg: static RTC_CR_Type): RTC_CR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_CR_Fields](reg.loc))
 
 proc write*(reg: RTC_CR_Type, val: RTC_CR_Fields) {.inline.} =
@@ -24543,7 +24543,7 @@ template modifyIt*(reg: RTC_CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_ISR_Type): RTC_ISR_Fields {.inline.} =
+proc read*(reg: static RTC_ISR_Type): RTC_ISR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_ISR_Fields](reg.loc))
 
 proc write*(reg: RTC_ISR_Type, val: RTC_ISR_Fields) {.inline.} =
@@ -24569,7 +24569,7 @@ template modifyIt*(reg: RTC_ISR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_PRER_Type): RTC_PRER_Fields {.inline.} =
+proc read*(reg: static RTC_PRER_Type): RTC_PRER_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_PRER_Fields](reg.loc))
 
 proc write*(reg: RTC_PRER_Type, val: RTC_PRER_Fields) {.inline.} =
@@ -24587,7 +24587,7 @@ template modifyIt*(reg: RTC_PRER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_WUTR_Type): RTC_WUTR_Fields {.inline.} =
+proc read*(reg: static RTC_WUTR_Type): RTC_WUTR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_WUTR_Fields](reg.loc))
 
 proc write*(reg: RTC_WUTR_Type, val: RTC_WUTR_Fields) {.inline.} =
@@ -24604,7 +24604,7 @@ template modifyIt*(reg: RTC_WUTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_CALIBR_Type): RTC_CALIBR_Fields {.inline.} =
+proc read*(reg: static RTC_CALIBR_Type): RTC_CALIBR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_CALIBR_Fields](reg.loc))
 
 proc write*(reg: RTC_CALIBR_Type, val: RTC_CALIBR_Fields) {.inline.} =
@@ -24622,7 +24622,7 @@ template modifyIt*(reg: RTC_CALIBR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_ALRMAR_Type): RTC_ALRMAR_Fields {.inline.} =
+proc read*(reg: static RTC_ALRMAR_Type): RTC_ALRMAR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_ALRMAR_Fields](reg.loc))
 
 proc write*(reg: RTC_ALRMAR_Type, val: RTC_ALRMAR_Fields) {.inline.} =
@@ -24652,7 +24652,7 @@ template modifyIt*(reg: RTC_ALRMAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_ALRMBR_Type): RTC_ALRMBR_Fields {.inline.} =
+proc read*(reg: static RTC_ALRMBR_Type): RTC_ALRMBR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_ALRMBR_Fields](reg.loc))
 
 proc write*(reg: RTC_ALRMBR_Type, val: RTC_ALRMBR_Fields) {.inline.} =
@@ -24690,7 +24690,7 @@ proc write*(reg: RTC_WPR_Type, KEY: uint32 = 0) =
   x.setMask((KEY shl 0).masked(0 .. 7))
   reg.write x.RTC_WPR_Fields
 
-proc read*(reg: RTC_SSR_Type): RTC_SSR_Fields {.inline.} =
+proc read*(reg: static RTC_SSR_Type): RTC_SSR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_SSR_Fields](reg.loc))
 
 proc write*(reg: RTC_SHIFTR_Type, val: RTC_SHIFTR_Fields) {.inline.} =
@@ -24702,16 +24702,16 @@ proc write*(reg: RTC_SHIFTR_Type, ADD1S: bool = false, SUBFS: uint32 = 0) =
   x.setMask((SUBFS shl 0).masked(0 .. 14))
   reg.write x.RTC_SHIFTR_Fields
 
-proc read*(reg: RTC_TSTR_Type): RTC_TSTR_Fields {.inline.} =
+proc read*(reg: static RTC_TSTR_Type): RTC_TSTR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_TSTR_Fields](reg.loc))
 
-proc read*(reg: RTC_TSDR_Type): RTC_TSDR_Fields {.inline.} =
+proc read*(reg: static RTC_TSDR_Type): RTC_TSDR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_TSDR_Fields](reg.loc))
 
-proc read*(reg: RTC_TSSSR_Type): RTC_TSSSR_Fields {.inline.} =
+proc read*(reg: static RTC_TSSSR_Type): RTC_TSSSR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_TSSSR_Fields](reg.loc))
 
-proc read*(reg: RTC_CALR_Type): RTC_CALR_Fields {.inline.} =
+proc read*(reg: static RTC_CALR_Type): RTC_CALR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_CALR_Fields](reg.loc))
 
 proc write*(reg: RTC_CALR_Type, val: RTC_CALR_Fields) {.inline.} =
@@ -24731,7 +24731,7 @@ template modifyIt*(reg: RTC_CALR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_TAFCR_Type): RTC_TAFCR_Fields {.inline.} =
+proc read*(reg: static RTC_TAFCR_Type): RTC_TAFCR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_TAFCR_Fields](reg.loc))
 
 proc write*(reg: RTC_TAFCR_Type, val: RTC_TAFCR_Fields) {.inline.} =
@@ -24760,7 +24760,7 @@ template modifyIt*(reg: RTC_TAFCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_ALRMASSR_Type): RTC_ALRMASSR_Fields {.inline.} =
+proc read*(reg: static RTC_ALRMASSR_Type): RTC_ALRMASSR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_ALRMASSR_Fields](reg.loc))
 
 proc write*(reg: RTC_ALRMASSR_Type, val: RTC_ALRMASSR_Fields) {.inline.} =
@@ -24778,7 +24778,7 @@ template modifyIt*(reg: RTC_ALRMASSR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_ALRMBSSR_Type): RTC_ALRMBSSR_Fields {.inline.} =
+proc read*(reg: static RTC_ALRMBSSR_Type): RTC_ALRMBSSR_Fields {.inline.} =
   volatileLoad(cast[ptr RTC_ALRMBSSR_Fields](reg.loc))
 
 proc write*(reg: RTC_ALRMBSSR_Type, val: RTC_ALRMBSSR_Fields) {.inline.} =
@@ -24796,7 +24796,7 @@ template modifyIt*(reg: RTC_ALRMBSSR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP0R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP0R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP0R_Type, val: uint32) {.inline.} =
@@ -24808,7 +24808,7 @@ template modifyIt*(reg: RTC_BKP0R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP1R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP1R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP1R_Type, val: uint32) {.inline.} =
@@ -24820,7 +24820,7 @@ template modifyIt*(reg: RTC_BKP1R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP2R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP2R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP2R_Type, val: uint32) {.inline.} =
@@ -24832,7 +24832,7 @@ template modifyIt*(reg: RTC_BKP2R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP3R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP3R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP3R_Type, val: uint32) {.inline.} =
@@ -24844,7 +24844,7 @@ template modifyIt*(reg: RTC_BKP3R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP4R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP4R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP4R_Type, val: uint32) {.inline.} =
@@ -24856,7 +24856,7 @@ template modifyIt*(reg: RTC_BKP4R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP5R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP5R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP5R_Type, val: uint32) {.inline.} =
@@ -24868,7 +24868,7 @@ template modifyIt*(reg: RTC_BKP5R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP6R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP6R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP6R_Type, val: uint32) {.inline.} =
@@ -24880,7 +24880,7 @@ template modifyIt*(reg: RTC_BKP6R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP7R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP7R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP7R_Type, val: uint32) {.inline.} =
@@ -24892,7 +24892,7 @@ template modifyIt*(reg: RTC_BKP7R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP8R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP8R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP8R_Type, val: uint32) {.inline.} =
@@ -24904,7 +24904,7 @@ template modifyIt*(reg: RTC_BKP8R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP9R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP9R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP9R_Type, val: uint32) {.inline.} =
@@ -24916,7 +24916,7 @@ template modifyIt*(reg: RTC_BKP9R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP10R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP10R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP10R_Type, val: uint32) {.inline.} =
@@ -24928,7 +24928,7 @@ template modifyIt*(reg: RTC_BKP10R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP11R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP11R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP11R_Type, val: uint32) {.inline.} =
@@ -24940,7 +24940,7 @@ template modifyIt*(reg: RTC_BKP11R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP12R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP12R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP12R_Type, val: uint32) {.inline.} =
@@ -24952,7 +24952,7 @@ template modifyIt*(reg: RTC_BKP12R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP13R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP13R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP13R_Type, val: uint32) {.inline.} =
@@ -24964,7 +24964,7 @@ template modifyIt*(reg: RTC_BKP13R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP14R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP14R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP14R_Type, val: uint32) {.inline.} =
@@ -24976,7 +24976,7 @@ template modifyIt*(reg: RTC_BKP14R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP15R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP15R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP15R_Type, val: uint32) {.inline.} =
@@ -24988,7 +24988,7 @@ template modifyIt*(reg: RTC_BKP15R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP16R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP16R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP16R_Type, val: uint32) {.inline.} =
@@ -25000,7 +25000,7 @@ template modifyIt*(reg: RTC_BKP16R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP17R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP17R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP17R_Type, val: uint32) {.inline.} =
@@ -25012,7 +25012,7 @@ template modifyIt*(reg: RTC_BKP17R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP18R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP18R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP18R_Type, val: uint32) {.inline.} =
@@ -25024,7 +25024,7 @@ template modifyIt*(reg: RTC_BKP18R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: RTC_BKP19R_Type): uint32 {.inline.} =
+proc read*(reg: static RTC_BKP19R_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: RTC_BKP19R_Type, val: uint32) {.inline.} =
@@ -25992,7 +25992,7 @@ type
   UART4_CR2_Fields* = distinct uint32
   UART4_CR3_Fields* = distinct uint32
 
-proc read*(reg: UART4_SR_Type): UART4_SR_Fields {.inline.} =
+proc read*(reg: static UART4_SR_Type): UART4_SR_Fields {.inline.} =
   volatileLoad(cast[ptr UART4_SR_Fields](reg.loc))
 
 proc write*(reg: UART4_SR_Type, val: UART4_SR_Fields) {.inline.} =
@@ -26011,7 +26011,7 @@ template modifyIt*(reg: UART4_SR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: UART4_DR_Type): UART4_DR_Fields {.inline.} =
+proc read*(reg: static UART4_DR_Type): UART4_DR_Fields {.inline.} =
   volatileLoad(cast[ptr UART4_DR_Fields](reg.loc))
 
 proc write*(reg: UART4_DR_Type, val: UART4_DR_Fields) {.inline.} =
@@ -26028,7 +26028,7 @@ template modifyIt*(reg: UART4_DR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: UART4_BRR_Type): UART4_BRR_Fields {.inline.} =
+proc read*(reg: static UART4_BRR_Type): UART4_BRR_Fields {.inline.} =
   volatileLoad(cast[ptr UART4_BRR_Fields](reg.loc))
 
 proc write*(reg: UART4_BRR_Type, val: UART4_BRR_Fields) {.inline.} =
@@ -26046,7 +26046,7 @@ template modifyIt*(reg: UART4_BRR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: UART4_CR1_Type): UART4_CR1_Fields {.inline.} =
+proc read*(reg: static UART4_CR1_Type): UART4_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr UART4_CR1_Fields](reg.loc))
 
 proc write*(reg: UART4_CR1_Type, val: UART4_CR1_Fields) {.inline.} =
@@ -26077,7 +26077,7 @@ template modifyIt*(reg: UART4_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: UART4_CR2_Type): UART4_CR2_Fields {.inline.} =
+proc read*(reg: static UART4_CR2_Type): UART4_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr UART4_CR2_Fields](reg.loc))
 
 proc write*(reg: UART4_CR2_Type, val: UART4_CR2_Fields) {.inline.} =
@@ -26098,7 +26098,7 @@ template modifyIt*(reg: UART4_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: UART4_CR3_Type): UART4_CR3_Fields {.inline.} =
+proc read*(reg: static UART4_CR3_Type): UART4_CR3_Fields {.inline.} =
   volatileLoad(cast[ptr UART4_CR3_Fields](reg.loc))
 
 proc write*(reg: UART4_CR3_Type, val: UART4_CR3_Fields) {.inline.} =
@@ -26471,10 +26471,10 @@ type
   C_ADC_CCR_Fields* = distinct uint32
   C_ADC_CDR_Fields* = distinct uint32
 
-proc read*(reg: C_ADC_CSR_Type): C_ADC_CSR_Fields {.inline.} =
+proc read*(reg: static C_ADC_CSR_Type): C_ADC_CSR_Fields {.inline.} =
   volatileLoad(cast[ptr C_ADC_CSR_Fields](reg.loc))
 
-proc read*(reg: C_ADC_CCR_Type): C_ADC_CCR_Fields {.inline.} =
+proc read*(reg: static C_ADC_CCR_Type): C_ADC_CCR_Fields {.inline.} =
   volatileLoad(cast[ptr C_ADC_CCR_Fields](reg.loc))
 
 proc write*(reg: C_ADC_CCR_Type, val: C_ADC_CCR_Fields) {.inline.} =
@@ -26497,7 +26497,7 @@ template modifyIt*(reg: C_ADC_CCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: C_ADC_CDR_Type): C_ADC_CDR_Fields {.inline.} =
+proc read*(reg: static C_ADC_CDR_Type): C_ADC_CDR_Fields {.inline.} =
   volatileLoad(cast[ptr C_ADC_CDR_Fields](reg.loc))
 
 func OVR3*(r: C_ADC_CSR_Fields): bool {.inline.} =
@@ -26647,7 +26647,7 @@ type
   TIM1_RCR_Fields* = distinct uint32
   TIM1_BDTR_Fields* = distinct uint32
 
-proc read*(reg: TIM1_CR1_Type): TIM1_CR1_Fields {.inline.} =
+proc read*(reg: static TIM1_CR1_Type): TIM1_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CR1_Fields](reg.loc))
 
 proc write*(reg: TIM1_CR1_Type, val: TIM1_CR1_Fields) {.inline.} =
@@ -26671,7 +26671,7 @@ template modifyIt*(reg: TIM1_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_CR2_Type): TIM1_CR2_Fields {.inline.} =
+proc read*(reg: static TIM1_CR2_Type): TIM1_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CR2_Fields](reg.loc))
 
 proc write*(reg: TIM1_CR2_Type, val: TIM1_CR2_Fields) {.inline.} =
@@ -26699,7 +26699,7 @@ template modifyIt*(reg: TIM1_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_SMCR_Type): TIM1_SMCR_Fields {.inline.} =
+proc read*(reg: static TIM1_SMCR_Type): TIM1_SMCR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_SMCR_Fields](reg.loc))
 
 proc write*(reg: TIM1_SMCR_Type, val: TIM1_SMCR_Fields) {.inline.} =
@@ -26722,7 +26722,7 @@ template modifyIt*(reg: TIM1_SMCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_DIER_Type): TIM1_DIER_Fields {.inline.} =
+proc read*(reg: static TIM1_DIER_Type): TIM1_DIER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_DIER_Fields](reg.loc))
 
 proc write*(reg: TIM1_DIER_Type, val: TIM1_DIER_Fields) {.inline.} =
@@ -26753,7 +26753,7 @@ template modifyIt*(reg: TIM1_DIER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_SR_Type): TIM1_SR_Fields {.inline.} =
+proc read*(reg: static TIM1_SR_Type): TIM1_SR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_SR_Fields](reg.loc))
 
 proc write*(reg: TIM1_SR_Type, val: TIM1_SR_Fields) {.inline.} =
@@ -26796,7 +26796,7 @@ proc write*(reg: TIM1_EGR_Type, BG: bool = false, TG: bool = false, COMG: bool =
   x.setMask((UG.uint32 shl 0).masked(0 .. 0))
   reg.write x.TIM1_EGR_Fields
 
-proc read*(reg: TIM1_CCMR1_Output_Type): TIM1_CCMR1_Output_Fields {.inline.} =
+proc read*(reg: static TIM1_CCMR1_Output_Type): TIM1_CCMR1_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CCMR1_Output_Fields](reg.loc))
 
 proc write*(reg: TIM1_CCMR1_Output_Type, val: TIM1_CCMR1_Output_Fields) {.inline.} =
@@ -26822,7 +26822,7 @@ template modifyIt*(reg: TIM1_CCMR1_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_CCMR1_Input_Type): TIM1_CCMR1_Input_Fields {.inline.} =
+proc read*(reg: static TIM1_CCMR1_Input_Type): TIM1_CCMR1_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CCMR1_Input_Fields](reg.loc))
 
 proc write*(reg: TIM1_CCMR1_Input_Type, val: TIM1_CCMR1_Input_Fields) {.inline.} =
@@ -26844,7 +26844,7 @@ template modifyIt*(reg: TIM1_CCMR1_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_CCMR2_Output_Type): TIM1_CCMR2_Output_Fields {.inline.} =
+proc read*(reg: static TIM1_CCMR2_Output_Type): TIM1_CCMR2_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CCMR2_Output_Fields](reg.loc))
 
 proc write*(reg: TIM1_CCMR2_Output_Type, val: TIM1_CCMR2_Output_Fields) {.inline.} =
@@ -26870,7 +26870,7 @@ template modifyIt*(reg: TIM1_CCMR2_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_CCMR2_Input_Type): TIM1_CCMR2_Input_Fields {.inline.} =
+proc read*(reg: static TIM1_CCMR2_Input_Type): TIM1_CCMR2_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CCMR2_Input_Fields](reg.loc))
 
 proc write*(reg: TIM1_CCMR2_Input_Type, val: TIM1_CCMR2_Input_Fields) {.inline.} =
@@ -26892,7 +26892,7 @@ template modifyIt*(reg: TIM1_CCMR2_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_CCER_Type): TIM1_CCER_Fields {.inline.} =
+proc read*(reg: static TIM1_CCER_Type): TIM1_CCER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CCER_Fields](reg.loc))
 
 proc write*(reg: TIM1_CCER_Type, val: TIM1_CCER_Fields) {.inline.} =
@@ -26922,7 +26922,7 @@ template modifyIt*(reg: TIM1_CCER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_CNT_Type): TIM1_CNT_Fields {.inline.} =
+proc read*(reg: static TIM1_CNT_Type): TIM1_CNT_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CNT_Fields](reg.loc))
 
 proc write*(reg: TIM1_CNT_Type, val: TIM1_CNT_Fields) {.inline.} =
@@ -26939,7 +26939,7 @@ template modifyIt*(reg: TIM1_CNT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_PSC_Type): TIM1_PSC_Fields {.inline.} =
+proc read*(reg: static TIM1_PSC_Type): TIM1_PSC_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_PSC_Fields](reg.loc))
 
 proc write*(reg: TIM1_PSC_Type, val: TIM1_PSC_Fields) {.inline.} =
@@ -26956,7 +26956,7 @@ template modifyIt*(reg: TIM1_PSC_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_ARR_Type): TIM1_ARR_Fields {.inline.} =
+proc read*(reg: static TIM1_ARR_Type): TIM1_ARR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_ARR_Fields](reg.loc))
 
 proc write*(reg: TIM1_ARR_Type, val: TIM1_ARR_Fields) {.inline.} =
@@ -26973,7 +26973,7 @@ template modifyIt*(reg: TIM1_ARR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_CCR1_Type): TIM1_CCR1_Fields {.inline.} =
+proc read*(reg: static TIM1_CCR1_Type): TIM1_CCR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CCR1_Fields](reg.loc))
 
 proc write*(reg: TIM1_CCR1_Type, val: TIM1_CCR1_Fields) {.inline.} =
@@ -26990,7 +26990,7 @@ template modifyIt*(reg: TIM1_CCR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_CCR2_Type): TIM1_CCR2_Fields {.inline.} =
+proc read*(reg: static TIM1_CCR2_Type): TIM1_CCR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CCR2_Fields](reg.loc))
 
 proc write*(reg: TIM1_CCR2_Type, val: TIM1_CCR2_Fields) {.inline.} =
@@ -27007,7 +27007,7 @@ template modifyIt*(reg: TIM1_CCR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_CCR3_Type): TIM1_CCR3_Fields {.inline.} =
+proc read*(reg: static TIM1_CCR3_Type): TIM1_CCR3_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CCR3_Fields](reg.loc))
 
 proc write*(reg: TIM1_CCR3_Type, val: TIM1_CCR3_Fields) {.inline.} =
@@ -27024,7 +27024,7 @@ template modifyIt*(reg: TIM1_CCR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_CCR4_Type): TIM1_CCR4_Fields {.inline.} =
+proc read*(reg: static TIM1_CCR4_Type): TIM1_CCR4_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_CCR4_Fields](reg.loc))
 
 proc write*(reg: TIM1_CCR4_Type, val: TIM1_CCR4_Fields) {.inline.} =
@@ -27041,7 +27041,7 @@ template modifyIt*(reg: TIM1_CCR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_DCR_Type): TIM1_DCR_Fields {.inline.} =
+proc read*(reg: static TIM1_DCR_Type): TIM1_DCR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_DCR_Fields](reg.loc))
 
 proc write*(reg: TIM1_DCR_Type, val: TIM1_DCR_Fields) {.inline.} =
@@ -27059,7 +27059,7 @@ template modifyIt*(reg: TIM1_DCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_DMAR_Type): TIM1_DMAR_Fields {.inline.} =
+proc read*(reg: static TIM1_DMAR_Type): TIM1_DMAR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_DMAR_Fields](reg.loc))
 
 proc write*(reg: TIM1_DMAR_Type, val: TIM1_DMAR_Fields) {.inline.} =
@@ -27076,7 +27076,7 @@ template modifyIt*(reg: TIM1_DMAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_RCR_Type): TIM1_RCR_Fields {.inline.} =
+proc read*(reg: static TIM1_RCR_Type): TIM1_RCR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_RCR_Fields](reg.loc))
 
 proc write*(reg: TIM1_RCR_Type, val: TIM1_RCR_Fields) {.inline.} =
@@ -27093,7 +27093,7 @@ template modifyIt*(reg: TIM1_RCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM1_BDTR_Type): TIM1_BDTR_Fields {.inline.} =
+proc read*(reg: static TIM1_BDTR_Type): TIM1_BDTR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM1_BDTR_Fields](reg.loc))
 
 proc write*(reg: TIM1_BDTR_Type, val: TIM1_BDTR_Fields) {.inline.} =
@@ -28259,7 +28259,7 @@ type
   TIM2_DMAR_Fields* = distinct uint32
   TIM2_OR_Fields* = distinct uint32
 
-proc read*(reg: TIM2_CR1_Type): TIM2_CR1_Fields {.inline.} =
+proc read*(reg: static TIM2_CR1_Type): TIM2_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CR1_Fields](reg.loc))
 
 proc write*(reg: TIM2_CR1_Type, val: TIM2_CR1_Fields) {.inline.} =
@@ -28283,7 +28283,7 @@ template modifyIt*(reg: TIM2_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_CR2_Type): TIM2_CR2_Fields {.inline.} =
+proc read*(reg: static TIM2_CR2_Type): TIM2_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CR2_Fields](reg.loc))
 
 proc write*(reg: TIM2_CR2_Type, val: TIM2_CR2_Fields) {.inline.} =
@@ -28302,7 +28302,7 @@ template modifyIt*(reg: TIM2_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_SMCR_Type): TIM2_SMCR_Fields {.inline.} =
+proc read*(reg: static TIM2_SMCR_Type): TIM2_SMCR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_SMCR_Fields](reg.loc))
 
 proc write*(reg: TIM2_SMCR_Type, val: TIM2_SMCR_Fields) {.inline.} =
@@ -28325,7 +28325,7 @@ template modifyIt*(reg: TIM2_SMCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_DIER_Type): TIM2_DIER_Fields {.inline.} =
+proc read*(reg: static TIM2_DIER_Type): TIM2_DIER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_DIER_Fields](reg.loc))
 
 proc write*(reg: TIM2_DIER_Type, val: TIM2_DIER_Fields) {.inline.} =
@@ -28353,7 +28353,7 @@ template modifyIt*(reg: TIM2_DIER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_SR_Type): TIM2_SR_Fields {.inline.} =
+proc read*(reg: static TIM2_SR_Type): TIM2_SR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_SR_Fields](reg.loc))
 
 proc write*(reg: TIM2_SR_Type, val: TIM2_SR_Fields) {.inline.} =
@@ -28392,7 +28392,7 @@ proc write*(reg: TIM2_EGR_Type, TG: bool = false, CC4G: bool = false, CC3G: bool
   x.setMask((UG.uint32 shl 0).masked(0 .. 0))
   reg.write x.TIM2_EGR_Fields
 
-proc read*(reg: TIM2_CCMR1_Output_Type): TIM2_CCMR1_Output_Fields {.inline.} =
+proc read*(reg: static TIM2_CCMR1_Output_Type): TIM2_CCMR1_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CCMR1_Output_Fields](reg.loc))
 
 proc write*(reg: TIM2_CCMR1_Output_Type, val: TIM2_CCMR1_Output_Fields) {.inline.} =
@@ -28418,7 +28418,7 @@ template modifyIt*(reg: TIM2_CCMR1_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_CCMR1_Input_Type): TIM2_CCMR1_Input_Fields {.inline.} =
+proc read*(reg: static TIM2_CCMR1_Input_Type): TIM2_CCMR1_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CCMR1_Input_Fields](reg.loc))
 
 proc write*(reg: TIM2_CCMR1_Input_Type, val: TIM2_CCMR1_Input_Fields) {.inline.} =
@@ -28440,7 +28440,7 @@ template modifyIt*(reg: TIM2_CCMR1_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_CCMR2_Output_Type): TIM2_CCMR2_Output_Fields {.inline.} =
+proc read*(reg: static TIM2_CCMR2_Output_Type): TIM2_CCMR2_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CCMR2_Output_Fields](reg.loc))
 
 proc write*(reg: TIM2_CCMR2_Output_Type, val: TIM2_CCMR2_Output_Fields) {.inline.} =
@@ -28466,7 +28466,7 @@ template modifyIt*(reg: TIM2_CCMR2_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_CCMR2_Input_Type): TIM2_CCMR2_Input_Fields {.inline.} =
+proc read*(reg: static TIM2_CCMR2_Input_Type): TIM2_CCMR2_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CCMR2_Input_Fields](reg.loc))
 
 proc write*(reg: TIM2_CCMR2_Input_Type, val: TIM2_CCMR2_Input_Fields) {.inline.} =
@@ -28488,7 +28488,7 @@ template modifyIt*(reg: TIM2_CCMR2_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_CCER_Type): TIM2_CCER_Fields {.inline.} =
+proc read*(reg: static TIM2_CCER_Type): TIM2_CCER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CCER_Fields](reg.loc))
 
 proc write*(reg: TIM2_CCER_Type, val: TIM2_CCER_Fields) {.inline.} =
@@ -28516,7 +28516,7 @@ template modifyIt*(reg: TIM2_CCER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_CNT_Type): TIM2_CNT_Fields {.inline.} =
+proc read*(reg: static TIM2_CNT_Type): TIM2_CNT_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CNT_Fields](reg.loc))
 
 proc write*(reg: TIM2_CNT_Type, val: TIM2_CNT_Fields) {.inline.} =
@@ -28534,7 +28534,7 @@ template modifyIt*(reg: TIM2_CNT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_PSC_Type): TIM2_PSC_Fields {.inline.} =
+proc read*(reg: static TIM2_PSC_Type): TIM2_PSC_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_PSC_Fields](reg.loc))
 
 proc write*(reg: TIM2_PSC_Type, val: TIM2_PSC_Fields) {.inline.} =
@@ -28551,7 +28551,7 @@ template modifyIt*(reg: TIM2_PSC_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_ARR_Type): TIM2_ARR_Fields {.inline.} =
+proc read*(reg: static TIM2_ARR_Type): TIM2_ARR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_ARR_Fields](reg.loc))
 
 proc write*(reg: TIM2_ARR_Type, val: TIM2_ARR_Fields) {.inline.} =
@@ -28569,7 +28569,7 @@ template modifyIt*(reg: TIM2_ARR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_CCR1_Type): TIM2_CCR1_Fields {.inline.} =
+proc read*(reg: static TIM2_CCR1_Type): TIM2_CCR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CCR1_Fields](reg.loc))
 
 proc write*(reg: TIM2_CCR1_Type, val: TIM2_CCR1_Fields) {.inline.} =
@@ -28587,7 +28587,7 @@ template modifyIt*(reg: TIM2_CCR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_CCR2_Type): TIM2_CCR2_Fields {.inline.} =
+proc read*(reg: static TIM2_CCR2_Type): TIM2_CCR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CCR2_Fields](reg.loc))
 
 proc write*(reg: TIM2_CCR2_Type, val: TIM2_CCR2_Fields) {.inline.} =
@@ -28605,7 +28605,7 @@ template modifyIt*(reg: TIM2_CCR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_CCR3_Type): TIM2_CCR3_Fields {.inline.} =
+proc read*(reg: static TIM2_CCR3_Type): TIM2_CCR3_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CCR3_Fields](reg.loc))
 
 proc write*(reg: TIM2_CCR3_Type, val: TIM2_CCR3_Fields) {.inline.} =
@@ -28623,7 +28623,7 @@ template modifyIt*(reg: TIM2_CCR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_CCR4_Type): TIM2_CCR4_Fields {.inline.} =
+proc read*(reg: static TIM2_CCR4_Type): TIM2_CCR4_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_CCR4_Fields](reg.loc))
 
 proc write*(reg: TIM2_CCR4_Type, val: TIM2_CCR4_Fields) {.inline.} =
@@ -28641,7 +28641,7 @@ template modifyIt*(reg: TIM2_CCR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_DCR_Type): TIM2_DCR_Fields {.inline.} =
+proc read*(reg: static TIM2_DCR_Type): TIM2_DCR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_DCR_Fields](reg.loc))
 
 proc write*(reg: TIM2_DCR_Type, val: TIM2_DCR_Fields) {.inline.} =
@@ -28659,7 +28659,7 @@ template modifyIt*(reg: TIM2_DCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_DMAR_Type): TIM2_DMAR_Fields {.inline.} =
+proc read*(reg: static TIM2_DMAR_Type): TIM2_DMAR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_DMAR_Fields](reg.loc))
 
 proc write*(reg: TIM2_DMAR_Type, val: TIM2_DMAR_Fields) {.inline.} =
@@ -28676,7 +28676,7 @@ template modifyIt*(reg: TIM2_DMAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM2_OR_Type): TIM2_OR_Fields {.inline.} =
+proc read*(reg: static TIM2_OR_Type): TIM2_OR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM2_OR_Fields](reg.loc))
 
 proc write*(reg: TIM2_OR_Type, val: TIM2_OR_Fields) {.inline.} =
@@ -29660,7 +29660,7 @@ type
   TIM3_DCR_Fields* = distinct uint32
   TIM3_DMAR_Fields* = distinct uint32
 
-proc read*(reg: TIM3_CR1_Type): TIM3_CR1_Fields {.inline.} =
+proc read*(reg: static TIM3_CR1_Type): TIM3_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CR1_Fields](reg.loc))
 
 proc write*(reg: TIM3_CR1_Type, val: TIM3_CR1_Fields) {.inline.} =
@@ -29684,7 +29684,7 @@ template modifyIt*(reg: TIM3_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_CR2_Type): TIM3_CR2_Fields {.inline.} =
+proc read*(reg: static TIM3_CR2_Type): TIM3_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CR2_Fields](reg.loc))
 
 proc write*(reg: TIM3_CR2_Type, val: TIM3_CR2_Fields) {.inline.} =
@@ -29703,7 +29703,7 @@ template modifyIt*(reg: TIM3_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_SMCR_Type): TIM3_SMCR_Fields {.inline.} =
+proc read*(reg: static TIM3_SMCR_Type): TIM3_SMCR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_SMCR_Fields](reg.loc))
 
 proc write*(reg: TIM3_SMCR_Type, val: TIM3_SMCR_Fields) {.inline.} =
@@ -29726,7 +29726,7 @@ template modifyIt*(reg: TIM3_SMCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_DIER_Type): TIM3_DIER_Fields {.inline.} =
+proc read*(reg: static TIM3_DIER_Type): TIM3_DIER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_DIER_Fields](reg.loc))
 
 proc write*(reg: TIM3_DIER_Type, val: TIM3_DIER_Fields) {.inline.} =
@@ -29754,7 +29754,7 @@ template modifyIt*(reg: TIM3_DIER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_SR_Type): TIM3_SR_Fields {.inline.} =
+proc read*(reg: static TIM3_SR_Type): TIM3_SR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_SR_Fields](reg.loc))
 
 proc write*(reg: TIM3_SR_Type, val: TIM3_SR_Fields) {.inline.} =
@@ -29793,7 +29793,7 @@ proc write*(reg: TIM3_EGR_Type, TG: bool = false, CC4G: bool = false, CC3G: bool
   x.setMask((UG.uint32 shl 0).masked(0 .. 0))
   reg.write x.TIM3_EGR_Fields
 
-proc read*(reg: TIM3_CCMR1_Output_Type): TIM3_CCMR1_Output_Fields {.inline.} =
+proc read*(reg: static TIM3_CCMR1_Output_Type): TIM3_CCMR1_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CCMR1_Output_Fields](reg.loc))
 
 proc write*(reg: TIM3_CCMR1_Output_Type, val: TIM3_CCMR1_Output_Fields) {.inline.} =
@@ -29819,7 +29819,7 @@ template modifyIt*(reg: TIM3_CCMR1_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_CCMR1_Input_Type): TIM3_CCMR1_Input_Fields {.inline.} =
+proc read*(reg: static TIM3_CCMR1_Input_Type): TIM3_CCMR1_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CCMR1_Input_Fields](reg.loc))
 
 proc write*(reg: TIM3_CCMR1_Input_Type, val: TIM3_CCMR1_Input_Fields) {.inline.} =
@@ -29841,7 +29841,7 @@ template modifyIt*(reg: TIM3_CCMR1_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_CCMR2_Output_Type): TIM3_CCMR2_Output_Fields {.inline.} =
+proc read*(reg: static TIM3_CCMR2_Output_Type): TIM3_CCMR2_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CCMR2_Output_Fields](reg.loc))
 
 proc write*(reg: TIM3_CCMR2_Output_Type, val: TIM3_CCMR2_Output_Fields) {.inline.} =
@@ -29867,7 +29867,7 @@ template modifyIt*(reg: TIM3_CCMR2_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_CCMR2_Input_Type): TIM3_CCMR2_Input_Fields {.inline.} =
+proc read*(reg: static TIM3_CCMR2_Input_Type): TIM3_CCMR2_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CCMR2_Input_Fields](reg.loc))
 
 proc write*(reg: TIM3_CCMR2_Input_Type, val: TIM3_CCMR2_Input_Fields) {.inline.} =
@@ -29889,7 +29889,7 @@ template modifyIt*(reg: TIM3_CCMR2_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_CCER_Type): TIM3_CCER_Fields {.inline.} =
+proc read*(reg: static TIM3_CCER_Type): TIM3_CCER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CCER_Fields](reg.loc))
 
 proc write*(reg: TIM3_CCER_Type, val: TIM3_CCER_Fields) {.inline.} =
@@ -29917,7 +29917,7 @@ template modifyIt*(reg: TIM3_CCER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_CNT_Type): TIM3_CNT_Fields {.inline.} =
+proc read*(reg: static TIM3_CNT_Type): TIM3_CNT_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CNT_Fields](reg.loc))
 
 proc write*(reg: TIM3_CNT_Type, val: TIM3_CNT_Fields) {.inline.} =
@@ -29935,7 +29935,7 @@ template modifyIt*(reg: TIM3_CNT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_PSC_Type): TIM3_PSC_Fields {.inline.} =
+proc read*(reg: static TIM3_PSC_Type): TIM3_PSC_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_PSC_Fields](reg.loc))
 
 proc write*(reg: TIM3_PSC_Type, val: TIM3_PSC_Fields) {.inline.} =
@@ -29952,7 +29952,7 @@ template modifyIt*(reg: TIM3_PSC_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_ARR_Type): TIM3_ARR_Fields {.inline.} =
+proc read*(reg: static TIM3_ARR_Type): TIM3_ARR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_ARR_Fields](reg.loc))
 
 proc write*(reg: TIM3_ARR_Type, val: TIM3_ARR_Fields) {.inline.} =
@@ -29970,7 +29970,7 @@ template modifyIt*(reg: TIM3_ARR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_CCR1_Type): TIM3_CCR1_Fields {.inline.} =
+proc read*(reg: static TIM3_CCR1_Type): TIM3_CCR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CCR1_Fields](reg.loc))
 
 proc write*(reg: TIM3_CCR1_Type, val: TIM3_CCR1_Fields) {.inline.} =
@@ -29988,7 +29988,7 @@ template modifyIt*(reg: TIM3_CCR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_CCR2_Type): TIM3_CCR2_Fields {.inline.} =
+proc read*(reg: static TIM3_CCR2_Type): TIM3_CCR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CCR2_Fields](reg.loc))
 
 proc write*(reg: TIM3_CCR2_Type, val: TIM3_CCR2_Fields) {.inline.} =
@@ -30006,7 +30006,7 @@ template modifyIt*(reg: TIM3_CCR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_CCR3_Type): TIM3_CCR3_Fields {.inline.} =
+proc read*(reg: static TIM3_CCR3_Type): TIM3_CCR3_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CCR3_Fields](reg.loc))
 
 proc write*(reg: TIM3_CCR3_Type, val: TIM3_CCR3_Fields) {.inline.} =
@@ -30024,7 +30024,7 @@ template modifyIt*(reg: TIM3_CCR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_CCR4_Type): TIM3_CCR4_Fields {.inline.} =
+proc read*(reg: static TIM3_CCR4_Type): TIM3_CCR4_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_CCR4_Fields](reg.loc))
 
 proc write*(reg: TIM3_CCR4_Type, val: TIM3_CCR4_Fields) {.inline.} =
@@ -30042,7 +30042,7 @@ template modifyIt*(reg: TIM3_CCR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_DCR_Type): TIM3_DCR_Fields {.inline.} =
+proc read*(reg: static TIM3_DCR_Type): TIM3_DCR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_DCR_Fields](reg.loc))
 
 proc write*(reg: TIM3_DCR_Type, val: TIM3_DCR_Fields) {.inline.} =
@@ -30060,7 +30060,7 @@ template modifyIt*(reg: TIM3_DCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM3_DMAR_Type): TIM3_DMAR_Fields {.inline.} =
+proc read*(reg: static TIM3_DMAR_Type): TIM3_DMAR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM3_DMAR_Fields](reg.loc))
 
 proc write*(reg: TIM3_DMAR_Type, val: TIM3_DMAR_Fields) {.inline.} =
@@ -31036,7 +31036,7 @@ type
   TIM5_DMAR_Fields* = distinct uint32
   TIM5_OR_Fields* = distinct uint32
 
-proc read*(reg: TIM5_CR1_Type): TIM5_CR1_Fields {.inline.} =
+proc read*(reg: static TIM5_CR1_Type): TIM5_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CR1_Fields](reg.loc))
 
 proc write*(reg: TIM5_CR1_Type, val: TIM5_CR1_Fields) {.inline.} =
@@ -31060,7 +31060,7 @@ template modifyIt*(reg: TIM5_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_CR2_Type): TIM5_CR2_Fields {.inline.} =
+proc read*(reg: static TIM5_CR2_Type): TIM5_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CR2_Fields](reg.loc))
 
 proc write*(reg: TIM5_CR2_Type, val: TIM5_CR2_Fields) {.inline.} =
@@ -31079,7 +31079,7 @@ template modifyIt*(reg: TIM5_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_SMCR_Type): TIM5_SMCR_Fields {.inline.} =
+proc read*(reg: static TIM5_SMCR_Type): TIM5_SMCR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_SMCR_Fields](reg.loc))
 
 proc write*(reg: TIM5_SMCR_Type, val: TIM5_SMCR_Fields) {.inline.} =
@@ -31102,7 +31102,7 @@ template modifyIt*(reg: TIM5_SMCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_DIER_Type): TIM5_DIER_Fields {.inline.} =
+proc read*(reg: static TIM5_DIER_Type): TIM5_DIER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_DIER_Fields](reg.loc))
 
 proc write*(reg: TIM5_DIER_Type, val: TIM5_DIER_Fields) {.inline.} =
@@ -31130,7 +31130,7 @@ template modifyIt*(reg: TIM5_DIER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_SR_Type): TIM5_SR_Fields {.inline.} =
+proc read*(reg: static TIM5_SR_Type): TIM5_SR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_SR_Fields](reg.loc))
 
 proc write*(reg: TIM5_SR_Type, val: TIM5_SR_Fields) {.inline.} =
@@ -31169,7 +31169,7 @@ proc write*(reg: TIM5_EGR_Type, TG: bool = false, CC4G: bool = false, CC3G: bool
   x.setMask((UG.uint32 shl 0).masked(0 .. 0))
   reg.write x.TIM5_EGR_Fields
 
-proc read*(reg: TIM5_CCMR1_Output_Type): TIM5_CCMR1_Output_Fields {.inline.} =
+proc read*(reg: static TIM5_CCMR1_Output_Type): TIM5_CCMR1_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CCMR1_Output_Fields](reg.loc))
 
 proc write*(reg: TIM5_CCMR1_Output_Type, val: TIM5_CCMR1_Output_Fields) {.inline.} =
@@ -31195,7 +31195,7 @@ template modifyIt*(reg: TIM5_CCMR1_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_CCMR1_Input_Type): TIM5_CCMR1_Input_Fields {.inline.} =
+proc read*(reg: static TIM5_CCMR1_Input_Type): TIM5_CCMR1_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CCMR1_Input_Fields](reg.loc))
 
 proc write*(reg: TIM5_CCMR1_Input_Type, val: TIM5_CCMR1_Input_Fields) {.inline.} =
@@ -31217,7 +31217,7 @@ template modifyIt*(reg: TIM5_CCMR1_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_CCMR2_Output_Type): TIM5_CCMR2_Output_Fields {.inline.} =
+proc read*(reg: static TIM5_CCMR2_Output_Type): TIM5_CCMR2_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CCMR2_Output_Fields](reg.loc))
 
 proc write*(reg: TIM5_CCMR2_Output_Type, val: TIM5_CCMR2_Output_Fields) {.inline.} =
@@ -31243,7 +31243,7 @@ template modifyIt*(reg: TIM5_CCMR2_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_CCMR2_Input_Type): TIM5_CCMR2_Input_Fields {.inline.} =
+proc read*(reg: static TIM5_CCMR2_Input_Type): TIM5_CCMR2_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CCMR2_Input_Fields](reg.loc))
 
 proc write*(reg: TIM5_CCMR2_Input_Type, val: TIM5_CCMR2_Input_Fields) {.inline.} =
@@ -31265,7 +31265,7 @@ template modifyIt*(reg: TIM5_CCMR2_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_CCER_Type): TIM5_CCER_Fields {.inline.} =
+proc read*(reg: static TIM5_CCER_Type): TIM5_CCER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CCER_Fields](reg.loc))
 
 proc write*(reg: TIM5_CCER_Type, val: TIM5_CCER_Fields) {.inline.} =
@@ -31293,7 +31293,7 @@ template modifyIt*(reg: TIM5_CCER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_CNT_Type): TIM5_CNT_Fields {.inline.} =
+proc read*(reg: static TIM5_CNT_Type): TIM5_CNT_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CNT_Fields](reg.loc))
 
 proc write*(reg: TIM5_CNT_Type, val: TIM5_CNT_Fields) {.inline.} =
@@ -31311,7 +31311,7 @@ template modifyIt*(reg: TIM5_CNT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_PSC_Type): TIM5_PSC_Fields {.inline.} =
+proc read*(reg: static TIM5_PSC_Type): TIM5_PSC_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_PSC_Fields](reg.loc))
 
 proc write*(reg: TIM5_PSC_Type, val: TIM5_PSC_Fields) {.inline.} =
@@ -31328,7 +31328,7 @@ template modifyIt*(reg: TIM5_PSC_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_ARR_Type): TIM5_ARR_Fields {.inline.} =
+proc read*(reg: static TIM5_ARR_Type): TIM5_ARR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_ARR_Fields](reg.loc))
 
 proc write*(reg: TIM5_ARR_Type, val: TIM5_ARR_Fields) {.inline.} =
@@ -31346,7 +31346,7 @@ template modifyIt*(reg: TIM5_ARR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_CCR1_Type): TIM5_CCR1_Fields {.inline.} =
+proc read*(reg: static TIM5_CCR1_Type): TIM5_CCR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CCR1_Fields](reg.loc))
 
 proc write*(reg: TIM5_CCR1_Type, val: TIM5_CCR1_Fields) {.inline.} =
@@ -31364,7 +31364,7 @@ template modifyIt*(reg: TIM5_CCR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_CCR2_Type): TIM5_CCR2_Fields {.inline.} =
+proc read*(reg: static TIM5_CCR2_Type): TIM5_CCR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CCR2_Fields](reg.loc))
 
 proc write*(reg: TIM5_CCR2_Type, val: TIM5_CCR2_Fields) {.inline.} =
@@ -31382,7 +31382,7 @@ template modifyIt*(reg: TIM5_CCR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_CCR3_Type): TIM5_CCR3_Fields {.inline.} =
+proc read*(reg: static TIM5_CCR3_Type): TIM5_CCR3_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CCR3_Fields](reg.loc))
 
 proc write*(reg: TIM5_CCR3_Type, val: TIM5_CCR3_Fields) {.inline.} =
@@ -31400,7 +31400,7 @@ template modifyIt*(reg: TIM5_CCR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_CCR4_Type): TIM5_CCR4_Fields {.inline.} =
+proc read*(reg: static TIM5_CCR4_Type): TIM5_CCR4_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_CCR4_Fields](reg.loc))
 
 proc write*(reg: TIM5_CCR4_Type, val: TIM5_CCR4_Fields) {.inline.} =
@@ -31418,7 +31418,7 @@ template modifyIt*(reg: TIM5_CCR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_DCR_Type): TIM5_DCR_Fields {.inline.} =
+proc read*(reg: static TIM5_DCR_Type): TIM5_DCR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_DCR_Fields](reg.loc))
 
 proc write*(reg: TIM5_DCR_Type, val: TIM5_DCR_Fields) {.inline.} =
@@ -31436,7 +31436,7 @@ template modifyIt*(reg: TIM5_DCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_DMAR_Type): TIM5_DMAR_Fields {.inline.} =
+proc read*(reg: static TIM5_DMAR_Type): TIM5_DMAR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_DMAR_Fields](reg.loc))
 
 proc write*(reg: TIM5_DMAR_Type, val: TIM5_DMAR_Fields) {.inline.} =
@@ -31453,7 +31453,7 @@ template modifyIt*(reg: TIM5_DMAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM5_OR_Type): TIM5_OR_Fields {.inline.} =
+proc read*(reg: static TIM5_OR_Type): TIM5_OR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM5_OR_Fields](reg.loc))
 
 proc write*(reg: TIM5_OR_Type, val: TIM5_OR_Fields) {.inline.} =
@@ -32431,7 +32431,7 @@ type
   TIM9_CCR1_Fields* = distinct uint32
   TIM9_CCR2_Fields* = distinct uint32
 
-proc read*(reg: TIM9_CR1_Type): TIM9_CR1_Fields {.inline.} =
+proc read*(reg: static TIM9_CR1_Type): TIM9_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_CR1_Fields](reg.loc))
 
 proc write*(reg: TIM9_CR1_Type, val: TIM9_CR1_Fields) {.inline.} =
@@ -32453,7 +32453,7 @@ template modifyIt*(reg: TIM9_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_CR2_Type): TIM9_CR2_Fields {.inline.} =
+proc read*(reg: static TIM9_CR2_Type): TIM9_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_CR2_Fields](reg.loc))
 
 proc write*(reg: TIM9_CR2_Type, val: TIM9_CR2_Fields) {.inline.} =
@@ -32470,7 +32470,7 @@ template modifyIt*(reg: TIM9_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_SMCR_Type): TIM9_SMCR_Fields {.inline.} =
+proc read*(reg: static TIM9_SMCR_Type): TIM9_SMCR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_SMCR_Fields](reg.loc))
 
 proc write*(reg: TIM9_SMCR_Type, val: TIM9_SMCR_Fields) {.inline.} =
@@ -32489,7 +32489,7 @@ template modifyIt*(reg: TIM9_SMCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_DIER_Type): TIM9_DIER_Fields {.inline.} =
+proc read*(reg: static TIM9_DIER_Type): TIM9_DIER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_DIER_Fields](reg.loc))
 
 proc write*(reg: TIM9_DIER_Type, val: TIM9_DIER_Fields) {.inline.} =
@@ -32509,7 +32509,7 @@ template modifyIt*(reg: TIM9_DIER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_SR_Type): TIM9_SR_Fields {.inline.} =
+proc read*(reg: static TIM9_SR_Type): TIM9_SR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_SR_Fields](reg.loc))
 
 proc write*(reg: TIM9_SR_Type, val: TIM9_SR_Fields) {.inline.} =
@@ -32542,7 +32542,7 @@ proc write*(reg: TIM9_EGR_Type, TG: bool = false, CC2G: bool = false, CC1G: bool
   x.setMask((UG.uint32 shl 0).masked(0 .. 0))
   reg.write x.TIM9_EGR_Fields
 
-proc read*(reg: TIM9_CCMR1_Output_Type): TIM9_CCMR1_Output_Fields {.inline.} =
+proc read*(reg: static TIM9_CCMR1_Output_Type): TIM9_CCMR1_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_CCMR1_Output_Fields](reg.loc))
 
 proc write*(reg: TIM9_CCMR1_Output_Type, val: TIM9_CCMR1_Output_Fields) {.inline.} =
@@ -32566,7 +32566,7 @@ template modifyIt*(reg: TIM9_CCMR1_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_CCMR1_Input_Type): TIM9_CCMR1_Input_Fields {.inline.} =
+proc read*(reg: static TIM9_CCMR1_Input_Type): TIM9_CCMR1_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_CCMR1_Input_Fields](reg.loc))
 
 proc write*(reg: TIM9_CCMR1_Input_Type, val: TIM9_CCMR1_Input_Fields) {.inline.} =
@@ -32588,7 +32588,7 @@ template modifyIt*(reg: TIM9_CCMR1_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_CCER_Type): TIM9_CCER_Fields {.inline.} =
+proc read*(reg: static TIM9_CCER_Type): TIM9_CCER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_CCER_Fields](reg.loc))
 
 proc write*(reg: TIM9_CCER_Type, val: TIM9_CCER_Fields) {.inline.} =
@@ -32610,7 +32610,7 @@ template modifyIt*(reg: TIM9_CCER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_CNT_Type): TIM9_CNT_Fields {.inline.} =
+proc read*(reg: static TIM9_CNT_Type): TIM9_CNT_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_CNT_Fields](reg.loc))
 
 proc write*(reg: TIM9_CNT_Type, val: TIM9_CNT_Fields) {.inline.} =
@@ -32627,7 +32627,7 @@ template modifyIt*(reg: TIM9_CNT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_PSC_Type): TIM9_PSC_Fields {.inline.} =
+proc read*(reg: static TIM9_PSC_Type): TIM9_PSC_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_PSC_Fields](reg.loc))
 
 proc write*(reg: TIM9_PSC_Type, val: TIM9_PSC_Fields) {.inline.} =
@@ -32644,7 +32644,7 @@ template modifyIt*(reg: TIM9_PSC_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_ARR_Type): TIM9_ARR_Fields {.inline.} =
+proc read*(reg: static TIM9_ARR_Type): TIM9_ARR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_ARR_Fields](reg.loc))
 
 proc write*(reg: TIM9_ARR_Type, val: TIM9_ARR_Fields) {.inline.} =
@@ -32661,7 +32661,7 @@ template modifyIt*(reg: TIM9_ARR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_CCR1_Type): TIM9_CCR1_Fields {.inline.} =
+proc read*(reg: static TIM9_CCR1_Type): TIM9_CCR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_CCR1_Fields](reg.loc))
 
 proc write*(reg: TIM9_CCR1_Type, val: TIM9_CCR1_Fields) {.inline.} =
@@ -32678,7 +32678,7 @@ template modifyIt*(reg: TIM9_CCR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM9_CCR2_Type): TIM9_CCR2_Fields {.inline.} =
+proc read*(reg: static TIM9_CCR2_Type): TIM9_CCR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM9_CCR2_Fields](reg.loc))
 
 proc write*(reg: TIM9_CCR2_Type, val: TIM9_CCR2_Fields) {.inline.} =
@@ -33137,7 +33137,7 @@ type
   TIM10_ARR_Fields* = distinct uint32
   TIM10_CCR1_Fields* = distinct uint32
 
-proc read*(reg: TIM10_CR1_Type): TIM10_CR1_Fields {.inline.} =
+proc read*(reg: static TIM10_CR1_Type): TIM10_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM10_CR1_Fields](reg.loc))
 
 proc write*(reg: TIM10_CR1_Type, val: TIM10_CR1_Fields) {.inline.} =
@@ -33158,7 +33158,7 @@ template modifyIt*(reg: TIM10_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM10_DIER_Type): TIM10_DIER_Fields {.inline.} =
+proc read*(reg: static TIM10_DIER_Type): TIM10_DIER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM10_DIER_Fields](reg.loc))
 
 proc write*(reg: TIM10_DIER_Type, val: TIM10_DIER_Fields) {.inline.} =
@@ -33176,7 +33176,7 @@ template modifyIt*(reg: TIM10_DIER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM10_SR_Type): TIM10_SR_Fields {.inline.} =
+proc read*(reg: static TIM10_SR_Type): TIM10_SR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM10_SR_Fields](reg.loc))
 
 proc write*(reg: TIM10_SR_Type, val: TIM10_SR_Fields) {.inline.} =
@@ -33204,7 +33204,7 @@ proc write*(reg: TIM10_EGR_Type, CC1G: bool = false, UG: bool = false) =
   x.setMask((UG.uint32 shl 0).masked(0 .. 0))
   reg.write x.TIM10_EGR_Fields
 
-proc read*(reg: TIM10_CCMR1_Output_Type): TIM10_CCMR1_Output_Fields {.inline.} =
+proc read*(reg: static TIM10_CCMR1_Output_Type): TIM10_CCMR1_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM10_CCMR1_Output_Fields](reg.loc))
 
 proc write*(reg: TIM10_CCMR1_Output_Type, val: TIM10_CCMR1_Output_Fields) {.inline.} =
@@ -33224,7 +33224,7 @@ template modifyIt*(reg: TIM10_CCMR1_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM10_CCMR1_Input_Type): TIM10_CCMR1_Input_Fields {.inline.} =
+proc read*(reg: static TIM10_CCMR1_Input_Type): TIM10_CCMR1_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM10_CCMR1_Input_Fields](reg.loc))
 
 proc write*(reg: TIM10_CCMR1_Input_Type, val: TIM10_CCMR1_Input_Fields) {.inline.} =
@@ -33243,7 +33243,7 @@ template modifyIt*(reg: TIM10_CCMR1_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM10_CCER_Type): TIM10_CCER_Fields {.inline.} =
+proc read*(reg: static TIM10_CCER_Type): TIM10_CCER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM10_CCER_Fields](reg.loc))
 
 proc write*(reg: TIM10_CCER_Type, val: TIM10_CCER_Fields) {.inline.} =
@@ -33262,7 +33262,7 @@ template modifyIt*(reg: TIM10_CCER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM10_CNT_Type): TIM10_CNT_Fields {.inline.} =
+proc read*(reg: static TIM10_CNT_Type): TIM10_CNT_Fields {.inline.} =
   volatileLoad(cast[ptr TIM10_CNT_Fields](reg.loc))
 
 proc write*(reg: TIM10_CNT_Type, val: TIM10_CNT_Fields) {.inline.} =
@@ -33279,7 +33279,7 @@ template modifyIt*(reg: TIM10_CNT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM10_PSC_Type): TIM10_PSC_Fields {.inline.} =
+proc read*(reg: static TIM10_PSC_Type): TIM10_PSC_Fields {.inline.} =
   volatileLoad(cast[ptr TIM10_PSC_Fields](reg.loc))
 
 proc write*(reg: TIM10_PSC_Type, val: TIM10_PSC_Fields) {.inline.} =
@@ -33296,7 +33296,7 @@ template modifyIt*(reg: TIM10_PSC_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM10_ARR_Type): TIM10_ARR_Fields {.inline.} =
+proc read*(reg: static TIM10_ARR_Type): TIM10_ARR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM10_ARR_Fields](reg.loc))
 
 proc write*(reg: TIM10_ARR_Type, val: TIM10_ARR_Fields) {.inline.} =
@@ -33313,7 +33313,7 @@ template modifyIt*(reg: TIM10_ARR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM10_CCR1_Type): TIM10_CCR1_Fields {.inline.} =
+proc read*(reg: static TIM10_CCR1_Type): TIM10_CCR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM10_CCR1_Fields](reg.loc))
 
 proc write*(reg: TIM10_CCR1_Type, val: TIM10_CCR1_Fields) {.inline.} =
@@ -33572,7 +33572,7 @@ type
   TIM11_CCR1_Fields* = distinct uint32
   TIM11_OR_Fields* = distinct uint32
 
-proc read*(reg: TIM11_CR1_Type): TIM11_CR1_Fields {.inline.} =
+proc read*(reg: static TIM11_CR1_Type): TIM11_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_CR1_Fields](reg.loc))
 
 proc write*(reg: TIM11_CR1_Type, val: TIM11_CR1_Fields) {.inline.} =
@@ -33593,7 +33593,7 @@ template modifyIt*(reg: TIM11_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM11_DIER_Type): TIM11_DIER_Fields {.inline.} =
+proc read*(reg: static TIM11_DIER_Type): TIM11_DIER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_DIER_Fields](reg.loc))
 
 proc write*(reg: TIM11_DIER_Type, val: TIM11_DIER_Fields) {.inline.} =
@@ -33611,7 +33611,7 @@ template modifyIt*(reg: TIM11_DIER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM11_SR_Type): TIM11_SR_Fields {.inline.} =
+proc read*(reg: static TIM11_SR_Type): TIM11_SR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_SR_Fields](reg.loc))
 
 proc write*(reg: TIM11_SR_Type, val: TIM11_SR_Fields) {.inline.} =
@@ -33639,7 +33639,7 @@ proc write*(reg: TIM11_EGR_Type, CC1G: bool = false, UG: bool = false) =
   x.setMask((UG.uint32 shl 0).masked(0 .. 0))
   reg.write x.TIM11_EGR_Fields
 
-proc read*(reg: TIM11_CCMR1_Output_Type): TIM11_CCMR1_Output_Fields {.inline.} =
+proc read*(reg: static TIM11_CCMR1_Output_Type): TIM11_CCMR1_Output_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_CCMR1_Output_Fields](reg.loc))
 
 proc write*(reg: TIM11_CCMR1_Output_Type, val: TIM11_CCMR1_Output_Fields) {.inline.} =
@@ -33659,7 +33659,7 @@ template modifyIt*(reg: TIM11_CCMR1_Output_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM11_CCMR1_Input_Type): TIM11_CCMR1_Input_Fields {.inline.} =
+proc read*(reg: static TIM11_CCMR1_Input_Type): TIM11_CCMR1_Input_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_CCMR1_Input_Fields](reg.loc))
 
 proc write*(reg: TIM11_CCMR1_Input_Type, val: TIM11_CCMR1_Input_Fields) {.inline.} =
@@ -33678,7 +33678,7 @@ template modifyIt*(reg: TIM11_CCMR1_Input_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM11_CCER_Type): TIM11_CCER_Fields {.inline.} =
+proc read*(reg: static TIM11_CCER_Type): TIM11_CCER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_CCER_Fields](reg.loc))
 
 proc write*(reg: TIM11_CCER_Type, val: TIM11_CCER_Fields) {.inline.} =
@@ -33697,7 +33697,7 @@ template modifyIt*(reg: TIM11_CCER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM11_CNT_Type): TIM11_CNT_Fields {.inline.} =
+proc read*(reg: static TIM11_CNT_Type): TIM11_CNT_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_CNT_Fields](reg.loc))
 
 proc write*(reg: TIM11_CNT_Type, val: TIM11_CNT_Fields) {.inline.} =
@@ -33714,7 +33714,7 @@ template modifyIt*(reg: TIM11_CNT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM11_PSC_Type): TIM11_PSC_Fields {.inline.} =
+proc read*(reg: static TIM11_PSC_Type): TIM11_PSC_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_PSC_Fields](reg.loc))
 
 proc write*(reg: TIM11_PSC_Type, val: TIM11_PSC_Fields) {.inline.} =
@@ -33731,7 +33731,7 @@ template modifyIt*(reg: TIM11_PSC_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM11_ARR_Type): TIM11_ARR_Fields {.inline.} =
+proc read*(reg: static TIM11_ARR_Type): TIM11_ARR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_ARR_Fields](reg.loc))
 
 proc write*(reg: TIM11_ARR_Type, val: TIM11_ARR_Fields) {.inline.} =
@@ -33748,7 +33748,7 @@ template modifyIt*(reg: TIM11_ARR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM11_CCR1_Type): TIM11_CCR1_Fields {.inline.} =
+proc read*(reg: static TIM11_CCR1_Type): TIM11_CCR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_CCR1_Fields](reg.loc))
 
 proc write*(reg: TIM11_CCR1_Type, val: TIM11_CCR1_Fields) {.inline.} =
@@ -33765,7 +33765,7 @@ template modifyIt*(reg: TIM11_CCR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM11_OR_Type): TIM11_OR_Fields {.inline.} =
+proc read*(reg: static TIM11_OR_Type): TIM11_OR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM11_OR_Fields](reg.loc))
 
 proc write*(reg: TIM11_OR_Type, val: TIM11_OR_Fields) {.inline.} =
@@ -34029,7 +34029,7 @@ type
   TIM6_PSC_Fields* = distinct uint32
   TIM6_ARR_Fields* = distinct uint32
 
-proc read*(reg: TIM6_CR1_Type): TIM6_CR1_Fields {.inline.} =
+proc read*(reg: static TIM6_CR1_Type): TIM6_CR1_Fields {.inline.} =
   volatileLoad(cast[ptr TIM6_CR1_Fields](reg.loc))
 
 proc write*(reg: TIM6_CR1_Type, val: TIM6_CR1_Fields) {.inline.} =
@@ -34050,7 +34050,7 @@ template modifyIt*(reg: TIM6_CR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM6_CR2_Type): TIM6_CR2_Fields {.inline.} =
+proc read*(reg: static TIM6_CR2_Type): TIM6_CR2_Fields {.inline.} =
   volatileLoad(cast[ptr TIM6_CR2_Fields](reg.loc))
 
 proc write*(reg: TIM6_CR2_Type, val: TIM6_CR2_Fields) {.inline.} =
@@ -34067,7 +34067,7 @@ template modifyIt*(reg: TIM6_CR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM6_DIER_Type): TIM6_DIER_Fields {.inline.} =
+proc read*(reg: static TIM6_DIER_Type): TIM6_DIER_Fields {.inline.} =
   volatileLoad(cast[ptr TIM6_DIER_Fields](reg.loc))
 
 proc write*(reg: TIM6_DIER_Type, val: TIM6_DIER_Fields) {.inline.} =
@@ -34085,7 +34085,7 @@ template modifyIt*(reg: TIM6_DIER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM6_SR_Type): TIM6_SR_Fields {.inline.} =
+proc read*(reg: static TIM6_SR_Type): TIM6_SR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM6_SR_Fields](reg.loc))
 
 proc write*(reg: TIM6_SR_Type, val: TIM6_SR_Fields) {.inline.} =
@@ -34110,7 +34110,7 @@ proc write*(reg: TIM6_EGR_Type, UG: bool = false) =
   x.setMask((UG.uint32 shl 0).masked(0 .. 0))
   reg.write x.TIM6_EGR_Fields
 
-proc read*(reg: TIM6_CNT_Type): TIM6_CNT_Fields {.inline.} =
+proc read*(reg: static TIM6_CNT_Type): TIM6_CNT_Fields {.inline.} =
   volatileLoad(cast[ptr TIM6_CNT_Fields](reg.loc))
 
 proc write*(reg: TIM6_CNT_Type, val: TIM6_CNT_Fields) {.inline.} =
@@ -34127,7 +34127,7 @@ template modifyIt*(reg: TIM6_CNT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM6_PSC_Type): TIM6_PSC_Fields {.inline.} =
+proc read*(reg: static TIM6_PSC_Type): TIM6_PSC_Fields {.inline.} =
   volatileLoad(cast[ptr TIM6_PSC_Fields](reg.loc))
 
 proc write*(reg: TIM6_PSC_Type, val: TIM6_PSC_Fields) {.inline.} =
@@ -34144,7 +34144,7 @@ template modifyIt*(reg: TIM6_PSC_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: TIM6_ARR_Type): TIM6_ARR_Fields {.inline.} =
+proc read*(reg: static TIM6_ARR_Type): TIM6_ARR_Fields {.inline.} =
   volatileLoad(cast[ptr TIM6_ARR_Fields](reg.loc))
 
 proc write*(reg: TIM6_ARR_Type, val: TIM6_ARR_Fields) {.inline.} =
@@ -34279,7 +34279,7 @@ type
   CRC_IDR_Fields* = distinct uint32
   CRC_CR_Fields* = distinct uint32
 
-proc read*(reg: CRC_DR_Type): uint32 {.inline.} =
+proc read*(reg: static CRC_DR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: CRC_DR_Type, val: uint32) {.inline.} =
@@ -34291,7 +34291,7 @@ template modifyIt*(reg: CRC_DR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CRC_IDR_Type): CRC_IDR_Fields {.inline.} =
+proc read*(reg: static CRC_IDR_Type): CRC_IDR_Fields {.inline.} =
   volatileLoad(cast[ptr CRC_IDR_Fields](reg.loc))
 
 proc write*(reg: CRC_IDR_Type, val: CRC_IDR_Fields) {.inline.} =
@@ -34351,7 +34351,7 @@ type
   OTG_FS_GLOBAL_FS_DIEPTXF2_Fields* = distinct uint32
   OTG_FS_GLOBAL_FS_DIEPTXF3_Fields* = distinct uint32
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GOTGCTL_Type): OTG_FS_GLOBAL_FS_GOTGCTL_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GOTGCTL_Type): OTG_FS_GLOBAL_FS_GOTGCTL_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GOTGCTL_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GOTGCTL_Type, val: OTG_FS_GLOBAL_FS_GOTGCTL_Fields) {.inline.} =
@@ -34371,7 +34371,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GOTGCTL_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GOTGINT_Type): OTG_FS_GLOBAL_FS_GOTGINT_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GOTGINT_Type): OTG_FS_GLOBAL_FS_GOTGINT_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GOTGINT_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GOTGINT_Type, val: OTG_FS_GLOBAL_FS_GOTGINT_Fields) {.inline.} =
@@ -34393,7 +34393,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GOTGINT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GAHBCFG_Type): OTG_FS_GLOBAL_FS_GAHBCFG_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GAHBCFG_Type): OTG_FS_GLOBAL_FS_GAHBCFG_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GAHBCFG_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GAHBCFG_Type, val: OTG_FS_GLOBAL_FS_GAHBCFG_Fields) {.inline.} =
@@ -34412,7 +34412,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GAHBCFG_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GUSBCFG_Type): OTG_FS_GLOBAL_FS_GUSBCFG_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GUSBCFG_Type): OTG_FS_GLOBAL_FS_GUSBCFG_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GUSBCFG_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GUSBCFG_Type, val: OTG_FS_GLOBAL_FS_GUSBCFG_Fields) {.inline.} =
@@ -34436,7 +34436,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GUSBCFG_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GRSTCTL_Type): OTG_FS_GLOBAL_FS_GRSTCTL_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GRSTCTL_Type): OTG_FS_GLOBAL_FS_GRSTCTL_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GRSTCTL_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GRSTCTL_Type, val: OTG_FS_GLOBAL_FS_GRSTCTL_Fields) {.inline.} =
@@ -34458,7 +34458,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GRSTCTL_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GINTSTS_Type): OTG_FS_GLOBAL_FS_GINTSTS_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GINTSTS_Type): OTG_FS_GLOBAL_FS_GINTSTS_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GINTSTS_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GINTSTS_Type, val: OTG_FS_GLOBAL_FS_GINTSTS_Fields) {.inline.} =
@@ -34488,7 +34488,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GINTSTS_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GINTMSK_Type): OTG_FS_GLOBAL_FS_GINTMSK_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GINTMSK_Type): OTG_FS_GLOBAL_FS_GINTMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GINTMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GINTMSK_Type, val: OTG_FS_GLOBAL_FS_GINTMSK_Fields) {.inline.} =
@@ -34528,13 +34528,13 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GINTMSK_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GRXSTSR_Device_Type): OTG_FS_GLOBAL_FS_GRXSTSR_Device_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GRXSTSR_Device_Type): OTG_FS_GLOBAL_FS_GRXSTSR_Device_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GRXSTSR_Device_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GRXSTSR_Host_Type): OTG_FS_GLOBAL_FS_GRXSTSR_Host_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GRXSTSR_Host_Type): OTG_FS_GLOBAL_FS_GRXSTSR_Host_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GRXSTSR_Host_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GRXFSIZ_Type): OTG_FS_GLOBAL_FS_GRXFSIZ_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GRXFSIZ_Type): OTG_FS_GLOBAL_FS_GRXFSIZ_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GRXFSIZ_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GRXFSIZ_Type, val: OTG_FS_GLOBAL_FS_GRXFSIZ_Fields) {.inline.} =
@@ -34551,7 +34551,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GRXFSIZ_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GNPTXFSIZ_Device_Type): OTG_FS_GLOBAL_FS_GNPTXFSIZ_Device_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GNPTXFSIZ_Device_Type): OTG_FS_GLOBAL_FS_GNPTXFSIZ_Device_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GNPTXFSIZ_Device_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GNPTXFSIZ_Device_Type, val: OTG_FS_GLOBAL_FS_GNPTXFSIZ_Device_Fields) {.inline.} =
@@ -34569,7 +34569,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GNPTXFSIZ_Device_Type, op: untyped): un
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GNPTXFSIZ_Host_Type): OTG_FS_GLOBAL_FS_GNPTXFSIZ_Host_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GNPTXFSIZ_Host_Type): OTG_FS_GLOBAL_FS_GNPTXFSIZ_Host_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GNPTXFSIZ_Host_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GNPTXFSIZ_Host_Type, val: OTG_FS_GLOBAL_FS_GNPTXFSIZ_Host_Fields) {.inline.} =
@@ -34587,10 +34587,10 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GNPTXFSIZ_Host_Type, op: untyped): unty
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GNPTXSTS_Type): OTG_FS_GLOBAL_FS_GNPTXSTS_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GNPTXSTS_Type): OTG_FS_GLOBAL_FS_GNPTXSTS_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GNPTXSTS_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_GLOBAL_FS_GCCFG_Type): OTG_FS_GLOBAL_FS_GCCFG_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_GCCFG_Type): OTG_FS_GLOBAL_FS_GCCFG_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_GCCFG_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_GCCFG_Type, val: OTG_FS_GLOBAL_FS_GCCFG_Fields) {.inline.} =
@@ -34610,7 +34610,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_GCCFG_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_CID_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_CID_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_CID_Type, val: uint32) {.inline.} =
@@ -34622,7 +34622,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_CID_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_HPTXFSIZ_Type): OTG_FS_GLOBAL_FS_HPTXFSIZ_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_HPTXFSIZ_Type): OTG_FS_GLOBAL_FS_HPTXFSIZ_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_HPTXFSIZ_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_HPTXFSIZ_Type, val: OTG_FS_GLOBAL_FS_HPTXFSIZ_Fields) {.inline.} =
@@ -34640,7 +34640,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_HPTXFSIZ_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_DIEPTXF1_Type): OTG_FS_GLOBAL_FS_DIEPTXF1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_DIEPTXF1_Type): OTG_FS_GLOBAL_FS_DIEPTXF1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_DIEPTXF1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_DIEPTXF1_Type, val: OTG_FS_GLOBAL_FS_DIEPTXF1_Fields) {.inline.} =
@@ -34658,7 +34658,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_DIEPTXF1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_DIEPTXF2_Type): OTG_FS_GLOBAL_FS_DIEPTXF2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_DIEPTXF2_Type): OTG_FS_GLOBAL_FS_DIEPTXF2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_DIEPTXF2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_DIEPTXF2_Type, val: OTG_FS_GLOBAL_FS_DIEPTXF2_Fields) {.inline.} =
@@ -34676,7 +34676,7 @@ template modifyIt*(reg: OTG_FS_GLOBAL_FS_DIEPTXF2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_GLOBAL_FS_DIEPTXF3_Type): OTG_FS_GLOBAL_FS_DIEPTXF3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_GLOBAL_FS_DIEPTXF3_Type): OTG_FS_GLOBAL_FS_DIEPTXF3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_GLOBAL_FS_DIEPTXF3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_GLOBAL_FS_DIEPTXF3_Type, val: OTG_FS_GLOBAL_FS_DIEPTXF3_Fields) {.inline.} =
@@ -35582,7 +35582,7 @@ type
   OTG_FS_HOST_FS_HCTSIZ10_Fields* = distinct uint32
   OTG_FS_HOST_FS_HCTSIZ11_Fields* = distinct uint32
 
-proc read*(reg: OTG_FS_HOST_FS_HCFG_Type): OTG_FS_HOST_FS_HCFG_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCFG_Type): OTG_FS_HOST_FS_HCFG_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCFG_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCFG_Type, val: OTG_FS_HOST_FS_HCFG_Fields) {.inline.} =
@@ -35599,7 +35599,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCFG_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_HFIR_Type): OTG_FS_HOST_HFIR_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_HFIR_Type): OTG_FS_HOST_HFIR_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_HFIR_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_HFIR_Type, val: OTG_FS_HOST_HFIR_Fields) {.inline.} =
@@ -35616,10 +35616,10 @@ template modifyIt*(reg: OTG_FS_HOST_HFIR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HFNUM_Type): OTG_FS_HOST_FS_HFNUM_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HFNUM_Type): OTG_FS_HOST_FS_HFNUM_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HFNUM_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_HOST_FS_HPTXSTS_Type): OTG_FS_HOST_FS_HPTXSTS_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HPTXSTS_Type): OTG_FS_HOST_FS_HPTXSTS_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HPTXSTS_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HPTXSTS_Type, val: OTG_FS_HOST_FS_HPTXSTS_Fields) {.inline.} =
@@ -35636,10 +35636,10 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HPTXSTS_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_HAINT_Type): OTG_FS_HOST_HAINT_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_HAINT_Type): OTG_FS_HOST_HAINT_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_HAINT_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_HOST_HAINTMSK_Type): OTG_FS_HOST_HAINTMSK_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_HAINTMSK_Type): OTG_FS_HOST_HAINTMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_HAINTMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_HAINTMSK_Type, val: OTG_FS_HOST_HAINTMSK_Fields) {.inline.} =
@@ -35656,7 +35656,7 @@ template modifyIt*(reg: OTG_FS_HOST_HAINTMSK_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HPRT_Type): OTG_FS_HOST_FS_HPRT_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HPRT_Type): OTG_FS_HOST_FS_HPRT_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HPRT_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HPRT_Type, val: OTG_FS_HOST_FS_HPRT_Fields) {.inline.} =
@@ -35681,7 +35681,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HPRT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR0_Type): OTG_FS_HOST_FS_HCCHAR0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR0_Type): OTG_FS_HOST_FS_HCCHAR0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR0_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR0_Type, val: OTG_FS_HOST_FS_HCCHAR0_Fields) {.inline.} =
@@ -35707,7 +35707,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR1_Type): OTG_FS_HOST_FS_HCCHAR1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR1_Type): OTG_FS_HOST_FS_HCCHAR1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR1_Type, val: OTG_FS_HOST_FS_HCCHAR1_Fields) {.inline.} =
@@ -35733,7 +35733,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR2_Type): OTG_FS_HOST_FS_HCCHAR2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR2_Type): OTG_FS_HOST_FS_HCCHAR2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR2_Type, val: OTG_FS_HOST_FS_HCCHAR2_Fields) {.inline.} =
@@ -35759,7 +35759,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR3_Type): OTG_FS_HOST_FS_HCCHAR3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR3_Type): OTG_FS_HOST_FS_HCCHAR3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR3_Type, val: OTG_FS_HOST_FS_HCCHAR3_Fields) {.inline.} =
@@ -35785,7 +35785,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR4_Type): OTG_FS_HOST_FS_HCCHAR4_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR4_Type): OTG_FS_HOST_FS_HCCHAR4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR4_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR4_Type, val: OTG_FS_HOST_FS_HCCHAR4_Fields) {.inline.} =
@@ -35811,7 +35811,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR5_Type): OTG_FS_HOST_FS_HCCHAR5_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR5_Type): OTG_FS_HOST_FS_HCCHAR5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR5_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR5_Type, val: OTG_FS_HOST_FS_HCCHAR5_Fields) {.inline.} =
@@ -35837,7 +35837,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR5_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR6_Type): OTG_FS_HOST_FS_HCCHAR6_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR6_Type): OTG_FS_HOST_FS_HCCHAR6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR6_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR6_Type, val: OTG_FS_HOST_FS_HCCHAR6_Fields) {.inline.} =
@@ -35863,7 +35863,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR6_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR7_Type): OTG_FS_HOST_FS_HCCHAR7_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR7_Type): OTG_FS_HOST_FS_HCCHAR7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR7_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR7_Type, val: OTG_FS_HOST_FS_HCCHAR7_Fields) {.inline.} =
@@ -35889,7 +35889,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR7_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR8_Type): OTG_FS_HOST_FS_HCCHAR8_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR8_Type): OTG_FS_HOST_FS_HCCHAR8_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR8_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR8_Type, val: OTG_FS_HOST_FS_HCCHAR8_Fields) {.inline.} =
@@ -35915,7 +35915,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR8_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR9_Type): OTG_FS_HOST_FS_HCCHAR9_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR9_Type): OTG_FS_HOST_FS_HCCHAR9_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR9_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR9_Type, val: OTG_FS_HOST_FS_HCCHAR9_Fields) {.inline.} =
@@ -35941,7 +35941,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR9_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR10_Type): OTG_FS_HOST_FS_HCCHAR10_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR10_Type): OTG_FS_HOST_FS_HCCHAR10_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR10_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR10_Type, val: OTG_FS_HOST_FS_HCCHAR10_Fields) {.inline.} =
@@ -35967,7 +35967,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR10_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCCHAR11_Type): OTG_FS_HOST_FS_HCCHAR11_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCCHAR11_Type): OTG_FS_HOST_FS_HCCHAR11_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCCHAR11_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCCHAR11_Type, val: OTG_FS_HOST_FS_HCCHAR11_Fields) {.inline.} =
@@ -35993,7 +35993,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCCHAR11_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT0_Type): OTG_FS_HOST_FS_HCINT0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT0_Type): OTG_FS_HOST_FS_HCINT0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT0_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT0_Type, val: OTG_FS_HOST_FS_HCINT0_Fields) {.inline.} =
@@ -36018,7 +36018,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT1_Type): OTG_FS_HOST_FS_HCINT1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT1_Type): OTG_FS_HOST_FS_HCINT1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT1_Type, val: OTG_FS_HOST_FS_HCINT1_Fields) {.inline.} =
@@ -36043,7 +36043,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT2_Type): OTG_FS_HOST_FS_HCINT2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT2_Type): OTG_FS_HOST_FS_HCINT2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT2_Type, val: OTG_FS_HOST_FS_HCINT2_Fields) {.inline.} =
@@ -36068,7 +36068,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT3_Type): OTG_FS_HOST_FS_HCINT3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT3_Type): OTG_FS_HOST_FS_HCINT3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT3_Type, val: OTG_FS_HOST_FS_HCINT3_Fields) {.inline.} =
@@ -36093,7 +36093,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT4_Type): OTG_FS_HOST_FS_HCINT4_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT4_Type): OTG_FS_HOST_FS_HCINT4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT4_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT4_Type, val: OTG_FS_HOST_FS_HCINT4_Fields) {.inline.} =
@@ -36118,7 +36118,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT5_Type): OTG_FS_HOST_FS_HCINT5_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT5_Type): OTG_FS_HOST_FS_HCINT5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT5_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT5_Type, val: OTG_FS_HOST_FS_HCINT5_Fields) {.inline.} =
@@ -36143,7 +36143,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT5_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT6_Type): OTG_FS_HOST_FS_HCINT6_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT6_Type): OTG_FS_HOST_FS_HCINT6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT6_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT6_Type, val: OTG_FS_HOST_FS_HCINT6_Fields) {.inline.} =
@@ -36168,7 +36168,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT6_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT7_Type): OTG_FS_HOST_FS_HCINT7_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT7_Type): OTG_FS_HOST_FS_HCINT7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT7_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT7_Type, val: OTG_FS_HOST_FS_HCINT7_Fields) {.inline.} =
@@ -36193,7 +36193,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT7_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT8_Type): OTG_FS_HOST_FS_HCINT8_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT8_Type): OTG_FS_HOST_FS_HCINT8_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT8_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT8_Type, val: OTG_FS_HOST_FS_HCINT8_Fields) {.inline.} =
@@ -36220,7 +36220,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT8_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT9_Type): OTG_FS_HOST_FS_HCINT9_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT9_Type): OTG_FS_HOST_FS_HCINT9_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT9_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT9_Type, val: OTG_FS_HOST_FS_HCINT9_Fields) {.inline.} =
@@ -36247,7 +36247,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT9_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT10_Type): OTG_FS_HOST_FS_HCINT10_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT10_Type): OTG_FS_HOST_FS_HCINT10_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT10_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT10_Type, val: OTG_FS_HOST_FS_HCINT10_Fields) {.inline.} =
@@ -36274,7 +36274,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT10_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINT11_Type): OTG_FS_HOST_FS_HCINT11_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINT11_Type): OTG_FS_HOST_FS_HCINT11_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINT11_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINT11_Type, val: OTG_FS_HOST_FS_HCINT11_Fields) {.inline.} =
@@ -36301,7 +36301,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINT11_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK0_Type): OTG_FS_HOST_FS_HCINTMSK0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK0_Type): OTG_FS_HOST_FS_HCINTMSK0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK0_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK0_Type, val: OTG_FS_HOST_FS_HCINTMSK0_Fields) {.inline.} =
@@ -36327,7 +36327,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK1_Type): OTG_FS_HOST_FS_HCINTMSK1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK1_Type): OTG_FS_HOST_FS_HCINTMSK1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK1_Type, val: OTG_FS_HOST_FS_HCINTMSK1_Fields) {.inline.} =
@@ -36353,7 +36353,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK2_Type): OTG_FS_HOST_FS_HCINTMSK2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK2_Type): OTG_FS_HOST_FS_HCINTMSK2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK2_Type, val: OTG_FS_HOST_FS_HCINTMSK2_Fields) {.inline.} =
@@ -36379,7 +36379,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK3_Type): OTG_FS_HOST_FS_HCINTMSK3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK3_Type): OTG_FS_HOST_FS_HCINTMSK3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK3_Type, val: OTG_FS_HOST_FS_HCINTMSK3_Fields) {.inline.} =
@@ -36405,7 +36405,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK4_Type): OTG_FS_HOST_FS_HCINTMSK4_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK4_Type): OTG_FS_HOST_FS_HCINTMSK4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK4_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK4_Type, val: OTG_FS_HOST_FS_HCINTMSK4_Fields) {.inline.} =
@@ -36431,7 +36431,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK5_Type): OTG_FS_HOST_FS_HCINTMSK5_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK5_Type): OTG_FS_HOST_FS_HCINTMSK5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK5_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK5_Type, val: OTG_FS_HOST_FS_HCINTMSK5_Fields) {.inline.} =
@@ -36457,7 +36457,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK5_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK6_Type): OTG_FS_HOST_FS_HCINTMSK6_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK6_Type): OTG_FS_HOST_FS_HCINTMSK6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK6_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK6_Type, val: OTG_FS_HOST_FS_HCINTMSK6_Fields) {.inline.} =
@@ -36483,7 +36483,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK6_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK7_Type): OTG_FS_HOST_FS_HCINTMSK7_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK7_Type): OTG_FS_HOST_FS_HCINTMSK7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK7_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK7_Type, val: OTG_FS_HOST_FS_HCINTMSK7_Fields) {.inline.} =
@@ -36509,7 +36509,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK7_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK8_Type): OTG_FS_HOST_FS_HCINTMSK8_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK8_Type): OTG_FS_HOST_FS_HCINTMSK8_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK8_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK8_Type, val: OTG_FS_HOST_FS_HCINTMSK8_Fields) {.inline.} =
@@ -36536,7 +36536,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK8_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK9_Type): OTG_FS_HOST_FS_HCINTMSK9_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK9_Type): OTG_FS_HOST_FS_HCINTMSK9_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK9_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK9_Type, val: OTG_FS_HOST_FS_HCINTMSK9_Fields) {.inline.} =
@@ -36563,7 +36563,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK9_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK10_Type): OTG_FS_HOST_FS_HCINTMSK10_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK10_Type): OTG_FS_HOST_FS_HCINTMSK10_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK10_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK10_Type, val: OTG_FS_HOST_FS_HCINTMSK10_Fields) {.inline.} =
@@ -36590,7 +36590,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK10_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCINTMSK11_Type): OTG_FS_HOST_FS_HCINTMSK11_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCINTMSK11_Type): OTG_FS_HOST_FS_HCINTMSK11_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCINTMSK11_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCINTMSK11_Type, val: OTG_FS_HOST_FS_HCINTMSK11_Fields) {.inline.} =
@@ -36617,7 +36617,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCINTMSK11_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ0_Type): OTG_FS_HOST_FS_HCTSIZ0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ0_Type): OTG_FS_HOST_FS_HCTSIZ0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ0_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ0_Type, val: OTG_FS_HOST_FS_HCTSIZ0_Fields) {.inline.} =
@@ -36636,7 +36636,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ1_Type): OTG_FS_HOST_FS_HCTSIZ1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ1_Type): OTG_FS_HOST_FS_HCTSIZ1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ1_Type, val: OTG_FS_HOST_FS_HCTSIZ1_Fields) {.inline.} =
@@ -36655,7 +36655,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ2_Type): OTG_FS_HOST_FS_HCTSIZ2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ2_Type): OTG_FS_HOST_FS_HCTSIZ2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ2_Type, val: OTG_FS_HOST_FS_HCTSIZ2_Fields) {.inline.} =
@@ -36674,7 +36674,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ3_Type): OTG_FS_HOST_FS_HCTSIZ3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ3_Type): OTG_FS_HOST_FS_HCTSIZ3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ3_Type, val: OTG_FS_HOST_FS_HCTSIZ3_Fields) {.inline.} =
@@ -36693,7 +36693,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ4_Type): OTG_FS_HOST_FS_HCTSIZ4_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ4_Type): OTG_FS_HOST_FS_HCTSIZ4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ4_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ4_Type, val: OTG_FS_HOST_FS_HCTSIZ4_Fields) {.inline.} =
@@ -36712,7 +36712,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ5_Type): OTG_FS_HOST_FS_HCTSIZ5_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ5_Type): OTG_FS_HOST_FS_HCTSIZ5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ5_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ5_Type, val: OTG_FS_HOST_FS_HCTSIZ5_Fields) {.inline.} =
@@ -36731,7 +36731,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ5_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ6_Type): OTG_FS_HOST_FS_HCTSIZ6_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ6_Type): OTG_FS_HOST_FS_HCTSIZ6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ6_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ6_Type, val: OTG_FS_HOST_FS_HCTSIZ6_Fields) {.inline.} =
@@ -36750,7 +36750,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ6_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ7_Type): OTG_FS_HOST_FS_HCTSIZ7_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ7_Type): OTG_FS_HOST_FS_HCTSIZ7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ7_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ7_Type, val: OTG_FS_HOST_FS_HCTSIZ7_Fields) {.inline.} =
@@ -36769,7 +36769,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ7_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ8_Type): OTG_FS_HOST_FS_HCTSIZ8_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ8_Type): OTG_FS_HOST_FS_HCTSIZ8_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ8_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ8_Type, val: OTG_FS_HOST_FS_HCTSIZ8_Fields) {.inline.} =
@@ -36788,7 +36788,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ8_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ9_Type): OTG_FS_HOST_FS_HCTSIZ9_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ9_Type): OTG_FS_HOST_FS_HCTSIZ9_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ9_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ9_Type, val: OTG_FS_HOST_FS_HCTSIZ9_Fields) {.inline.} =
@@ -36807,7 +36807,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ9_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ10_Type): OTG_FS_HOST_FS_HCTSIZ10_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ10_Type): OTG_FS_HOST_FS_HCTSIZ10_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ10_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ10_Type, val: OTG_FS_HOST_FS_HCTSIZ10_Fields) {.inline.} =
@@ -36826,7 +36826,7 @@ template modifyIt*(reg: OTG_FS_HOST_FS_HCTSIZ10_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_HOST_FS_HCTSIZ11_Type): OTG_FS_HOST_FS_HCTSIZ11_Fields {.inline.} =
+proc read*(reg: static OTG_FS_HOST_FS_HCTSIZ11_Type): OTG_FS_HOST_FS_HCTSIZ11_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_HOST_FS_HCTSIZ11_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_HOST_FS_HCTSIZ11_Type, val: OTG_FS_HOST_FS_HCTSIZ11_Fields) {.inline.} =
@@ -40596,7 +40596,7 @@ type
   OTG_FS_DEVICE_DOEPTSIZ2_Fields* = distinct uint32
   OTG_FS_DEVICE_DOEPTSIZ3_Fields* = distinct uint32
 
-proc read*(reg: OTG_FS_DEVICE_FS_DCFG_Type): OTG_FS_DEVICE_FS_DCFG_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_FS_DCFG_Type): OTG_FS_DEVICE_FS_DCFG_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_FS_DCFG_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_FS_DCFG_Type, val: OTG_FS_DEVICE_FS_DCFG_Fields) {.inline.} =
@@ -40617,7 +40617,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_FS_DCFG_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_FS_DCTL_Type): OTG_FS_DEVICE_FS_DCTL_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_FS_DCTL_Type): OTG_FS_DEVICE_FS_DCTL_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_FS_DCTL_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_FS_DCTL_Type, val: OTG_FS_DEVICE_FS_DCTL_Fields) {.inline.} =
@@ -40641,10 +40641,10 @@ template modifyIt*(reg: OTG_FS_DEVICE_FS_DCTL_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_FS_DSTS_Type): OTG_FS_DEVICE_FS_DSTS_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_FS_DSTS_Type): OTG_FS_DEVICE_FS_DSTS_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_FS_DSTS_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_DEVICE_FS_DIEPMSK_Type): OTG_FS_DEVICE_FS_DIEPMSK_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_FS_DIEPMSK_Type): OTG_FS_DEVICE_FS_DIEPMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_FS_DIEPMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_FS_DIEPMSK_Type, val: OTG_FS_DEVICE_FS_DIEPMSK_Fields) {.inline.} =
@@ -40666,7 +40666,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_FS_DIEPMSK_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_FS_DOEPMSK_Type): OTG_FS_DEVICE_FS_DOEPMSK_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_FS_DOEPMSK_Type): OTG_FS_DEVICE_FS_DOEPMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_FS_DOEPMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_FS_DOEPMSK_Type, val: OTG_FS_DEVICE_FS_DOEPMSK_Fields) {.inline.} =
@@ -40686,10 +40686,10 @@ template modifyIt*(reg: OTG_FS_DEVICE_FS_DOEPMSK_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_FS_DAINT_Type): OTG_FS_DEVICE_FS_DAINT_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_FS_DAINT_Type): OTG_FS_DEVICE_FS_DAINT_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_FS_DAINT_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_DEVICE_FS_DAINTMSK_Type): OTG_FS_DEVICE_FS_DAINTMSK_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_FS_DAINTMSK_Type): OTG_FS_DEVICE_FS_DAINTMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_FS_DAINTMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_FS_DAINTMSK_Type, val: OTG_FS_DEVICE_FS_DAINTMSK_Fields) {.inline.} =
@@ -40707,7 +40707,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_FS_DAINTMSK_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DVBUSDIS_Type): OTG_FS_DEVICE_DVBUSDIS_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DVBUSDIS_Type): OTG_FS_DEVICE_DVBUSDIS_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DVBUSDIS_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DVBUSDIS_Type, val: OTG_FS_DEVICE_DVBUSDIS_Fields) {.inline.} =
@@ -40724,7 +40724,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DVBUSDIS_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DVBUSPULSE_Type): OTG_FS_DEVICE_DVBUSPULSE_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DVBUSPULSE_Type): OTG_FS_DEVICE_DVBUSPULSE_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DVBUSPULSE_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DVBUSPULSE_Type, val: OTG_FS_DEVICE_DVBUSPULSE_Fields) {.inline.} =
@@ -40741,7 +40741,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DVBUSPULSE_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPEMPMSK_Type): OTG_FS_DEVICE_DIEPEMPMSK_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPEMPMSK_Type): OTG_FS_DEVICE_DIEPEMPMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPEMPMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPEMPMSK_Type, val: OTG_FS_DEVICE_DIEPEMPMSK_Fields) {.inline.} =
@@ -40758,7 +40758,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPEMPMSK_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_FS_DIEPCTL0_Type): OTG_FS_DEVICE_FS_DIEPCTL0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_FS_DIEPCTL0_Type): OTG_FS_DEVICE_FS_DIEPCTL0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_FS_DIEPCTL0_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_FS_DIEPCTL0_Type, val: OTG_FS_DEVICE_FS_DIEPCTL0_Fields) {.inline.} =
@@ -40779,7 +40779,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_FS_DIEPCTL0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPCTL1_Type): OTG_FS_DEVICE_DIEPCTL1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPCTL1_Type): OTG_FS_DEVICE_DIEPCTL1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPCTL1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPCTL1_Type, val: OTG_FS_DEVICE_DIEPCTL1_Fields) {.inline.} =
@@ -40806,7 +40806,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPCTL1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPCTL2_Type): OTG_FS_DEVICE_DIEPCTL2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPCTL2_Type): OTG_FS_DEVICE_DIEPCTL2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPCTL2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPCTL2_Type, val: OTG_FS_DEVICE_DIEPCTL2_Fields) {.inline.} =
@@ -40833,7 +40833,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPCTL2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPCTL3_Type): OTG_FS_DEVICE_DIEPCTL3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPCTL3_Type): OTG_FS_DEVICE_DIEPCTL3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPCTL3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPCTL3_Type, val: OTG_FS_DEVICE_DIEPCTL3_Fields) {.inline.} =
@@ -40860,7 +40860,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPCTL3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPCTL0_Type): OTG_FS_DEVICE_DOEPCTL0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPCTL0_Type): OTG_FS_DEVICE_DOEPCTL0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPCTL0_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPCTL0_Type, val: OTG_FS_DEVICE_DOEPCTL0_Fields) {.inline.} =
@@ -40881,7 +40881,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPCTL0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPCTL1_Type): OTG_FS_DEVICE_DOEPCTL1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPCTL1_Type): OTG_FS_DEVICE_DOEPCTL1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPCTL1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPCTL1_Type, val: OTG_FS_DEVICE_DOEPCTL1_Fields) {.inline.} =
@@ -40908,7 +40908,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPCTL1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPCTL2_Type): OTG_FS_DEVICE_DOEPCTL2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPCTL2_Type): OTG_FS_DEVICE_DOEPCTL2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPCTL2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPCTL2_Type, val: OTG_FS_DEVICE_DOEPCTL2_Fields) {.inline.} =
@@ -40935,7 +40935,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPCTL2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPCTL3_Type): OTG_FS_DEVICE_DOEPCTL3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPCTL3_Type): OTG_FS_DEVICE_DOEPCTL3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPCTL3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPCTL3_Type, val: OTG_FS_DEVICE_DOEPCTL3_Fields) {.inline.} =
@@ -40962,7 +40962,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPCTL3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPINT0_Type): OTG_FS_DEVICE_DIEPINT0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPINT0_Type): OTG_FS_DEVICE_DIEPINT0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPINT0_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPINT0_Type, val: OTG_FS_DEVICE_DIEPINT0_Fields) {.inline.} =
@@ -40983,7 +40983,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPINT0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPINT1_Type): OTG_FS_DEVICE_DIEPINT1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPINT1_Type): OTG_FS_DEVICE_DIEPINT1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPINT1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPINT1_Type, val: OTG_FS_DEVICE_DIEPINT1_Fields) {.inline.} =
@@ -41004,7 +41004,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPINT1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPINT2_Type): OTG_FS_DEVICE_DIEPINT2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPINT2_Type): OTG_FS_DEVICE_DIEPINT2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPINT2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPINT2_Type, val: OTG_FS_DEVICE_DIEPINT2_Fields) {.inline.} =
@@ -41025,7 +41025,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPINT2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPINT3_Type): OTG_FS_DEVICE_DIEPINT3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPINT3_Type): OTG_FS_DEVICE_DIEPINT3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPINT3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPINT3_Type, val: OTG_FS_DEVICE_DIEPINT3_Fields) {.inline.} =
@@ -41046,7 +41046,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPINT3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPINT0_Type): OTG_FS_DEVICE_DOEPINT0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPINT0_Type): OTG_FS_DEVICE_DOEPINT0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPINT0_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPINT0_Type, val: OTG_FS_DEVICE_DOEPINT0_Fields) {.inline.} =
@@ -41067,7 +41067,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPINT0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPINT1_Type): OTG_FS_DEVICE_DOEPINT1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPINT1_Type): OTG_FS_DEVICE_DOEPINT1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPINT1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPINT1_Type, val: OTG_FS_DEVICE_DOEPINT1_Fields) {.inline.} =
@@ -41088,7 +41088,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPINT1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPINT2_Type): OTG_FS_DEVICE_DOEPINT2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPINT2_Type): OTG_FS_DEVICE_DOEPINT2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPINT2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPINT2_Type, val: OTG_FS_DEVICE_DOEPINT2_Fields) {.inline.} =
@@ -41109,7 +41109,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPINT2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPINT3_Type): OTG_FS_DEVICE_DOEPINT3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPINT3_Type): OTG_FS_DEVICE_DOEPINT3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPINT3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPINT3_Type, val: OTG_FS_DEVICE_DOEPINT3_Fields) {.inline.} =
@@ -41130,7 +41130,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPINT3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPTSIZ0_Type): OTG_FS_DEVICE_DIEPTSIZ0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPTSIZ0_Type): OTG_FS_DEVICE_DIEPTSIZ0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPTSIZ0_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPTSIZ0_Type, val: OTG_FS_DEVICE_DIEPTSIZ0_Fields) {.inline.} =
@@ -41148,7 +41148,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPTSIZ0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPTSIZ0_Type): OTG_FS_DEVICE_DOEPTSIZ0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPTSIZ0_Type): OTG_FS_DEVICE_DOEPTSIZ0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPTSIZ0_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPTSIZ0_Type, val: OTG_FS_DEVICE_DOEPTSIZ0_Fields) {.inline.} =
@@ -41167,7 +41167,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPTSIZ0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPTSIZ1_Type): OTG_FS_DEVICE_DIEPTSIZ1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPTSIZ1_Type): OTG_FS_DEVICE_DIEPTSIZ1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPTSIZ1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPTSIZ1_Type, val: OTG_FS_DEVICE_DIEPTSIZ1_Fields) {.inline.} =
@@ -41186,7 +41186,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPTSIZ1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPTSIZ2_Type): OTG_FS_DEVICE_DIEPTSIZ2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPTSIZ2_Type): OTG_FS_DEVICE_DIEPTSIZ2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPTSIZ2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPTSIZ2_Type, val: OTG_FS_DEVICE_DIEPTSIZ2_Fields) {.inline.} =
@@ -41205,7 +41205,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPTSIZ2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DIEPTSIZ3_Type): OTG_FS_DEVICE_DIEPTSIZ3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DIEPTSIZ3_Type): OTG_FS_DEVICE_DIEPTSIZ3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DIEPTSIZ3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DIEPTSIZ3_Type, val: OTG_FS_DEVICE_DIEPTSIZ3_Fields) {.inline.} =
@@ -41224,19 +41224,19 @@ template modifyIt*(reg: OTG_FS_DEVICE_DIEPTSIZ3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DTXFSTS0_Type): OTG_FS_DEVICE_DTXFSTS0_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DTXFSTS0_Type): OTG_FS_DEVICE_DTXFSTS0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DTXFSTS0_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_DEVICE_DTXFSTS1_Type): OTG_FS_DEVICE_DTXFSTS1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DTXFSTS1_Type): OTG_FS_DEVICE_DTXFSTS1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DTXFSTS1_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_DEVICE_DTXFSTS2_Type): OTG_FS_DEVICE_DTXFSTS2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DTXFSTS2_Type): OTG_FS_DEVICE_DTXFSTS2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DTXFSTS2_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_DEVICE_DTXFSTS3_Type): OTG_FS_DEVICE_DTXFSTS3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DTXFSTS3_Type): OTG_FS_DEVICE_DTXFSTS3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DTXFSTS3_Fields](reg.loc))
 
-proc read*(reg: OTG_FS_DEVICE_DOEPTSIZ1_Type): OTG_FS_DEVICE_DOEPTSIZ1_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPTSIZ1_Type): OTG_FS_DEVICE_DOEPTSIZ1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPTSIZ1_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPTSIZ1_Type, val: OTG_FS_DEVICE_DOEPTSIZ1_Fields) {.inline.} =
@@ -41255,7 +41255,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPTSIZ1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPTSIZ2_Type): OTG_FS_DEVICE_DOEPTSIZ2_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPTSIZ2_Type): OTG_FS_DEVICE_DOEPTSIZ2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPTSIZ2_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPTSIZ2_Type, val: OTG_FS_DEVICE_DOEPTSIZ2_Fields) {.inline.} =
@@ -41274,7 +41274,7 @@ template modifyIt*(reg: OTG_FS_DEVICE_DOEPTSIZ2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_FS_DEVICE_DOEPTSIZ3_Type): OTG_FS_DEVICE_DOEPTSIZ3_Fields {.inline.} =
+proc read*(reg: static OTG_FS_DEVICE_DOEPTSIZ3_Type): OTG_FS_DEVICE_DOEPTSIZ3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_DEVICE_DOEPTSIZ3_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_DEVICE_DOEPTSIZ3_Type, val: OTG_FS_DEVICE_DOEPTSIZ3_Fields) {.inline.} =
@@ -42826,7 +42826,7 @@ proc `XFRSIZ=`*(r: var OTG_FS_DEVICE_DOEPTSIZ3_Fields, val: uint32) {.inline.} =
 type
   OTG_FS_PWRCLK_FS_PCGCCTL_Fields* = distinct uint32
 
-proc read*(reg: OTG_FS_PWRCLK_FS_PCGCCTL_Type): OTG_FS_PWRCLK_FS_PCGCCTL_Fields {.inline.} =
+proc read*(reg: static OTG_FS_PWRCLK_FS_PCGCCTL_Type): OTG_FS_PWRCLK_FS_PCGCCTL_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_FS_PWRCLK_FS_PCGCCTL_Fields](reg.loc))
 
 proc write*(reg: OTG_FS_PWRCLK_FS_PCGCCTL_Type, val: OTG_FS_PWRCLK_FS_PCGCCTL_Fields) {.inline.} =
@@ -42963,7 +42963,7 @@ type
   CAN1_F27R1_Fields* = distinct uint32
   CAN1_F27R2_Fields* = distinct uint32
 
-proc read*(reg: CAN1_MCR_Type): CAN1_MCR_Fields {.inline.} =
+proc read*(reg: static CAN1_MCR_Type): CAN1_MCR_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_MCR_Fields](reg.loc))
 
 proc write*(reg: CAN1_MCR_Type, val: CAN1_MCR_Fields) {.inline.} =
@@ -42989,7 +42989,7 @@ template modifyIt*(reg: CAN1_MCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_MSR_Type): CAN1_MSR_Fields {.inline.} =
+proc read*(reg: static CAN1_MSR_Type): CAN1_MSR_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_MSR_Fields](reg.loc))
 
 proc write*(reg: CAN1_MSR_Type, val: CAN1_MSR_Fields) {.inline.} =
@@ -43008,7 +43008,7 @@ template modifyIt*(reg: CAN1_MSR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TSR_Type): CAN1_TSR_Fields {.inline.} =
+proc read*(reg: static CAN1_TSR_Type): CAN1_TSR_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TSR_Fields](reg.loc))
 
 proc write*(reg: CAN1_TSR_Type, val: CAN1_TSR_Fields) {.inline.} =
@@ -43039,7 +43039,7 @@ template modifyIt*(reg: CAN1_TSR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_RF0R_Type): CAN1_RF0R_Fields {.inline.} =
+proc read*(reg: static CAN1_RF0R_Type): CAN1_RF0R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_RF0R_Fields](reg.loc))
 
 proc write*(reg: CAN1_RF0R_Type, val: CAN1_RF0R_Fields) {.inline.} =
@@ -43058,7 +43058,7 @@ template modifyIt*(reg: CAN1_RF0R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_RF1R_Type): CAN1_RF1R_Fields {.inline.} =
+proc read*(reg: static CAN1_RF1R_Type): CAN1_RF1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_RF1R_Fields](reg.loc))
 
 proc write*(reg: CAN1_RF1R_Type, val: CAN1_RF1R_Fields) {.inline.} =
@@ -43077,7 +43077,7 @@ template modifyIt*(reg: CAN1_RF1R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_IER_Type): CAN1_IER_Fields {.inline.} =
+proc read*(reg: static CAN1_IER_Type): CAN1_IER_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_IER_Fields](reg.loc))
 
 proc write*(reg: CAN1_IER_Type, val: CAN1_IER_Fields) {.inline.} =
@@ -43107,7 +43107,7 @@ template modifyIt*(reg: CAN1_IER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_ESR_Type): CAN1_ESR_Fields {.inline.} =
+proc read*(reg: static CAN1_ESR_Type): CAN1_ESR_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_ESR_Fields](reg.loc))
 
 proc write*(reg: CAN1_ESR_Type, val: CAN1_ESR_Fields) {.inline.} =
@@ -43124,7 +43124,7 @@ template modifyIt*(reg: CAN1_ESR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_BTR_Type): CAN1_BTR_Fields {.inline.} =
+proc read*(reg: static CAN1_BTR_Type): CAN1_BTR_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_BTR_Fields](reg.loc))
 
 proc write*(reg: CAN1_BTR_Type, val: CAN1_BTR_Fields) {.inline.} =
@@ -43146,7 +43146,7 @@ template modifyIt*(reg: CAN1_BTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TI0R_Type): CAN1_TI0R_Fields {.inline.} =
+proc read*(reg: static CAN1_TI0R_Type): CAN1_TI0R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TI0R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TI0R_Type, val: CAN1_TI0R_Fields) {.inline.} =
@@ -43167,7 +43167,7 @@ template modifyIt*(reg: CAN1_TI0R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TDT0R_Type): CAN1_TDT0R_Fields {.inline.} =
+proc read*(reg: static CAN1_TDT0R_Type): CAN1_TDT0R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TDT0R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TDT0R_Type, val: CAN1_TDT0R_Fields) {.inline.} =
@@ -43186,7 +43186,7 @@ template modifyIt*(reg: CAN1_TDT0R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TDL0R_Type): CAN1_TDL0R_Fields {.inline.} =
+proc read*(reg: static CAN1_TDL0R_Type): CAN1_TDL0R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TDL0R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TDL0R_Type, val: CAN1_TDL0R_Fields) {.inline.} =
@@ -43206,7 +43206,7 @@ template modifyIt*(reg: CAN1_TDL0R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TDH0R_Type): CAN1_TDH0R_Fields {.inline.} =
+proc read*(reg: static CAN1_TDH0R_Type): CAN1_TDH0R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TDH0R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TDH0R_Type, val: CAN1_TDH0R_Fields) {.inline.} =
@@ -43226,7 +43226,7 @@ template modifyIt*(reg: CAN1_TDH0R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TI1R_Type): CAN1_TI1R_Fields {.inline.} =
+proc read*(reg: static CAN1_TI1R_Type): CAN1_TI1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TI1R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TI1R_Type, val: CAN1_TI1R_Fields) {.inline.} =
@@ -43247,7 +43247,7 @@ template modifyIt*(reg: CAN1_TI1R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TDT1R_Type): CAN1_TDT1R_Fields {.inline.} =
+proc read*(reg: static CAN1_TDT1R_Type): CAN1_TDT1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TDT1R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TDT1R_Type, val: CAN1_TDT1R_Fields) {.inline.} =
@@ -43266,7 +43266,7 @@ template modifyIt*(reg: CAN1_TDT1R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TDL1R_Type): CAN1_TDL1R_Fields {.inline.} =
+proc read*(reg: static CAN1_TDL1R_Type): CAN1_TDL1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TDL1R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TDL1R_Type, val: CAN1_TDL1R_Fields) {.inline.} =
@@ -43286,7 +43286,7 @@ template modifyIt*(reg: CAN1_TDL1R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TDH1R_Type): CAN1_TDH1R_Fields {.inline.} =
+proc read*(reg: static CAN1_TDH1R_Type): CAN1_TDH1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TDH1R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TDH1R_Type, val: CAN1_TDH1R_Fields) {.inline.} =
@@ -43306,7 +43306,7 @@ template modifyIt*(reg: CAN1_TDH1R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TI2R_Type): CAN1_TI2R_Fields {.inline.} =
+proc read*(reg: static CAN1_TI2R_Type): CAN1_TI2R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TI2R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TI2R_Type, val: CAN1_TI2R_Fields) {.inline.} =
@@ -43327,7 +43327,7 @@ template modifyIt*(reg: CAN1_TI2R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TDT2R_Type): CAN1_TDT2R_Fields {.inline.} =
+proc read*(reg: static CAN1_TDT2R_Type): CAN1_TDT2R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TDT2R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TDT2R_Type, val: CAN1_TDT2R_Fields) {.inline.} =
@@ -43346,7 +43346,7 @@ template modifyIt*(reg: CAN1_TDT2R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TDL2R_Type): CAN1_TDL2R_Fields {.inline.} =
+proc read*(reg: static CAN1_TDL2R_Type): CAN1_TDL2R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TDL2R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TDL2R_Type, val: CAN1_TDL2R_Fields) {.inline.} =
@@ -43366,7 +43366,7 @@ template modifyIt*(reg: CAN1_TDL2R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_TDH2R_Type): CAN1_TDH2R_Fields {.inline.} =
+proc read*(reg: static CAN1_TDH2R_Type): CAN1_TDH2R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_TDH2R_Fields](reg.loc))
 
 proc write*(reg: CAN1_TDH2R_Type, val: CAN1_TDH2R_Fields) {.inline.} =
@@ -43386,31 +43386,31 @@ template modifyIt*(reg: CAN1_TDH2R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_RI0R_Type): CAN1_RI0R_Fields {.inline.} =
+proc read*(reg: static CAN1_RI0R_Type): CAN1_RI0R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_RI0R_Fields](reg.loc))
 
-proc read*(reg: CAN1_RDT0R_Type): CAN1_RDT0R_Fields {.inline.} =
+proc read*(reg: static CAN1_RDT0R_Type): CAN1_RDT0R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_RDT0R_Fields](reg.loc))
 
-proc read*(reg: CAN1_RDL0R_Type): CAN1_RDL0R_Fields {.inline.} =
+proc read*(reg: static CAN1_RDL0R_Type): CAN1_RDL0R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_RDL0R_Fields](reg.loc))
 
-proc read*(reg: CAN1_RDH0R_Type): CAN1_RDH0R_Fields {.inline.} =
+proc read*(reg: static CAN1_RDH0R_Type): CAN1_RDH0R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_RDH0R_Fields](reg.loc))
 
-proc read*(reg: CAN1_RI1R_Type): CAN1_RI1R_Fields {.inline.} =
+proc read*(reg: static CAN1_RI1R_Type): CAN1_RI1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_RI1R_Fields](reg.loc))
 
-proc read*(reg: CAN1_RDT1R_Type): CAN1_RDT1R_Fields {.inline.} =
+proc read*(reg: static CAN1_RDT1R_Type): CAN1_RDT1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_RDT1R_Fields](reg.loc))
 
-proc read*(reg: CAN1_RDL1R_Type): CAN1_RDL1R_Fields {.inline.} =
+proc read*(reg: static CAN1_RDL1R_Type): CAN1_RDL1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_RDL1R_Fields](reg.loc))
 
-proc read*(reg: CAN1_RDH1R_Type): CAN1_RDH1R_Fields {.inline.} =
+proc read*(reg: static CAN1_RDH1R_Type): CAN1_RDH1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_RDH1R_Fields](reg.loc))
 
-proc read*(reg: CAN1_FMR_Type): CAN1_FMR_Fields {.inline.} =
+proc read*(reg: static CAN1_FMR_Type): CAN1_FMR_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_FMR_Fields](reg.loc))
 
 proc write*(reg: CAN1_FMR_Type, val: CAN1_FMR_Fields) {.inline.} =
@@ -43428,7 +43428,7 @@ template modifyIt*(reg: CAN1_FMR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_FM1R_Type): CAN1_FM1R_Fields {.inline.} =
+proc read*(reg: static CAN1_FM1R_Type): CAN1_FM1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_FM1R_Fields](reg.loc))
 
 proc write*(reg: CAN1_FM1R_Type, val: CAN1_FM1R_Fields) {.inline.} =
@@ -43472,7 +43472,7 @@ template modifyIt*(reg: CAN1_FM1R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_FS1R_Type): CAN1_FS1R_Fields {.inline.} =
+proc read*(reg: static CAN1_FS1R_Type): CAN1_FS1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_FS1R_Fields](reg.loc))
 
 proc write*(reg: CAN1_FS1R_Type, val: CAN1_FS1R_Fields) {.inline.} =
@@ -43516,7 +43516,7 @@ template modifyIt*(reg: CAN1_FS1R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_FFA1R_Type): CAN1_FFA1R_Fields {.inline.} =
+proc read*(reg: static CAN1_FFA1R_Type): CAN1_FFA1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_FFA1R_Fields](reg.loc))
 
 proc write*(reg: CAN1_FFA1R_Type, val: CAN1_FFA1R_Fields) {.inline.} =
@@ -43560,7 +43560,7 @@ template modifyIt*(reg: CAN1_FFA1R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_FA1R_Type): CAN1_FA1R_Fields {.inline.} =
+proc read*(reg: static CAN1_FA1R_Type): CAN1_FA1R_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_FA1R_Fields](reg.loc))
 
 proc write*(reg: CAN1_FA1R_Type, val: CAN1_FA1R_Fields) {.inline.} =
@@ -43604,7 +43604,7 @@ template modifyIt*(reg: CAN1_FA1R_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F0R1_Type): CAN1_F0R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F0R1_Type): CAN1_F0R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F0R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F0R1_Type, val: CAN1_F0R1_Fields) {.inline.} =
@@ -43652,7 +43652,7 @@ template modifyIt*(reg: CAN1_F0R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F0R2_Type): CAN1_F0R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F0R2_Type): CAN1_F0R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F0R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F0R2_Type, val: CAN1_F0R2_Fields) {.inline.} =
@@ -43700,7 +43700,7 @@ template modifyIt*(reg: CAN1_F0R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F1R1_Type): CAN1_F1R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F1R1_Type): CAN1_F1R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F1R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F1R1_Type, val: CAN1_F1R1_Fields) {.inline.} =
@@ -43748,7 +43748,7 @@ template modifyIt*(reg: CAN1_F1R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F1R2_Type): CAN1_F1R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F1R2_Type): CAN1_F1R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F1R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F1R2_Type, val: CAN1_F1R2_Fields) {.inline.} =
@@ -43796,7 +43796,7 @@ template modifyIt*(reg: CAN1_F1R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F2R1_Type): CAN1_F2R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F2R1_Type): CAN1_F2R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F2R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F2R1_Type, val: CAN1_F2R1_Fields) {.inline.} =
@@ -43844,7 +43844,7 @@ template modifyIt*(reg: CAN1_F2R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F2R2_Type): CAN1_F2R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F2R2_Type): CAN1_F2R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F2R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F2R2_Type, val: CAN1_F2R2_Fields) {.inline.} =
@@ -43892,7 +43892,7 @@ template modifyIt*(reg: CAN1_F2R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F3R1_Type): CAN1_F3R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F3R1_Type): CAN1_F3R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F3R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F3R1_Type, val: CAN1_F3R1_Fields) {.inline.} =
@@ -43940,7 +43940,7 @@ template modifyIt*(reg: CAN1_F3R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F3R2_Type): CAN1_F3R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F3R2_Type): CAN1_F3R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F3R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F3R2_Type, val: CAN1_F3R2_Fields) {.inline.} =
@@ -43988,7 +43988,7 @@ template modifyIt*(reg: CAN1_F3R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F4R1_Type): CAN1_F4R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F4R1_Type): CAN1_F4R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F4R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F4R1_Type, val: CAN1_F4R1_Fields) {.inline.} =
@@ -44036,7 +44036,7 @@ template modifyIt*(reg: CAN1_F4R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F4R2_Type): CAN1_F4R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F4R2_Type): CAN1_F4R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F4R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F4R2_Type, val: CAN1_F4R2_Fields) {.inline.} =
@@ -44084,7 +44084,7 @@ template modifyIt*(reg: CAN1_F4R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F5R1_Type): CAN1_F5R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F5R1_Type): CAN1_F5R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F5R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F5R1_Type, val: CAN1_F5R1_Fields) {.inline.} =
@@ -44132,7 +44132,7 @@ template modifyIt*(reg: CAN1_F5R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F5R2_Type): CAN1_F5R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F5R2_Type): CAN1_F5R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F5R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F5R2_Type, val: CAN1_F5R2_Fields) {.inline.} =
@@ -44180,7 +44180,7 @@ template modifyIt*(reg: CAN1_F5R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F6R1_Type): CAN1_F6R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F6R1_Type): CAN1_F6R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F6R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F6R1_Type, val: CAN1_F6R1_Fields) {.inline.} =
@@ -44228,7 +44228,7 @@ template modifyIt*(reg: CAN1_F6R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F6R2_Type): CAN1_F6R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F6R2_Type): CAN1_F6R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F6R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F6R2_Type, val: CAN1_F6R2_Fields) {.inline.} =
@@ -44276,7 +44276,7 @@ template modifyIt*(reg: CAN1_F6R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F7R1_Type): CAN1_F7R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F7R1_Type): CAN1_F7R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F7R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F7R1_Type, val: CAN1_F7R1_Fields) {.inline.} =
@@ -44324,7 +44324,7 @@ template modifyIt*(reg: CAN1_F7R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F7R2_Type): CAN1_F7R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F7R2_Type): CAN1_F7R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F7R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F7R2_Type, val: CAN1_F7R2_Fields) {.inline.} =
@@ -44372,7 +44372,7 @@ template modifyIt*(reg: CAN1_F7R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F8R1_Type): CAN1_F8R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F8R1_Type): CAN1_F8R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F8R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F8R1_Type, val: CAN1_F8R1_Fields) {.inline.} =
@@ -44420,7 +44420,7 @@ template modifyIt*(reg: CAN1_F8R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F8R2_Type): CAN1_F8R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F8R2_Type): CAN1_F8R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F8R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F8R2_Type, val: CAN1_F8R2_Fields) {.inline.} =
@@ -44468,7 +44468,7 @@ template modifyIt*(reg: CAN1_F8R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F9R1_Type): CAN1_F9R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F9R1_Type): CAN1_F9R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F9R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F9R1_Type, val: CAN1_F9R1_Fields) {.inline.} =
@@ -44516,7 +44516,7 @@ template modifyIt*(reg: CAN1_F9R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F9R2_Type): CAN1_F9R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F9R2_Type): CAN1_F9R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F9R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F9R2_Type, val: CAN1_F9R2_Fields) {.inline.} =
@@ -44564,7 +44564,7 @@ template modifyIt*(reg: CAN1_F9R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F10R1_Type): CAN1_F10R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F10R1_Type): CAN1_F10R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F10R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F10R1_Type, val: CAN1_F10R1_Fields) {.inline.} =
@@ -44612,7 +44612,7 @@ template modifyIt*(reg: CAN1_F10R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F10R2_Type): CAN1_F10R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F10R2_Type): CAN1_F10R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F10R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F10R2_Type, val: CAN1_F10R2_Fields) {.inline.} =
@@ -44660,7 +44660,7 @@ template modifyIt*(reg: CAN1_F10R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F11R1_Type): CAN1_F11R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F11R1_Type): CAN1_F11R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F11R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F11R1_Type, val: CAN1_F11R1_Fields) {.inline.} =
@@ -44708,7 +44708,7 @@ template modifyIt*(reg: CAN1_F11R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F11R2_Type): CAN1_F11R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F11R2_Type): CAN1_F11R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F11R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F11R2_Type, val: CAN1_F11R2_Fields) {.inline.} =
@@ -44756,7 +44756,7 @@ template modifyIt*(reg: CAN1_F11R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F12R1_Type): CAN1_F12R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F12R1_Type): CAN1_F12R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F12R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F12R1_Type, val: CAN1_F12R1_Fields) {.inline.} =
@@ -44804,7 +44804,7 @@ template modifyIt*(reg: CAN1_F12R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F12R2_Type): CAN1_F12R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F12R2_Type): CAN1_F12R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F12R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F12R2_Type, val: CAN1_F12R2_Fields) {.inline.} =
@@ -44852,7 +44852,7 @@ template modifyIt*(reg: CAN1_F12R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F13R1_Type): CAN1_F13R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F13R1_Type): CAN1_F13R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F13R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F13R1_Type, val: CAN1_F13R1_Fields) {.inline.} =
@@ -44900,7 +44900,7 @@ template modifyIt*(reg: CAN1_F13R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F13R2_Type): CAN1_F13R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F13R2_Type): CAN1_F13R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F13R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F13R2_Type, val: CAN1_F13R2_Fields) {.inline.} =
@@ -44948,7 +44948,7 @@ template modifyIt*(reg: CAN1_F13R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F14R1_Type): CAN1_F14R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F14R1_Type): CAN1_F14R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F14R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F14R1_Type, val: CAN1_F14R1_Fields) {.inline.} =
@@ -44996,7 +44996,7 @@ template modifyIt*(reg: CAN1_F14R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F14R2_Type): CAN1_F14R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F14R2_Type): CAN1_F14R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F14R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F14R2_Type, val: CAN1_F14R2_Fields) {.inline.} =
@@ -45044,7 +45044,7 @@ template modifyIt*(reg: CAN1_F14R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F15R1_Type): CAN1_F15R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F15R1_Type): CAN1_F15R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F15R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F15R1_Type, val: CAN1_F15R1_Fields) {.inline.} =
@@ -45092,7 +45092,7 @@ template modifyIt*(reg: CAN1_F15R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F15R2_Type): CAN1_F15R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F15R2_Type): CAN1_F15R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F15R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F15R2_Type, val: CAN1_F15R2_Fields) {.inline.} =
@@ -45140,7 +45140,7 @@ template modifyIt*(reg: CAN1_F15R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F16R1_Type): CAN1_F16R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F16R1_Type): CAN1_F16R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F16R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F16R1_Type, val: CAN1_F16R1_Fields) {.inline.} =
@@ -45188,7 +45188,7 @@ template modifyIt*(reg: CAN1_F16R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F16R2_Type): CAN1_F16R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F16R2_Type): CAN1_F16R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F16R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F16R2_Type, val: CAN1_F16R2_Fields) {.inline.} =
@@ -45236,7 +45236,7 @@ template modifyIt*(reg: CAN1_F16R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F17R1_Type): CAN1_F17R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F17R1_Type): CAN1_F17R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F17R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F17R1_Type, val: CAN1_F17R1_Fields) {.inline.} =
@@ -45284,7 +45284,7 @@ template modifyIt*(reg: CAN1_F17R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F17R2_Type): CAN1_F17R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F17R2_Type): CAN1_F17R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F17R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F17R2_Type, val: CAN1_F17R2_Fields) {.inline.} =
@@ -45332,7 +45332,7 @@ template modifyIt*(reg: CAN1_F17R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F18R1_Type): CAN1_F18R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F18R1_Type): CAN1_F18R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F18R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F18R1_Type, val: CAN1_F18R1_Fields) {.inline.} =
@@ -45380,7 +45380,7 @@ template modifyIt*(reg: CAN1_F18R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F18R2_Type): CAN1_F18R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F18R2_Type): CAN1_F18R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F18R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F18R2_Type, val: CAN1_F18R2_Fields) {.inline.} =
@@ -45428,7 +45428,7 @@ template modifyIt*(reg: CAN1_F18R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F19R1_Type): CAN1_F19R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F19R1_Type): CAN1_F19R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F19R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F19R1_Type, val: CAN1_F19R1_Fields) {.inline.} =
@@ -45476,7 +45476,7 @@ template modifyIt*(reg: CAN1_F19R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F19R2_Type): CAN1_F19R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F19R2_Type): CAN1_F19R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F19R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F19R2_Type, val: CAN1_F19R2_Fields) {.inline.} =
@@ -45524,7 +45524,7 @@ template modifyIt*(reg: CAN1_F19R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F20R1_Type): CAN1_F20R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F20R1_Type): CAN1_F20R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F20R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F20R1_Type, val: CAN1_F20R1_Fields) {.inline.} =
@@ -45572,7 +45572,7 @@ template modifyIt*(reg: CAN1_F20R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F20R2_Type): CAN1_F20R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F20R2_Type): CAN1_F20R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F20R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F20R2_Type, val: CAN1_F20R2_Fields) {.inline.} =
@@ -45620,7 +45620,7 @@ template modifyIt*(reg: CAN1_F20R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F21R1_Type): CAN1_F21R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F21R1_Type): CAN1_F21R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F21R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F21R1_Type, val: CAN1_F21R1_Fields) {.inline.} =
@@ -45668,7 +45668,7 @@ template modifyIt*(reg: CAN1_F21R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F21R2_Type): CAN1_F21R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F21R2_Type): CAN1_F21R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F21R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F21R2_Type, val: CAN1_F21R2_Fields) {.inline.} =
@@ -45716,7 +45716,7 @@ template modifyIt*(reg: CAN1_F21R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F22R1_Type): CAN1_F22R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F22R1_Type): CAN1_F22R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F22R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F22R1_Type, val: CAN1_F22R1_Fields) {.inline.} =
@@ -45764,7 +45764,7 @@ template modifyIt*(reg: CAN1_F22R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F22R2_Type): CAN1_F22R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F22R2_Type): CAN1_F22R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F22R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F22R2_Type, val: CAN1_F22R2_Fields) {.inline.} =
@@ -45812,7 +45812,7 @@ template modifyIt*(reg: CAN1_F22R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F23R1_Type): CAN1_F23R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F23R1_Type): CAN1_F23R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F23R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F23R1_Type, val: CAN1_F23R1_Fields) {.inline.} =
@@ -45860,7 +45860,7 @@ template modifyIt*(reg: CAN1_F23R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F23R2_Type): CAN1_F23R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F23R2_Type): CAN1_F23R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F23R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F23R2_Type, val: CAN1_F23R2_Fields) {.inline.} =
@@ -45908,7 +45908,7 @@ template modifyIt*(reg: CAN1_F23R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F24R1_Type): CAN1_F24R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F24R1_Type): CAN1_F24R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F24R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F24R1_Type, val: CAN1_F24R1_Fields) {.inline.} =
@@ -45956,7 +45956,7 @@ template modifyIt*(reg: CAN1_F24R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F24R2_Type): CAN1_F24R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F24R2_Type): CAN1_F24R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F24R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F24R2_Type, val: CAN1_F24R2_Fields) {.inline.} =
@@ -46004,7 +46004,7 @@ template modifyIt*(reg: CAN1_F24R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F25R1_Type): CAN1_F25R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F25R1_Type): CAN1_F25R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F25R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F25R1_Type, val: CAN1_F25R1_Fields) {.inline.} =
@@ -46052,7 +46052,7 @@ template modifyIt*(reg: CAN1_F25R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F25R2_Type): CAN1_F25R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F25R2_Type): CAN1_F25R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F25R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F25R2_Type, val: CAN1_F25R2_Fields) {.inline.} =
@@ -46100,7 +46100,7 @@ template modifyIt*(reg: CAN1_F25R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F26R1_Type): CAN1_F26R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F26R1_Type): CAN1_F26R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F26R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F26R1_Type, val: CAN1_F26R1_Fields) {.inline.} =
@@ -46148,7 +46148,7 @@ template modifyIt*(reg: CAN1_F26R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F26R2_Type): CAN1_F26R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F26R2_Type): CAN1_F26R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F26R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F26R2_Type, val: CAN1_F26R2_Fields) {.inline.} =
@@ -46196,7 +46196,7 @@ template modifyIt*(reg: CAN1_F26R2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F27R1_Type): CAN1_F27R1_Fields {.inline.} =
+proc read*(reg: static CAN1_F27R1_Type): CAN1_F27R1_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F27R1_Fields](reg.loc))
 
 proc write*(reg: CAN1_F27R1_Type, val: CAN1_F27R1_Fields) {.inline.} =
@@ -46244,7 +46244,7 @@ template modifyIt*(reg: CAN1_F27R1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: CAN1_F27R2_Type): CAN1_F27R2_Fields {.inline.} =
+proc read*(reg: static CAN1_F27R2_Type): CAN1_F27R2_Fields {.inline.} =
   volatileLoad(cast[ptr CAN1_F27R2_Fields](reg.loc))
 
 proc write*(reg: CAN1_F27R2_Type, val: CAN1_F27R2_Fields) {.inline.} =
@@ -64529,7 +64529,7 @@ type
   FLASH_CR_Fields* = distinct uint32
   FLASH_OPTCR_Fields* = distinct uint32
 
-proc read*(reg: FLASH_ACR_Type): FLASH_ACR_Fields {.inline.} =
+proc read*(reg: static FLASH_ACR_Type): FLASH_ACR_Fields {.inline.} =
   volatileLoad(cast[ptr FLASH_ACR_Fields](reg.loc))
 
 proc write*(reg: FLASH_ACR_Type, val: FLASH_ACR_Fields) {.inline.} =
@@ -64557,7 +64557,7 @@ proc write*(reg: FLASH_KEYR_Type, val: uint32) {.inline.} =
 proc write*(reg: FLASH_OPTKEYR_Type, val: uint32) {.inline.} =
   volatileStore(cast[ptr uint32](reg.loc), val)
 
-proc read*(reg: FLASH_SR_Type): FLASH_SR_Fields {.inline.} =
+proc read*(reg: static FLASH_SR_Type): FLASH_SR_Fields {.inline.} =
   volatileLoad(cast[ptr FLASH_SR_Fields](reg.loc))
 
 proc write*(reg: FLASH_SR_Type, val: FLASH_SR_Fields) {.inline.} =
@@ -64580,7 +64580,7 @@ template modifyIt*(reg: FLASH_SR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FLASH_CR_Type): FLASH_CR_Fields {.inline.} =
+proc read*(reg: static FLASH_CR_Type): FLASH_CR_Fields {.inline.} =
   volatileLoad(cast[ptr FLASH_CR_Fields](reg.loc))
 
 proc write*(reg: FLASH_CR_Type, val: FLASH_CR_Fields) {.inline.} =
@@ -64605,7 +64605,7 @@ template modifyIt*(reg: FLASH_CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: FLASH_OPTCR_Type): FLASH_OPTCR_Fields {.inline.} =
+proc read*(reg: static FLASH_OPTCR_Type): FLASH_OPTCR_Fields {.inline.} =
   volatileLoad(cast[ptr FLASH_OPTCR_Fields](reg.loc))
 
 proc write*(reg: FLASH_OPTCR_Type, val: FLASH_OPTCR_Fields) {.inline.} =
@@ -64917,7 +64917,7 @@ type
   EXTI_SWIER_Fields* = distinct uint32
   EXTI_PR_Fields* = distinct uint32
 
-proc read*(reg: EXTI_IMR_Type): EXTI_IMR_Fields {.inline.} =
+proc read*(reg: static EXTI_IMR_Type): EXTI_IMR_Fields {.inline.} =
   volatileLoad(cast[ptr EXTI_IMR_Fields](reg.loc))
 
 proc write*(reg: EXTI_IMR_Type, val: EXTI_IMR_Fields) {.inline.} =
@@ -64956,7 +64956,7 @@ template modifyIt*(reg: EXTI_IMR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: EXTI_EMR_Type): EXTI_EMR_Fields {.inline.} =
+proc read*(reg: static EXTI_EMR_Type): EXTI_EMR_Fields {.inline.} =
   volatileLoad(cast[ptr EXTI_EMR_Fields](reg.loc))
 
 proc write*(reg: EXTI_EMR_Type, val: EXTI_EMR_Fields) {.inline.} =
@@ -64995,7 +64995,7 @@ template modifyIt*(reg: EXTI_EMR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: EXTI_RTSR_Type): EXTI_RTSR_Fields {.inline.} =
+proc read*(reg: static EXTI_RTSR_Type): EXTI_RTSR_Fields {.inline.} =
   volatileLoad(cast[ptr EXTI_RTSR_Fields](reg.loc))
 
 proc write*(reg: EXTI_RTSR_Type, val: EXTI_RTSR_Fields) {.inline.} =
@@ -65034,7 +65034,7 @@ template modifyIt*(reg: EXTI_RTSR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: EXTI_FTSR_Type): EXTI_FTSR_Fields {.inline.} =
+proc read*(reg: static EXTI_FTSR_Type): EXTI_FTSR_Fields {.inline.} =
   volatileLoad(cast[ptr EXTI_FTSR_Fields](reg.loc))
 
 proc write*(reg: EXTI_FTSR_Type, val: EXTI_FTSR_Fields) {.inline.} =
@@ -65073,7 +65073,7 @@ template modifyIt*(reg: EXTI_FTSR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: EXTI_SWIER_Type): EXTI_SWIER_Fields {.inline.} =
+proc read*(reg: static EXTI_SWIER_Type): EXTI_SWIER_Fields {.inline.} =
   volatileLoad(cast[ptr EXTI_SWIER_Fields](reg.loc))
 
 proc write*(reg: EXTI_SWIER_Type, val: EXTI_SWIER_Fields) {.inline.} =
@@ -65112,7 +65112,7 @@ template modifyIt*(reg: EXTI_SWIER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: EXTI_PR_Type): EXTI_PR_Fields {.inline.} =
+proc read*(reg: static EXTI_PR_Type): EXTI_PR_Fields {.inline.} =
   volatileLoad(cast[ptr EXTI_PR_Fields](reg.loc))
 
 proc write*(reg: EXTI_PR_Type, val: EXTI_PR_Fields) {.inline.} =
@@ -66419,7 +66419,7 @@ type
   OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Peripheral_Fields* = distinct uint32
   OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Peripheral_Fields* = distinct uint32
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GOTGCTL_Type): OTG_HS_GLOBAL_OTG_HS_GOTGCTL_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GOTGCTL_Type): OTG_HS_GLOBAL_OTG_HS_GOTGCTL_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GOTGCTL_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_GOTGCTL_Type, val: OTG_HS_GLOBAL_OTG_HS_GOTGCTL_Fields) {.inline.} =
@@ -66439,7 +66439,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_GOTGCTL_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GOTGINT_Type): OTG_HS_GLOBAL_OTG_HS_GOTGINT_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GOTGINT_Type): OTG_HS_GLOBAL_OTG_HS_GOTGINT_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GOTGINT_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_GOTGINT_Type, val: OTG_HS_GLOBAL_OTG_HS_GOTGINT_Fields) {.inline.} =
@@ -66461,7 +66461,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_GOTGINT_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GAHBCFG_Type): OTG_HS_GLOBAL_OTG_HS_GAHBCFG_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GAHBCFG_Type): OTG_HS_GLOBAL_OTG_HS_GAHBCFG_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GAHBCFG_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_GAHBCFG_Type, val: OTG_HS_GLOBAL_OTG_HS_GAHBCFG_Fields) {.inline.} =
@@ -66482,7 +66482,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_GAHBCFG_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GUSBCFG_Type): OTG_HS_GLOBAL_OTG_HS_GUSBCFG_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GUSBCFG_Type): OTG_HS_GLOBAL_OTG_HS_GUSBCFG_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GUSBCFG_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_GUSBCFG_Type, val: OTG_HS_GLOBAL_OTG_HS_GUSBCFG_Fields) {.inline.} =
@@ -66516,7 +66516,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_GUSBCFG_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GRSTCTL_Type): OTG_HS_GLOBAL_OTG_HS_GRSTCTL_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GRSTCTL_Type): OTG_HS_GLOBAL_OTG_HS_GRSTCTL_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GRSTCTL_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_GRSTCTL_Type, val: OTG_HS_GLOBAL_OTG_HS_GRSTCTL_Fields) {.inline.} =
@@ -66538,7 +66538,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_GRSTCTL_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GINTSTS_Type): OTG_HS_GLOBAL_OTG_HS_GINTSTS_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GINTSTS_Type): OTG_HS_GLOBAL_OTG_HS_GINTSTS_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GINTSTS_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_GINTSTS_Type, val: OTG_HS_GLOBAL_OTG_HS_GINTSTS_Fields) {.inline.} =
@@ -66569,7 +66569,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_GINTSTS_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GINTMSK_Type): OTG_HS_GLOBAL_OTG_HS_GINTMSK_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GINTMSK_Type): OTG_HS_GLOBAL_OTG_HS_GINTMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GINTMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_GINTMSK_Type, val: OTG_HS_GLOBAL_OTG_HS_GINTMSK_Fields) {.inline.} =
@@ -66610,13 +66610,13 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_GINTMSK_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Host_Type): OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Host_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Host_Type): OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Host_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Host_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Host_Type): OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Host_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Host_Type): OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Host_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Host_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GRXFSIZ_Type): OTG_HS_GLOBAL_OTG_HS_GRXFSIZ_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GRXFSIZ_Type): OTG_HS_GLOBAL_OTG_HS_GRXFSIZ_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GRXFSIZ_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_GRXFSIZ_Type, val: OTG_HS_GLOBAL_OTG_HS_GRXFSIZ_Fields) {.inline.} =
@@ -66633,7 +66633,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_GRXFSIZ_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GNPTXFSIZ_Host_Type): OTG_HS_GLOBAL_OTG_HS_GNPTXFSIZ_Host_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GNPTXFSIZ_Host_Type): OTG_HS_GLOBAL_OTG_HS_GNPTXFSIZ_Host_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GNPTXFSIZ_Host_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_GNPTXFSIZ_Host_Type, val: OTG_HS_GLOBAL_OTG_HS_GNPTXFSIZ_Host_Fields) {.inline.} =
@@ -66651,7 +66651,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_GNPTXFSIZ_Host_Type, op: untyped): 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_TX0FSIZ_Peripheral_Type): OTG_HS_GLOBAL_OTG_HS_TX0FSIZ_Peripheral_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_TX0FSIZ_Peripheral_Type): OTG_HS_GLOBAL_OTG_HS_TX0FSIZ_Peripheral_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_TX0FSIZ_Peripheral_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_TX0FSIZ_Peripheral_Type, val: OTG_HS_GLOBAL_OTG_HS_TX0FSIZ_Peripheral_Fields) {.inline.} =
@@ -66669,10 +66669,10 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_TX0FSIZ_Peripheral_Type, op: untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GNPTXSTS_Type): OTG_HS_GLOBAL_OTG_HS_GNPTXSTS_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GNPTXSTS_Type): OTG_HS_GLOBAL_OTG_HS_GNPTXSTS_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GNPTXSTS_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GCCFG_Type): OTG_HS_GLOBAL_OTG_HS_GCCFG_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GCCFG_Type): OTG_HS_GLOBAL_OTG_HS_GCCFG_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GCCFG_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_GCCFG_Type, val: OTG_HS_GLOBAL_OTG_HS_GCCFG_Fields) {.inline.} =
@@ -66694,7 +66694,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_GCCFG_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_CID_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_CID_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_CID_Type, val: uint32) {.inline.} =
@@ -66706,7 +66706,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_CID_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_HPTXFSIZ_Type): OTG_HS_GLOBAL_OTG_HS_HPTXFSIZ_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_HPTXFSIZ_Type): OTG_HS_GLOBAL_OTG_HS_HPTXFSIZ_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_HPTXFSIZ_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_HPTXFSIZ_Type, val: OTG_HS_GLOBAL_OTG_HS_HPTXFSIZ_Fields) {.inline.} =
@@ -66724,7 +66724,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_HPTXFSIZ_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF1_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_DIEPTXF1_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_DIEPTXF1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF1_Type, val: OTG_HS_GLOBAL_OTG_HS_DIEPTXF1_Fields) {.inline.} =
@@ -66742,7 +66742,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF1_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF2_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_DIEPTXF2_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_DIEPTXF2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF2_Type, val: OTG_HS_GLOBAL_OTG_HS_DIEPTXF2_Fields) {.inline.} =
@@ -66760,7 +66760,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF2_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF3_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_DIEPTXF3_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_DIEPTXF3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF3_Type, val: OTG_HS_GLOBAL_OTG_HS_DIEPTXF3_Fields) {.inline.} =
@@ -66778,7 +66778,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF3_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF4_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_DIEPTXF4_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_DIEPTXF4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF4_Type, val: OTG_HS_GLOBAL_OTG_HS_DIEPTXF4_Fields) {.inline.} =
@@ -66796,7 +66796,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF4_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF5_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_DIEPTXF5_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_DIEPTXF5_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF5_Type, val: OTG_HS_GLOBAL_OTG_HS_DIEPTXF5_Fields) {.inline.} =
@@ -66814,7 +66814,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF5_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF6_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF6_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_DIEPTXF6_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_DIEPTXF6_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF6_Type, val: OTG_HS_GLOBAL_OTG_HS_DIEPTXF6_Fields) {.inline.} =
@@ -66832,7 +66832,7 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF6_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF7_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF7_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_DIEPTXF7_Type): OTG_HS_GLOBAL_OTG_HS_DIEPTXF7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_DIEPTXF7_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF7_Type, val: OTG_HS_GLOBAL_OTG_HS_DIEPTXF7_Fields) {.inline.} =
@@ -66850,10 +66850,10 @@ template modifyIt*(reg: OTG_HS_GLOBAL_OTG_HS_DIEPTXF7_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Peripheral_Type): OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Peripheral_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Peripheral_Type): OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Peripheral_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GRXSTSR_Peripheral_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Peripheral_Type): OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Peripheral_Fields {.inline.} =
+proc read*(reg: static OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Peripheral_Type): OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Peripheral_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_GLOBAL_OTG_HS_GRXSTSP_Peripheral_Fields](reg.loc))
 
 func SRQSCS*(r: OTG_HS_GLOBAL_OTG_HS_GOTGCTL_Fields): bool {.inline.} =
@@ -68019,7 +68019,7 @@ type
   OTG_HS_HOST_OTG_HS_HCTSIZ14_Fields* = distinct uint32
   OTG_HS_HOST_OTG_HS_HCTSIZ15_Fields* = distinct uint32
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCFG_Type): OTG_HS_HOST_OTG_HS_HCFG_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCFG_Type): OTG_HS_HOST_OTG_HS_HCFG_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCFG_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCFG_Type, val: OTG_HS_HOST_OTG_HS_HCFG_Fields) {.inline.} =
@@ -68036,7 +68036,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCFG_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HFIR_Type): OTG_HS_HOST_OTG_HS_HFIR_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HFIR_Type): OTG_HS_HOST_OTG_HS_HFIR_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HFIR_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HFIR_Type, val: OTG_HS_HOST_OTG_HS_HFIR_Fields) {.inline.} =
@@ -68054,10 +68054,10 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HFIR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HFNUM_Type): OTG_HS_HOST_OTG_HS_HFNUM_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HFNUM_Type): OTG_HS_HOST_OTG_HS_HFNUM_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HFNUM_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HPTXSTS_Type): OTG_HS_HOST_OTG_HS_HPTXSTS_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HPTXSTS_Type): OTG_HS_HOST_OTG_HS_HPTXSTS_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HPTXSTS_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HPTXSTS_Type, val: OTG_HS_HOST_OTG_HS_HPTXSTS_Fields) {.inline.} =
@@ -68074,10 +68074,10 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HPTXSTS_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HAINT_Type): OTG_HS_HOST_OTG_HS_HAINT_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HAINT_Type): OTG_HS_HOST_OTG_HS_HAINT_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HAINT_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HAINTMSK_Type): OTG_HS_HOST_OTG_HS_HAINTMSK_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HAINTMSK_Type): OTG_HS_HOST_OTG_HS_HAINTMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HAINTMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HAINTMSK_Type, val: OTG_HS_HOST_OTG_HS_HAINTMSK_Fields) {.inline.} =
@@ -68094,7 +68094,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HAINTMSK_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HPRT_Type): OTG_HS_HOST_OTG_HS_HPRT_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HPRT_Type): OTG_HS_HOST_OTG_HS_HPRT_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HPRT_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HPRT_Type, val: OTG_HS_HOST_OTG_HS_HPRT_Fields) {.inline.} =
@@ -68119,7 +68119,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HPRT_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR0_Type): OTG_HS_HOST_OTG_HS_HCCHAR0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR0_Type): OTG_HS_HOST_OTG_HS_HCCHAR0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR0_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR0_Fields) {.inline.} =
@@ -68145,7 +68145,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR1_Type): OTG_HS_HOST_OTG_HS_HCCHAR1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR1_Type): OTG_HS_HOST_OTG_HS_HCCHAR1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR1_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR1_Fields) {.inline.} =
@@ -68171,7 +68171,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR2_Type): OTG_HS_HOST_OTG_HS_HCCHAR2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR2_Type): OTG_HS_HOST_OTG_HS_HCCHAR2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR2_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR2_Fields) {.inline.} =
@@ -68197,7 +68197,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR3_Type): OTG_HS_HOST_OTG_HS_HCCHAR3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR3_Type): OTG_HS_HOST_OTG_HS_HCCHAR3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR3_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR3_Fields) {.inline.} =
@@ -68223,7 +68223,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR4_Type): OTG_HS_HOST_OTG_HS_HCCHAR4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR4_Type): OTG_HS_HOST_OTG_HS_HCCHAR4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR4_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR4_Fields) {.inline.} =
@@ -68249,7 +68249,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR5_Type): OTG_HS_HOST_OTG_HS_HCCHAR5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR5_Type): OTG_HS_HOST_OTG_HS_HCCHAR5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR5_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR5_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR5_Fields) {.inline.} =
@@ -68275,7 +68275,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR5_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR6_Type): OTG_HS_HOST_OTG_HS_HCCHAR6_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR6_Type): OTG_HS_HOST_OTG_HS_HCCHAR6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR6_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR6_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR6_Fields) {.inline.} =
@@ -68301,7 +68301,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR6_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR7_Type): OTG_HS_HOST_OTG_HS_HCCHAR7_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR7_Type): OTG_HS_HOST_OTG_HS_HCCHAR7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR7_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR7_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR7_Fields) {.inline.} =
@@ -68327,7 +68327,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR7_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR8_Type): OTG_HS_HOST_OTG_HS_HCCHAR8_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR8_Type): OTG_HS_HOST_OTG_HS_HCCHAR8_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR8_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR8_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR8_Fields) {.inline.} =
@@ -68353,7 +68353,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR8_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR9_Type): OTG_HS_HOST_OTG_HS_HCCHAR9_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR9_Type): OTG_HS_HOST_OTG_HS_HCCHAR9_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR9_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR9_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR9_Fields) {.inline.} =
@@ -68379,7 +68379,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR9_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR10_Type): OTG_HS_HOST_OTG_HS_HCCHAR10_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR10_Type): OTG_HS_HOST_OTG_HS_HCCHAR10_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR10_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR10_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR10_Fields) {.inline.} =
@@ -68405,7 +68405,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR10_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR11_Type): OTG_HS_HOST_OTG_HS_HCCHAR11_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR11_Type): OTG_HS_HOST_OTG_HS_HCCHAR11_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR11_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR11_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR11_Fields) {.inline.} =
@@ -68431,7 +68431,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR11_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR12_Type): OTG_HS_HOST_OTG_HS_HCCHAR12_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR12_Type): OTG_HS_HOST_OTG_HS_HCCHAR12_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR12_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR12_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR12_Fields) {.inline.} =
@@ -68457,7 +68457,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR12_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR13_Type): OTG_HS_HOST_OTG_HS_HCCHAR13_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR13_Type): OTG_HS_HOST_OTG_HS_HCCHAR13_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR13_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR13_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR13_Fields) {.inline.} =
@@ -68483,7 +68483,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR13_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR14_Type): OTG_HS_HOST_OTG_HS_HCCHAR14_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR14_Type): OTG_HS_HOST_OTG_HS_HCCHAR14_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR14_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR14_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR14_Fields) {.inline.} =
@@ -68509,7 +68509,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR14_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCCHAR15_Type): OTG_HS_HOST_OTG_HS_HCCHAR15_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCCHAR15_Type): OTG_HS_HOST_OTG_HS_HCCHAR15_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCCHAR15_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCCHAR15_Type, val: OTG_HS_HOST_OTG_HS_HCCHAR15_Fields) {.inline.} =
@@ -68535,7 +68535,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCCHAR15_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT0_Type): OTG_HS_HOST_OTG_HS_HCSPLT0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT0_Type): OTG_HS_HOST_OTG_HS_HCSPLT0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT0_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT0_Fields) {.inline.} =
@@ -68556,7 +68556,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT1_Type): OTG_HS_HOST_OTG_HS_HCSPLT1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT1_Type): OTG_HS_HOST_OTG_HS_HCSPLT1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT1_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT1_Fields) {.inline.} =
@@ -68577,7 +68577,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT2_Type): OTG_HS_HOST_OTG_HS_HCSPLT2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT2_Type): OTG_HS_HOST_OTG_HS_HCSPLT2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT2_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT2_Fields) {.inline.} =
@@ -68598,7 +68598,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT3_Type): OTG_HS_HOST_OTG_HS_HCSPLT3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT3_Type): OTG_HS_HOST_OTG_HS_HCSPLT3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT3_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT3_Fields) {.inline.} =
@@ -68619,7 +68619,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT4_Type): OTG_HS_HOST_OTG_HS_HCSPLT4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT4_Type): OTG_HS_HOST_OTG_HS_HCSPLT4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT4_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT4_Fields) {.inline.} =
@@ -68640,7 +68640,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT5_Type): OTG_HS_HOST_OTG_HS_HCSPLT5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT5_Type): OTG_HS_HOST_OTG_HS_HCSPLT5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT5_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT5_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT5_Fields) {.inline.} =
@@ -68661,7 +68661,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT5_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT6_Type): OTG_HS_HOST_OTG_HS_HCSPLT6_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT6_Type): OTG_HS_HOST_OTG_HS_HCSPLT6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT6_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT6_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT6_Fields) {.inline.} =
@@ -68682,7 +68682,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT6_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT7_Type): OTG_HS_HOST_OTG_HS_HCSPLT7_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT7_Type): OTG_HS_HOST_OTG_HS_HCSPLT7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT7_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT7_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT7_Fields) {.inline.} =
@@ -68703,7 +68703,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT7_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT8_Type): OTG_HS_HOST_OTG_HS_HCSPLT8_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT8_Type): OTG_HS_HOST_OTG_HS_HCSPLT8_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT8_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT8_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT8_Fields) {.inline.} =
@@ -68724,7 +68724,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT8_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT9_Type): OTG_HS_HOST_OTG_HS_HCSPLT9_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT9_Type): OTG_HS_HOST_OTG_HS_HCSPLT9_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT9_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT9_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT9_Fields) {.inline.} =
@@ -68745,7 +68745,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT9_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT10_Type): OTG_HS_HOST_OTG_HS_HCSPLT10_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT10_Type): OTG_HS_HOST_OTG_HS_HCSPLT10_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT10_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT10_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT10_Fields) {.inline.} =
@@ -68766,7 +68766,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT10_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT11_Type): OTG_HS_HOST_OTG_HS_HCSPLT11_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT11_Type): OTG_HS_HOST_OTG_HS_HCSPLT11_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT11_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT11_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT11_Fields) {.inline.} =
@@ -68787,7 +68787,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT11_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT12_Type): OTG_HS_HOST_OTG_HS_HCSPLT12_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT12_Type): OTG_HS_HOST_OTG_HS_HCSPLT12_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT12_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT12_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT12_Fields) {.inline.} =
@@ -68808,7 +68808,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT12_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT13_Type): OTG_HS_HOST_OTG_HS_HCSPLT13_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT13_Type): OTG_HS_HOST_OTG_HS_HCSPLT13_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT13_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT13_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT13_Fields) {.inline.} =
@@ -68829,7 +68829,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT13_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT14_Type): OTG_HS_HOST_OTG_HS_HCSPLT14_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT14_Type): OTG_HS_HOST_OTG_HS_HCSPLT14_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT14_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT14_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT14_Fields) {.inline.} =
@@ -68850,7 +68850,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT14_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCSPLT15_Type): OTG_HS_HOST_OTG_HS_HCSPLT15_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCSPLT15_Type): OTG_HS_HOST_OTG_HS_HCSPLT15_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCSPLT15_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCSPLT15_Type, val: OTG_HS_HOST_OTG_HS_HCSPLT15_Fields) {.inline.} =
@@ -68871,7 +68871,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCSPLT15_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT0_Type): OTG_HS_HOST_OTG_HS_HCINT0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT0_Type): OTG_HS_HOST_OTG_HS_HCINT0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT0_Type, val: OTG_HS_HOST_OTG_HS_HCINT0_Fields) {.inline.} =
@@ -68896,7 +68896,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT1_Type): OTG_HS_HOST_OTG_HS_HCINT1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT1_Type): OTG_HS_HOST_OTG_HS_HCINT1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT1_Type, val: OTG_HS_HOST_OTG_HS_HCINT1_Fields) {.inline.} =
@@ -68923,7 +68923,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT2_Type): OTG_HS_HOST_OTG_HS_HCINT2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT2_Type): OTG_HS_HOST_OTG_HS_HCINT2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT2_Type, val: OTG_HS_HOST_OTG_HS_HCINT2_Fields) {.inline.} =
@@ -68950,7 +68950,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT3_Type): OTG_HS_HOST_OTG_HS_HCINT3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT3_Type): OTG_HS_HOST_OTG_HS_HCINT3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT3_Type, val: OTG_HS_HOST_OTG_HS_HCINT3_Fields) {.inline.} =
@@ -68977,7 +68977,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT4_Type): OTG_HS_HOST_OTG_HS_HCINT4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT4_Type): OTG_HS_HOST_OTG_HS_HCINT4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT4_Type, val: OTG_HS_HOST_OTG_HS_HCINT4_Fields) {.inline.} =
@@ -69004,7 +69004,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT5_Type): OTG_HS_HOST_OTG_HS_HCINT5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT5_Type): OTG_HS_HOST_OTG_HS_HCINT5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT5_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT5_Type, val: OTG_HS_HOST_OTG_HS_HCINT5_Fields) {.inline.} =
@@ -69031,7 +69031,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT5_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT6_Type): OTG_HS_HOST_OTG_HS_HCINT6_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT6_Type): OTG_HS_HOST_OTG_HS_HCINT6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT6_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT6_Type, val: OTG_HS_HOST_OTG_HS_HCINT6_Fields) {.inline.} =
@@ -69058,7 +69058,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT6_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT7_Type): OTG_HS_HOST_OTG_HS_HCINT7_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT7_Type): OTG_HS_HOST_OTG_HS_HCINT7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT7_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT7_Type, val: OTG_HS_HOST_OTG_HS_HCINT7_Fields) {.inline.} =
@@ -69085,7 +69085,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT7_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT8_Type): OTG_HS_HOST_OTG_HS_HCINT8_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT8_Type): OTG_HS_HOST_OTG_HS_HCINT8_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT8_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT8_Type, val: OTG_HS_HOST_OTG_HS_HCINT8_Fields) {.inline.} =
@@ -69112,7 +69112,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT8_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT9_Type): OTG_HS_HOST_OTG_HS_HCINT9_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT9_Type): OTG_HS_HOST_OTG_HS_HCINT9_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT9_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT9_Type, val: OTG_HS_HOST_OTG_HS_HCINT9_Fields) {.inline.} =
@@ -69139,7 +69139,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT9_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT10_Type): OTG_HS_HOST_OTG_HS_HCINT10_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT10_Type): OTG_HS_HOST_OTG_HS_HCINT10_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT10_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT10_Type, val: OTG_HS_HOST_OTG_HS_HCINT10_Fields) {.inline.} =
@@ -69166,7 +69166,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT10_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT11_Type): OTG_HS_HOST_OTG_HS_HCINT11_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT11_Type): OTG_HS_HOST_OTG_HS_HCINT11_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT11_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT11_Type, val: OTG_HS_HOST_OTG_HS_HCINT11_Fields) {.inline.} =
@@ -69193,7 +69193,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT11_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT12_Type): OTG_HS_HOST_OTG_HS_HCINT12_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT12_Type): OTG_HS_HOST_OTG_HS_HCINT12_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT12_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT12_Type, val: OTG_HS_HOST_OTG_HS_HCINT12_Fields) {.inline.} =
@@ -69220,7 +69220,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT12_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT13_Type): OTG_HS_HOST_OTG_HS_HCINT13_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT13_Type): OTG_HS_HOST_OTG_HS_HCINT13_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT13_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT13_Type, val: OTG_HS_HOST_OTG_HS_HCINT13_Fields) {.inline.} =
@@ -69247,7 +69247,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT13_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT14_Type): OTG_HS_HOST_OTG_HS_HCINT14_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT14_Type): OTG_HS_HOST_OTG_HS_HCINT14_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT14_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT14_Type, val: OTG_HS_HOST_OTG_HS_HCINT14_Fields) {.inline.} =
@@ -69274,7 +69274,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT14_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINT15_Type): OTG_HS_HOST_OTG_HS_HCINT15_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINT15_Type): OTG_HS_HOST_OTG_HS_HCINT15_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINT15_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINT15_Type, val: OTG_HS_HOST_OTG_HS_HCINT15_Fields) {.inline.} =
@@ -69301,7 +69301,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINT15_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK0_Type): OTG_HS_HOST_OTG_HS_HCINTMSK0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK0_Type): OTG_HS_HOST_OTG_HS_HCINTMSK0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK0_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK0_Fields) {.inline.} =
@@ -69328,7 +69328,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK0_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK1_Type): OTG_HS_HOST_OTG_HS_HCINTMSK1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK1_Type): OTG_HS_HOST_OTG_HS_HCINTMSK1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK1_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK1_Fields) {.inline.} =
@@ -69355,7 +69355,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK1_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK2_Type): OTG_HS_HOST_OTG_HS_HCINTMSK2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK2_Type): OTG_HS_HOST_OTG_HS_HCINTMSK2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK2_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK2_Fields) {.inline.} =
@@ -69382,7 +69382,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK2_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK3_Type): OTG_HS_HOST_OTG_HS_HCINTMSK3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK3_Type): OTG_HS_HOST_OTG_HS_HCINTMSK3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK3_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK3_Fields) {.inline.} =
@@ -69409,7 +69409,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK3_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK4_Type): OTG_HS_HOST_OTG_HS_HCINTMSK4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK4_Type): OTG_HS_HOST_OTG_HS_HCINTMSK4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK4_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK4_Fields) {.inline.} =
@@ -69436,7 +69436,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK4_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK5_Type): OTG_HS_HOST_OTG_HS_HCINTMSK5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK5_Type): OTG_HS_HOST_OTG_HS_HCINTMSK5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK5_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK5_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK5_Fields) {.inline.} =
@@ -69463,7 +69463,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK5_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK6_Type): OTG_HS_HOST_OTG_HS_HCINTMSK6_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK6_Type): OTG_HS_HOST_OTG_HS_HCINTMSK6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK6_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK6_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK6_Fields) {.inline.} =
@@ -69490,7 +69490,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK6_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK7_Type): OTG_HS_HOST_OTG_HS_HCINTMSK7_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK7_Type): OTG_HS_HOST_OTG_HS_HCINTMSK7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK7_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK7_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK7_Fields) {.inline.} =
@@ -69517,7 +69517,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK7_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK8_Type): OTG_HS_HOST_OTG_HS_HCINTMSK8_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK8_Type): OTG_HS_HOST_OTG_HS_HCINTMSK8_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK8_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK8_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK8_Fields) {.inline.} =
@@ -69544,7 +69544,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK8_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK9_Type): OTG_HS_HOST_OTG_HS_HCINTMSK9_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK9_Type): OTG_HS_HOST_OTG_HS_HCINTMSK9_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK9_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK9_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK9_Fields) {.inline.} =
@@ -69571,7 +69571,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK9_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK10_Type): OTG_HS_HOST_OTG_HS_HCINTMSK10_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK10_Type): OTG_HS_HOST_OTG_HS_HCINTMSK10_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK10_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK10_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK10_Fields) {.inline.} =
@@ -69598,7 +69598,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK10_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK11_Type): OTG_HS_HOST_OTG_HS_HCINTMSK11_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK11_Type): OTG_HS_HOST_OTG_HS_HCINTMSK11_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK11_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK11_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK11_Fields) {.inline.} =
@@ -69625,7 +69625,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK11_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK12_Type): OTG_HS_HOST_OTG_HS_HCINTMSK12_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK12_Type): OTG_HS_HOST_OTG_HS_HCINTMSK12_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK12_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK12_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK12_Fields) {.inline.} =
@@ -69652,7 +69652,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK12_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK13_Type): OTG_HS_HOST_OTG_HS_HCINTMSK13_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK13_Type): OTG_HS_HOST_OTG_HS_HCINTMSK13_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK13_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK13_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK13_Fields) {.inline.} =
@@ -69679,7 +69679,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK13_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK14_Type): OTG_HS_HOST_OTG_HS_HCINTMSK14_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK14_Type): OTG_HS_HOST_OTG_HS_HCINTMSK14_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK14_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK14_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK14_Fields) {.inline.} =
@@ -69706,7 +69706,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK14_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK15_Type): OTG_HS_HOST_OTG_HS_HCINTMSK15_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCINTMSK15_Type): OTG_HS_HOST_OTG_HS_HCINTMSK15_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCINTMSK15_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK15_Type, val: OTG_HS_HOST_OTG_HS_HCINTMSK15_Fields) {.inline.} =
@@ -69733,7 +69733,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCINTMSK15_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ0_Type): OTG_HS_HOST_OTG_HS_HCTSIZ0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ0_Type): OTG_HS_HOST_OTG_HS_HCTSIZ0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ0_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ0_Fields) {.inline.} =
@@ -69752,7 +69752,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ1_Type): OTG_HS_HOST_OTG_HS_HCTSIZ1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ1_Type): OTG_HS_HOST_OTG_HS_HCTSIZ1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ1_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ1_Fields) {.inline.} =
@@ -69771,7 +69771,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ2_Type): OTG_HS_HOST_OTG_HS_HCTSIZ2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ2_Type): OTG_HS_HOST_OTG_HS_HCTSIZ2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ2_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ2_Fields) {.inline.} =
@@ -69790,7 +69790,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ3_Type): OTG_HS_HOST_OTG_HS_HCTSIZ3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ3_Type): OTG_HS_HOST_OTG_HS_HCTSIZ3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ3_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ3_Fields) {.inline.} =
@@ -69809,7 +69809,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ4_Type): OTG_HS_HOST_OTG_HS_HCTSIZ4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ4_Type): OTG_HS_HOST_OTG_HS_HCTSIZ4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ4_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ4_Fields) {.inline.} =
@@ -69828,7 +69828,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ5_Type): OTG_HS_HOST_OTG_HS_HCTSIZ5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ5_Type): OTG_HS_HOST_OTG_HS_HCTSIZ5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ5_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ5_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ5_Fields) {.inline.} =
@@ -69847,7 +69847,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ5_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ6_Type): OTG_HS_HOST_OTG_HS_HCTSIZ6_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ6_Type): OTG_HS_HOST_OTG_HS_HCTSIZ6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ6_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ6_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ6_Fields) {.inline.} =
@@ -69866,7 +69866,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ6_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ7_Type): OTG_HS_HOST_OTG_HS_HCTSIZ7_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ7_Type): OTG_HS_HOST_OTG_HS_HCTSIZ7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ7_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ7_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ7_Fields) {.inline.} =
@@ -69885,7 +69885,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ7_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ8_Type): OTG_HS_HOST_OTG_HS_HCTSIZ8_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ8_Type): OTG_HS_HOST_OTG_HS_HCTSIZ8_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ8_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ8_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ8_Fields) {.inline.} =
@@ -69904,7 +69904,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ8_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ9_Type): OTG_HS_HOST_OTG_HS_HCTSIZ9_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ9_Type): OTG_HS_HOST_OTG_HS_HCTSIZ9_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ9_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ9_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ9_Fields) {.inline.} =
@@ -69923,7 +69923,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ9_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ10_Type): OTG_HS_HOST_OTG_HS_HCTSIZ10_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ10_Type): OTG_HS_HOST_OTG_HS_HCTSIZ10_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ10_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ10_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ10_Fields) {.inline.} =
@@ -69942,7 +69942,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ10_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ11_Type): OTG_HS_HOST_OTG_HS_HCTSIZ11_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ11_Type): OTG_HS_HOST_OTG_HS_HCTSIZ11_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ11_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ11_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ11_Fields) {.inline.} =
@@ -69961,7 +69961,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ11_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ12_Type): OTG_HS_HOST_OTG_HS_HCTSIZ12_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ12_Type): OTG_HS_HOST_OTG_HS_HCTSIZ12_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ12_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ12_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ12_Fields) {.inline.} =
@@ -69980,7 +69980,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ12_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ13_Type): OTG_HS_HOST_OTG_HS_HCTSIZ13_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ13_Type): OTG_HS_HOST_OTG_HS_HCTSIZ13_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ13_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ13_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ13_Fields) {.inline.} =
@@ -69999,7 +69999,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ13_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ14_Type): OTG_HS_HOST_OTG_HS_HCTSIZ14_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ14_Type): OTG_HS_HOST_OTG_HS_HCTSIZ14_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ14_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ14_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ14_Fields) {.inline.} =
@@ -70018,7 +70018,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ14_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ15_Type): OTG_HS_HOST_OTG_HS_HCTSIZ15_Fields {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCTSIZ15_Type): OTG_HS_HOST_OTG_HS_HCTSIZ15_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_HOST_OTG_HS_HCTSIZ15_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ15_Type, val: OTG_HS_HOST_OTG_HS_HCTSIZ15_Fields) {.inline.} =
@@ -70037,7 +70037,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCTSIZ15_Type, op: untyped): untyped 
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA0_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA0_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA0_Type, val: uint32) {.inline.} =
@@ -70049,7 +70049,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA0_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA1_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA1_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA1_Type, val: uint32) {.inline.} =
@@ -70061,7 +70061,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA2_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA2_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA2_Type, val: uint32) {.inline.} =
@@ -70073,7 +70073,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA3_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA3_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA3_Type, val: uint32) {.inline.} =
@@ -70085,7 +70085,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA3_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA4_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA4_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA4_Type, val: uint32) {.inline.} =
@@ -70097,7 +70097,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA4_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA5_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA5_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA5_Type, val: uint32) {.inline.} =
@@ -70109,7 +70109,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA5_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA6_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA6_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA6_Type, val: uint32) {.inline.} =
@@ -70121,7 +70121,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA6_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA7_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA7_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA7_Type, val: uint32) {.inline.} =
@@ -70133,7 +70133,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA7_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA8_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA8_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA8_Type, val: uint32) {.inline.} =
@@ -70145,7 +70145,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA8_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA9_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA9_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA9_Type, val: uint32) {.inline.} =
@@ -70157,7 +70157,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA9_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA10_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA10_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA10_Type, val: uint32) {.inline.} =
@@ -70169,7 +70169,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA10_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA11_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA11_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA11_Type, val: uint32) {.inline.} =
@@ -70181,7 +70181,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA11_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA12_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA12_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA12_Type, val: uint32) {.inline.} =
@@ -70193,7 +70193,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA12_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA13_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA13_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA13_Type, val: uint32) {.inline.} =
@@ -70205,7 +70205,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA13_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA14_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA14_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA14_Type, val: uint32) {.inline.} =
@@ -70217,7 +70217,7 @@ template modifyIt*(reg: OTG_HS_HOST_OTG_HS_HCDMA14_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_HOST_OTG_HS_HCDMA15_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_HOST_OTG_HS_HCDMA15_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_HOST_OTG_HS_HCDMA15_Type, val: uint32) {.inline.} =
@@ -76189,7 +76189,7 @@ type
   OTG_HS_DEVICE_OTG_HS_DOEPTSIZ3_Fields* = distinct uint32
   OTG_HS_DEVICE_OTG_HS_DOEPTSIZ4_Fields* = distinct uint32
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DCFG_Type): OTG_HS_DEVICE_OTG_HS_DCFG_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DCFG_Type): OTG_HS_DEVICE_OTG_HS_DCFG_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DCFG_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DCFG_Type, val: OTG_HS_DEVICE_OTG_HS_DCFG_Fields) {.inline.} =
@@ -76212,7 +76212,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DCFG_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DCTL_Type): OTG_HS_DEVICE_OTG_HS_DCTL_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DCTL_Type): OTG_HS_DEVICE_OTG_HS_DCTL_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DCTL_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DCTL_Type, val: OTG_HS_DEVICE_OTG_HS_DCTL_Fields) {.inline.} =
@@ -76236,10 +76236,10 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DCTL_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DSTS_Type): OTG_HS_DEVICE_OTG_HS_DSTS_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DSTS_Type): OTG_HS_DEVICE_OTG_HS_DSTS_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DSTS_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPMSK_Type): OTG_HS_DEVICE_OTG_HS_DIEPMSK_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPMSK_Type): OTG_HS_DEVICE_OTG_HS_DIEPMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPMSK_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPMSK_Fields) {.inline.} =
@@ -76263,7 +76263,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPMSK_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPMSK_Type): OTG_HS_DEVICE_OTG_HS_DOEPMSK_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPMSK_Type): OTG_HS_DEVICE_OTG_HS_DOEPMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPMSK_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPMSK_Fields) {.inline.} =
@@ -76286,10 +76286,10 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPMSK_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DAINT_Type): OTG_HS_DEVICE_OTG_HS_DAINT_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DAINT_Type): OTG_HS_DEVICE_OTG_HS_DAINT_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DAINT_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DAINTMSK_Type): OTG_HS_DEVICE_OTG_HS_DAINTMSK_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DAINTMSK_Type): OTG_HS_DEVICE_OTG_HS_DAINTMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DAINTMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DAINTMSK_Type, val: OTG_HS_DEVICE_OTG_HS_DAINTMSK_Fields) {.inline.} =
@@ -76307,7 +76307,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DAINTMSK_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DVBUSDIS_Type): OTG_HS_DEVICE_OTG_HS_DVBUSDIS_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DVBUSDIS_Type): OTG_HS_DEVICE_OTG_HS_DVBUSDIS_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DVBUSDIS_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DVBUSDIS_Type, val: OTG_HS_DEVICE_OTG_HS_DVBUSDIS_Fields) {.inline.} =
@@ -76324,7 +76324,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DVBUSDIS_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DVBUSPULSE_Type): OTG_HS_DEVICE_OTG_HS_DVBUSPULSE_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DVBUSPULSE_Type): OTG_HS_DEVICE_OTG_HS_DVBUSPULSE_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DVBUSPULSE_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DVBUSPULSE_Type, val: OTG_HS_DEVICE_OTG_HS_DVBUSPULSE_Fields) {.inline.} =
@@ -76341,7 +76341,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DVBUSPULSE_Type, op: untyped): unty
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DTHRCTL_Type): OTG_HS_DEVICE_OTG_HS_DTHRCTL_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DTHRCTL_Type): OTG_HS_DEVICE_OTG_HS_DTHRCTL_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DTHRCTL_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DTHRCTL_Type, val: OTG_HS_DEVICE_OTG_HS_DTHRCTL_Fields) {.inline.} =
@@ -76363,7 +76363,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DTHRCTL_Type, op: untyped): untyped
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPEMPMSK_Type): OTG_HS_DEVICE_OTG_HS_DIEPEMPMSK_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPEMPMSK_Type): OTG_HS_DEVICE_OTG_HS_DIEPEMPMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPEMPMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPEMPMSK_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPEMPMSK_Fields) {.inline.} =
@@ -76380,7 +76380,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPEMPMSK_Type, op: untyped): unty
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DEACHINT_Type): OTG_HS_DEVICE_OTG_HS_DEACHINT_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DEACHINT_Type): OTG_HS_DEVICE_OTG_HS_DEACHINT_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DEACHINT_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DEACHINT_Type, val: OTG_HS_DEVICE_OTG_HS_DEACHINT_Fields) {.inline.} =
@@ -76398,7 +76398,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DEACHINT_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DEACHINTMSK_Type): OTG_HS_DEVICE_OTG_HS_DEACHINTMSK_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DEACHINTMSK_Type): OTG_HS_DEVICE_OTG_HS_DEACHINTMSK_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DEACHINTMSK_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DEACHINTMSK_Type, val: OTG_HS_DEVICE_OTG_HS_DEACHINTMSK_Fields) {.inline.} =
@@ -76416,7 +76416,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DEACHINTMSK_Type, op: untyped): unt
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPEACHMSK1_Type): OTG_HS_DEVICE_OTG_HS_DIEPEACHMSK1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPEACHMSK1_Type): OTG_HS_DEVICE_OTG_HS_DIEPEACHMSK1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPEACHMSK1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPEACHMSK1_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPEACHMSK1_Fields) {.inline.} =
@@ -76441,7 +76441,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPEACHMSK1_Type, op: untyped): un
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPEACHMSK1_Type): OTG_HS_DEVICE_OTG_HS_DOEPEACHMSK1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPEACHMSK1_Type): OTG_HS_DEVICE_OTG_HS_DOEPEACHMSK1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPEACHMSK1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPEACHMSK1_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPEACHMSK1_Fields) {.inline.} =
@@ -76468,7 +76468,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPEACHMSK1_Type, op: untyped): un
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL0_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPCTL0_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPCTL0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL0_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPCTL0_Fields) {.inline.} =
@@ -76495,7 +76495,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL0_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL1_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPCTL1_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPCTL1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL1_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPCTL1_Fields) {.inline.} =
@@ -76522,7 +76522,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL1_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL2_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPCTL2_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPCTL2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL2_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPCTL2_Fields) {.inline.} =
@@ -76549,7 +76549,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL2_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL3_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPCTL3_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPCTL3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL3_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPCTL3_Fields) {.inline.} =
@@ -76576,7 +76576,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL3_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL4_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPCTL4_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPCTL4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL4_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPCTL4_Fields) {.inline.} =
@@ -76603,7 +76603,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL4_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL5_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPCTL5_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPCTL5_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL5_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPCTL5_Fields) {.inline.} =
@@ -76630,7 +76630,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL5_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL6_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL6_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPCTL6_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPCTL6_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL6_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPCTL6_Fields) {.inline.} =
@@ -76657,7 +76657,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL6_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL7_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL7_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPCTL7_Type): OTG_HS_DEVICE_OTG_HS_DIEPCTL7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPCTL7_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL7_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPCTL7_Fields) {.inline.} =
@@ -76684,7 +76684,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPCTL7_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT0_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPINT0_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPINT0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT0_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPINT0_Fields) {.inline.} =
@@ -76710,7 +76710,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT0_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT1_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPINT1_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPINT1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT1_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPINT1_Fields) {.inline.} =
@@ -76736,7 +76736,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT1_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT2_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPINT2_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPINT2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT2_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPINT2_Fields) {.inline.} =
@@ -76762,7 +76762,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT2_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT3_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPINT3_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPINT3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT3_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPINT3_Fields) {.inline.} =
@@ -76788,7 +76788,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT3_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT4_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPINT4_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPINT4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT4_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPINT4_Fields) {.inline.} =
@@ -76814,7 +76814,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT4_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT5_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPINT5_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPINT5_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT5_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPINT5_Fields) {.inline.} =
@@ -76840,7 +76840,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT5_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT6_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT6_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPINT6_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPINT6_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT6_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPINT6_Fields) {.inline.} =
@@ -76866,7 +76866,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT6_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT7_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT7_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPINT7_Type): OTG_HS_DEVICE_OTG_HS_DIEPINT7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPINT7_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT7_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPINT7_Fields) {.inline.} =
@@ -76892,7 +76892,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPINT7_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ0_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPTSIZ0_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPTSIZ0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ0_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ0_Fields) {.inline.} =
@@ -76910,7 +76910,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ0_Type, op: untyped): untyp
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA1_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPDMA1_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA1_Type, val: uint32) {.inline.} =
@@ -76922,7 +76922,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA1_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA2_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPDMA2_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA2_Type, val: uint32) {.inline.} =
@@ -76934,7 +76934,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA2_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA3_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPDMA3_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA3_Type, val: uint32) {.inline.} =
@@ -76946,7 +76946,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA3_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA4_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPDMA4_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA4_Type, val: uint32) {.inline.} =
@@ -76958,7 +76958,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA4_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA5_Type): uint32 {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPDMA5_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA5_Type, val: uint32) {.inline.} =
@@ -76970,25 +76970,25 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPDMA5_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DTXFSTS0_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DTXFSTS0_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DTXFSTS0_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DTXFSTS1_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DTXFSTS1_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DTXFSTS1_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DTXFSTS2_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DTXFSTS2_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DTXFSTS2_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DTXFSTS3_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DTXFSTS3_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DTXFSTS3_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DTXFSTS4_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DTXFSTS4_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DTXFSTS4_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DTXFSTS5_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DTXFSTS5_Type): OTG_HS_DEVICE_OTG_HS_DTXFSTS5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DTXFSTS5_Fields](reg.loc))
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ1_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPTSIZ1_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPTSIZ1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ1_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ1_Fields) {.inline.} =
@@ -77007,7 +77007,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ1_Type, op: untyped): untyp
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ2_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPTSIZ2_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPTSIZ2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ2_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ2_Fields) {.inline.} =
@@ -77026,7 +77026,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ2_Type, op: untyped): untyp
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ3_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPTSIZ3_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPTSIZ3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ3_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ3_Fields) {.inline.} =
@@ -77045,7 +77045,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ3_Type, op: untyped): untyp
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ4_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPTSIZ4_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPTSIZ4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ4_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ4_Fields) {.inline.} =
@@ -77064,7 +77064,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ4_Type, op: untyped): untyp
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ5_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DIEPTSIZ5_Type): OTG_HS_DEVICE_OTG_HS_DIEPTSIZ5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DIEPTSIZ5_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ5_Type, val: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ5_Fields) {.inline.} =
@@ -77083,7 +77083,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DIEPTSIZ5_Type, op: untyped): untyp
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL0_Type): OTG_HS_DEVICE_OTG_HS_DOEPCTL0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPCTL0_Type): OTG_HS_DEVICE_OTG_HS_DOEPCTL0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPCTL0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL0_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPCTL0_Fields) {.inline.} =
@@ -77104,7 +77104,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL0_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL1_Type): OTG_HS_DEVICE_OTG_HS_DOEPCTL1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPCTL1_Type): OTG_HS_DEVICE_OTG_HS_DOEPCTL1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPCTL1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL1_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPCTL1_Fields) {.inline.} =
@@ -77131,7 +77131,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL1_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL2_Type): OTG_HS_DEVICE_OTG_HS_DOEPCTL2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPCTL2_Type): OTG_HS_DEVICE_OTG_HS_DOEPCTL2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPCTL2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL2_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPCTL2_Fields) {.inline.} =
@@ -77158,7 +77158,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL2_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL3_Type): OTG_HS_DEVICE_OTG_HS_DOEPCTL3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPCTL3_Type): OTG_HS_DEVICE_OTG_HS_DOEPCTL3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPCTL3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL3_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPCTL3_Fields) {.inline.} =
@@ -77185,7 +77185,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPCTL3_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT0_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPINT0_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPINT0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT0_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPINT0_Fields) {.inline.} =
@@ -77207,7 +77207,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT0_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT1_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPINT1_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPINT1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT1_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPINT1_Fields) {.inline.} =
@@ -77229,7 +77229,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT1_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT2_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPINT2_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPINT2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT2_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPINT2_Fields) {.inline.} =
@@ -77251,7 +77251,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT2_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT3_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPINT3_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPINT3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT3_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPINT3_Fields) {.inline.} =
@@ -77273,7 +77273,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT3_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT4_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPINT4_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPINT4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT4_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPINT4_Fields) {.inline.} =
@@ -77295,7 +77295,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT4_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT5_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT5_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPINT5_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT5_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPINT5_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT5_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPINT5_Fields) {.inline.} =
@@ -77317,7 +77317,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT5_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT6_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT6_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPINT6_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT6_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPINT6_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT6_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPINT6_Fields) {.inline.} =
@@ -77339,7 +77339,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT6_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT7_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT7_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPINT7_Type): OTG_HS_DEVICE_OTG_HS_DOEPINT7_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPINT7_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT7_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPINT7_Fields) {.inline.} =
@@ -77361,7 +77361,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPINT7_Type, op: untyped): untype
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ0_Type): OTG_HS_DEVICE_OTG_HS_DOEPTSIZ0_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPTSIZ0_Type): OTG_HS_DEVICE_OTG_HS_DOEPTSIZ0_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPTSIZ0_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ0_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ0_Fields) {.inline.} =
@@ -77380,7 +77380,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ0_Type, op: untyped): untyp
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ1_Type): OTG_HS_DEVICE_OTG_HS_DOEPTSIZ1_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPTSIZ1_Type): OTG_HS_DEVICE_OTG_HS_DOEPTSIZ1_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPTSIZ1_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ1_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ1_Fields) {.inline.} =
@@ -77399,7 +77399,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ1_Type, op: untyped): untyp
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ2_Type): OTG_HS_DEVICE_OTG_HS_DOEPTSIZ2_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPTSIZ2_Type): OTG_HS_DEVICE_OTG_HS_DOEPTSIZ2_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPTSIZ2_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ2_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ2_Fields) {.inline.} =
@@ -77418,7 +77418,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ2_Type, op: untyped): untyp
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ3_Type): OTG_HS_DEVICE_OTG_HS_DOEPTSIZ3_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPTSIZ3_Type): OTG_HS_DEVICE_OTG_HS_DOEPTSIZ3_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPTSIZ3_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ3_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ3_Fields) {.inline.} =
@@ -77437,7 +77437,7 @@ template modifyIt*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ3_Type, op: untyped): untyp
     op
     reg.write(it)
 
-proc read*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ4_Type): OTG_HS_DEVICE_OTG_HS_DOEPTSIZ4_Fields {.inline.} =
+proc read*(reg: static OTG_HS_DEVICE_OTG_HS_DOEPTSIZ4_Type): OTG_HS_DEVICE_OTG_HS_DOEPTSIZ4_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_DEVICE_OTG_HS_DOEPTSIZ4_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ4_Type, val: OTG_HS_DEVICE_OTG_HS_DOEPTSIZ4_Fields) {.inline.} =
@@ -80612,7 +80612,7 @@ proc `RXDPID_STUPCNT=`*(r: var OTG_HS_DEVICE_OTG_HS_DOEPTSIZ4_Fields, val: uint3
 type
   OTG_HS_PWRCLK_OTG_HS_PCGCR_Fields* = distinct uint32
 
-proc read*(reg: OTG_HS_PWRCLK_OTG_HS_PCGCR_Type): OTG_HS_PWRCLK_OTG_HS_PCGCR_Fields {.inline.} =
+proc read*(reg: static OTG_HS_PWRCLK_OTG_HS_PCGCR_Type): OTG_HS_PWRCLK_OTG_HS_PCGCR_Fields {.inline.} =
   volatileLoad(cast[ptr OTG_HS_PWRCLK_OTG_HS_PCGCR_Fields](reg.loc))
 
 proc write*(reg: OTG_HS_PWRCLK_OTG_HS_PCGCR_Type, val: OTG_HS_PWRCLK_OTG_HS_PCGCR_Fields) {.inline.} =
@@ -80675,7 +80675,7 @@ type
   SAI1_ACLRFR_Fields* = distinct uint32
   SAI1_GCR_Fields* = distinct uint32
 
-proc read*(reg: SAI1_BCR1_Type): SAI1_BCR1_Fields {.inline.} =
+proc read*(reg: static SAI1_BCR1_Type): SAI1_BCR1_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_BCR1_Fields](reg.loc))
 
 proc write*(reg: SAI1_BCR1_Type, val: SAI1_BCR1_Fields) {.inline.} =
@@ -80703,7 +80703,7 @@ template modifyIt*(reg: SAI1_BCR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_BCR2_Type): SAI1_BCR2_Fields {.inline.} =
+proc read*(reg: static SAI1_BCR2_Type): SAI1_BCR2_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_BCR2_Fields](reg.loc))
 
 proc write*(reg: SAI1_BCR2_Type, val: SAI1_BCR2_Fields) {.inline.} =
@@ -80727,7 +80727,7 @@ template modifyIt*(reg: SAI1_BCR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_BFRCR_Type): SAI1_BFRCR_Fields {.inline.} =
+proc read*(reg: static SAI1_BFRCR_Type): SAI1_BFRCR_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_BFRCR_Fields](reg.loc))
 
 proc write*(reg: SAI1_BFRCR_Type, val: SAI1_BFRCR_Fields) {.inline.} =
@@ -80748,7 +80748,7 @@ template modifyIt*(reg: SAI1_BFRCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_BSLOTR_Type): SAI1_BSLOTR_Fields {.inline.} =
+proc read*(reg: static SAI1_BSLOTR_Type): SAI1_BSLOTR_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_BSLOTR_Fields](reg.loc))
 
 proc write*(reg: SAI1_BSLOTR_Type, val: SAI1_BSLOTR_Fields) {.inline.} =
@@ -80768,7 +80768,7 @@ template modifyIt*(reg: SAI1_BSLOTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_BIM_Type): SAI1_BIM_Fields {.inline.} =
+proc read*(reg: static SAI1_BIM_Type): SAI1_BIM_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_BIM_Fields](reg.loc))
 
 proc write*(reg: SAI1_BIM_Type, val: SAI1_BIM_Fields) {.inline.} =
@@ -80791,7 +80791,7 @@ template modifyIt*(reg: SAI1_BIM_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_BSR_Type): SAI1_BSR_Fields {.inline.} =
+proc read*(reg: static SAI1_BSR_Type): SAI1_BSR_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_BSR_Fields](reg.loc))
 
 proc write*(reg: SAI1_BCLRFR_Type, val: SAI1_BCLRFR_Fields) {.inline.} =
@@ -80807,7 +80807,7 @@ proc write*(reg: SAI1_BCLRFR_Type, LFSDET: bool = false, CAFSDET: bool = false, 
   x.setMask((OVRUDR.uint32 shl 0).masked(0 .. 0))
   reg.write x.SAI1_BCLRFR_Fields
 
-proc read*(reg: SAI1_BDR_Type): uint32 {.inline.} =
+proc read*(reg: static SAI1_BDR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: SAI1_BDR_Type, val: uint32) {.inline.} =
@@ -80819,7 +80819,7 @@ template modifyIt*(reg: SAI1_BDR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_ACR1_Type): SAI1_ACR1_Fields {.inline.} =
+proc read*(reg: static SAI1_ACR1_Type): SAI1_ACR1_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_ACR1_Fields](reg.loc))
 
 proc write*(reg: SAI1_ACR1_Type, val: SAI1_ACR1_Fields) {.inline.} =
@@ -80847,7 +80847,7 @@ template modifyIt*(reg: SAI1_ACR1_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_ACR2_Type): SAI1_ACR2_Fields {.inline.} =
+proc read*(reg: static SAI1_ACR2_Type): SAI1_ACR2_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_ACR2_Fields](reg.loc))
 
 proc write*(reg: SAI1_ACR2_Type, val: SAI1_ACR2_Fields) {.inline.} =
@@ -80871,7 +80871,7 @@ template modifyIt*(reg: SAI1_ACR2_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_AFRCR_Type): SAI1_AFRCR_Fields {.inline.} =
+proc read*(reg: static SAI1_AFRCR_Type): SAI1_AFRCR_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_AFRCR_Fields](reg.loc))
 
 proc write*(reg: SAI1_AFRCR_Type, val: SAI1_AFRCR_Fields) {.inline.} =
@@ -80892,7 +80892,7 @@ template modifyIt*(reg: SAI1_AFRCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_ASLOTR_Type): SAI1_ASLOTR_Fields {.inline.} =
+proc read*(reg: static SAI1_ASLOTR_Type): SAI1_ASLOTR_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_ASLOTR_Fields](reg.loc))
 
 proc write*(reg: SAI1_ASLOTR_Type, val: SAI1_ASLOTR_Fields) {.inline.} =
@@ -80912,7 +80912,7 @@ template modifyIt*(reg: SAI1_ASLOTR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_AIM_Type): SAI1_AIM_Fields {.inline.} =
+proc read*(reg: static SAI1_AIM_Type): SAI1_AIM_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_AIM_Fields](reg.loc))
 
 proc write*(reg: SAI1_AIM_Type, val: SAI1_AIM_Fields) {.inline.} =
@@ -80935,7 +80935,7 @@ template modifyIt*(reg: SAI1_AIM_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_ASR_Type): SAI1_ASR_Fields {.inline.} =
+proc read*(reg: static SAI1_ASR_Type): SAI1_ASR_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_ASR_Fields](reg.loc))
 
 proc write*(reg: SAI1_ASR_Type, val: SAI1_ASR_Fields) {.inline.} =
@@ -80959,7 +80959,7 @@ template modifyIt*(reg: SAI1_ASR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_ACLRFR_Type): SAI1_ACLRFR_Fields {.inline.} =
+proc read*(reg: static SAI1_ACLRFR_Type): SAI1_ACLRFR_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_ACLRFR_Fields](reg.loc))
 
 proc write*(reg: SAI1_ACLRFR_Type, val: SAI1_ACLRFR_Fields) {.inline.} =
@@ -80981,7 +80981,7 @@ template modifyIt*(reg: SAI1_ACLRFR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_ADR_Type): uint32 {.inline.} =
+proc read*(reg: static SAI1_ADR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: SAI1_ADR_Type, val: uint32) {.inline.} =
@@ -80993,7 +80993,7 @@ template modifyIt*(reg: SAI1_ADR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SAI1_GCR_Type): SAI1_GCR_Fields {.inline.} =
+proc read*(reg: static SAI1_GCR_Type): SAI1_GCR_Fields {.inline.} =
   volatileLoad(cast[ptr SAI1_GCR_Fields](reg.loc))
 
 proc write*(reg: SAI1_GCR_Type, val: SAI1_GCR_Fields) {.inline.} =
@@ -81867,7 +81867,7 @@ type
   PWR_CR_Fields* = distinct uint32
   PWR_CSR_Fields* = distinct uint32
 
-proc read*(reg: PWR_CR_Type): PWR_CR_Fields {.inline.} =
+proc read*(reg: static PWR_CR_Type): PWR_CR_Fields {.inline.} =
   volatileLoad(cast[ptr PWR_CR_Fields](reg.loc))
 
 proc write*(reg: PWR_CR_Type, val: PWR_CR_Fields) {.inline.} =
@@ -81900,7 +81900,7 @@ template modifyIt*(reg: PWR_CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: PWR_CSR_Type): PWR_CSR_Fields {.inline.} =
+proc read*(reg: static PWR_CSR_Type): PWR_CSR_Fields {.inline.} =
   volatileLoad(cast[ptr PWR_CSR_Fields](reg.loc))
 
 proc write*(reg: PWR_CSR_Type, val: PWR_CSR_Fields) {.inline.} =
@@ -82139,7 +82139,7 @@ type
   QUADSPI_PIR_Fields* = distinct uint32
   QUADSPI_LPTR_Fields* = distinct uint32
 
-proc read*(reg: QUADSPI_CR_Type): QUADSPI_CR_Fields {.inline.} =
+proc read*(reg: static QUADSPI_CR_Type): QUADSPI_CR_Fields {.inline.} =
   volatileLoad(cast[ptr QUADSPI_CR_Fields](reg.loc))
 
 proc write*(reg: QUADSPI_CR_Type, val: QUADSPI_CR_Fields) {.inline.} =
@@ -82171,7 +82171,7 @@ template modifyIt*(reg: QUADSPI_CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_DCR_Type): QUADSPI_DCR_Fields {.inline.} =
+proc read*(reg: static QUADSPI_DCR_Type): QUADSPI_DCR_Fields {.inline.} =
   volatileLoad(cast[ptr QUADSPI_DCR_Fields](reg.loc))
 
 proc write*(reg: QUADSPI_DCR_Type, val: QUADSPI_DCR_Fields) {.inline.} =
@@ -82190,10 +82190,10 @@ template modifyIt*(reg: QUADSPI_DCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_SR_Type): QUADSPI_SR_Fields {.inline.} =
+proc read*(reg: static QUADSPI_SR_Type): QUADSPI_SR_Fields {.inline.} =
   volatileLoad(cast[ptr QUADSPI_SR_Fields](reg.loc))
 
-proc read*(reg: QUADSPI_FCR_Type): QUADSPI_FCR_Fields {.inline.} =
+proc read*(reg: static QUADSPI_FCR_Type): QUADSPI_FCR_Fields {.inline.} =
   volatileLoad(cast[ptr QUADSPI_FCR_Fields](reg.loc))
 
 proc write*(reg: QUADSPI_FCR_Type, val: QUADSPI_FCR_Fields) {.inline.} =
@@ -82213,7 +82213,7 @@ template modifyIt*(reg: QUADSPI_FCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_DLR_Type): uint32 {.inline.} =
+proc read*(reg: static QUADSPI_DLR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: QUADSPI_DLR_Type, val: uint32) {.inline.} =
@@ -82225,7 +82225,7 @@ template modifyIt*(reg: QUADSPI_DLR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_CCR_Type): QUADSPI_CCR_Fields {.inline.} =
+proc read*(reg: static QUADSPI_CCR_Type): QUADSPI_CCR_Fields {.inline.} =
   volatileLoad(cast[ptr QUADSPI_CCR_Fields](reg.loc))
 
 proc write*(reg: QUADSPI_CCR_Type, val: QUADSPI_CCR_Fields) {.inline.} =
@@ -82253,7 +82253,7 @@ template modifyIt*(reg: QUADSPI_CCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_AR_Type): uint32 {.inline.} =
+proc read*(reg: static QUADSPI_AR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: QUADSPI_AR_Type, val: uint32) {.inline.} =
@@ -82265,7 +82265,7 @@ template modifyIt*(reg: QUADSPI_AR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_ABR_Type): uint32 {.inline.} =
+proc read*(reg: static QUADSPI_ABR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: QUADSPI_ABR_Type, val: uint32) {.inline.} =
@@ -82277,7 +82277,7 @@ template modifyIt*(reg: QUADSPI_ABR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_DR_Type): uint32 {.inline.} =
+proc read*(reg: static QUADSPI_DR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: QUADSPI_DR_Type, val: uint32) {.inline.} =
@@ -82289,7 +82289,7 @@ template modifyIt*(reg: QUADSPI_DR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_PSMKR_Type): uint32 {.inline.} =
+proc read*(reg: static QUADSPI_PSMKR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: QUADSPI_PSMKR_Type, val: uint32) {.inline.} =
@@ -82301,7 +82301,7 @@ template modifyIt*(reg: QUADSPI_PSMKR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_PSMAR_Type): uint32 {.inline.} =
+proc read*(reg: static QUADSPI_PSMAR_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: QUADSPI_PSMAR_Type, val: uint32) {.inline.} =
@@ -82313,7 +82313,7 @@ template modifyIt*(reg: QUADSPI_PSMAR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_PIR_Type): QUADSPI_PIR_Fields {.inline.} =
+proc read*(reg: static QUADSPI_PIR_Type): QUADSPI_PIR_Fields {.inline.} =
   volatileLoad(cast[ptr QUADSPI_PIR_Fields](reg.loc))
 
 proc write*(reg: QUADSPI_PIR_Type, val: QUADSPI_PIR_Fields) {.inline.} =
@@ -82330,7 +82330,7 @@ template modifyIt*(reg: QUADSPI_PIR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: QUADSPI_LPTR_Type): QUADSPI_LPTR_Fields {.inline.} =
+proc read*(reg: static QUADSPI_LPTR_Type): QUADSPI_LPTR_Fields {.inline.} =
   volatileLoad(cast[ptr QUADSPI_LPTR_Fields](reg.loc))
 
 proc write*(reg: QUADSPI_LPTR_Type, val: QUADSPI_LPTR_Fields) {.inline.} =
@@ -82710,7 +82710,7 @@ type
   SPDIF_RX_CSR_Fields* = distinct uint32
   SPDIF_RX_DIR_Fields* = distinct uint32
 
-proc read*(reg: SPDIF_RX_CR_Type): SPDIF_RX_CR_Fields {.inline.} =
+proc read*(reg: static SPDIF_RX_CR_Type): SPDIF_RX_CR_Fields {.inline.} =
   volatileLoad(cast[ptr SPDIF_RX_CR_Fields](reg.loc))
 
 proc write*(reg: SPDIF_RX_CR_Type, val: SPDIF_RX_CR_Fields) {.inline.} =
@@ -82739,7 +82739,7 @@ template modifyIt*(reg: SPDIF_RX_CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SPDIF_RX_IMR_Type): SPDIF_RX_IMR_Fields {.inline.} =
+proc read*(reg: static SPDIF_RX_IMR_Type): SPDIF_RX_IMR_Fields {.inline.} =
   volatileLoad(cast[ptr SPDIF_RX_IMR_Fields](reg.loc))
 
 proc write*(reg: SPDIF_RX_IMR_Type, val: SPDIF_RX_IMR_Fields) {.inline.} =
@@ -82762,7 +82762,7 @@ template modifyIt*(reg: SPDIF_RX_IMR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SPDIF_RX_SR_Type): SPDIF_RX_SR_Fields {.inline.} =
+proc read*(reg: static SPDIF_RX_SR_Type): SPDIF_RX_SR_Fields {.inline.} =
   volatileLoad(cast[ptr SPDIF_RX_SR_Fields](reg.loc))
 
 proc write*(reg: SPDIF_RX_IFCR_Type, val: SPDIF_RX_IFCR_Fields) {.inline.} =
@@ -82776,13 +82776,13 @@ proc write*(reg: SPDIF_RX_IFCR_Type, PERRCF: bool = false, OVRCF: bool = false, 
   x.setMask((SYNCDCF.uint32 shl 5).masked(5 .. 5))
   reg.write x.SPDIF_RX_IFCR_Fields
 
-proc read*(reg: SPDIF_RX_DR_Type): SPDIF_RX_DR_Fields {.inline.} =
+proc read*(reg: static SPDIF_RX_DR_Type): SPDIF_RX_DR_Fields {.inline.} =
   volatileLoad(cast[ptr SPDIF_RX_DR_Fields](reg.loc))
 
-proc read*(reg: SPDIF_RX_CSR_Type): SPDIF_RX_CSR_Fields {.inline.} =
+proc read*(reg: static SPDIF_RX_CSR_Type): SPDIF_RX_CSR_Fields {.inline.} =
   volatileLoad(cast[ptr SPDIF_RX_CSR_Fields](reg.loc))
 
-proc read*(reg: SPDIF_RX_DIR_Type): SPDIF_RX_DIR_Fields {.inline.} =
+proc read*(reg: static SPDIF_RX_DIR_Type): SPDIF_RX_DIR_Fields {.inline.} =
   volatileLoad(cast[ptr SPDIF_RX_DIR_Fields](reg.loc))
 
 func SPDIFEN*(r: SPDIF_RX_CR_Fields): uint32 {.inline.} =
@@ -83060,7 +83060,7 @@ type
   HDMI_CEC_CEC_ISR_Fields* = distinct uint32
   HDMI_CEC_CEC_IER_Fields* = distinct uint32
 
-proc read*(reg: HDMI_CEC_CEC_CR_Type): HDMI_CEC_CEC_CR_Fields {.inline.} =
+proc read*(reg: static HDMI_CEC_CEC_CR_Type): HDMI_CEC_CEC_CR_Fields {.inline.} =
   volatileLoad(cast[ptr HDMI_CEC_CEC_CR_Fields](reg.loc))
 
 proc write*(reg: HDMI_CEC_CEC_CR_Type, val: HDMI_CEC_CEC_CR_Fields) {.inline.} =
@@ -83077,7 +83077,7 @@ template modifyIt*(reg: HDMI_CEC_CEC_CR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: HDMI_CEC_CEC_CFGR_Type): HDMI_CEC_CEC_CFGR_Fields {.inline.} =
+proc read*(reg: static HDMI_CEC_CEC_CFGR_Type): HDMI_CEC_CEC_CFGR_Fields {.inline.} =
   volatileLoad(cast[ptr HDMI_CEC_CEC_CFGR_Fields](reg.loc))
 
 proc write*(reg: HDMI_CEC_CEC_CFGR_Type, val: HDMI_CEC_CEC_CFGR_Fields) {.inline.} =
@@ -83110,10 +83110,10 @@ proc write*(reg: HDMI_CEC_CEC_TXDR_Type, TXD: uint32 = 0) =
   x.setMask((TXD shl 0).masked(0 .. 7))
   reg.write x.HDMI_CEC_CEC_TXDR_Fields
 
-proc read*(reg: HDMI_CEC_CEC_RXDR_Type): HDMI_CEC_CEC_RXDR_Fields {.inline.} =
+proc read*(reg: static HDMI_CEC_CEC_RXDR_Type): HDMI_CEC_CEC_RXDR_Fields {.inline.} =
   volatileLoad(cast[ptr HDMI_CEC_CEC_RXDR_Fields](reg.loc))
 
-proc read*(reg: HDMI_CEC_CEC_ISR_Type): HDMI_CEC_CEC_ISR_Fields {.inline.} =
+proc read*(reg: static HDMI_CEC_CEC_ISR_Type): HDMI_CEC_CEC_ISR_Fields {.inline.} =
   volatileLoad(cast[ptr HDMI_CEC_CEC_ISR_Fields](reg.loc))
 
 proc write*(reg: HDMI_CEC_CEC_ISR_Type, val: HDMI_CEC_CEC_ISR_Fields) {.inline.} =
@@ -83142,7 +83142,7 @@ template modifyIt*(reg: HDMI_CEC_CEC_ISR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: HDMI_CEC_CEC_IER_Type): HDMI_CEC_CEC_IER_Fields {.inline.} =
+proc read*(reg: static HDMI_CEC_CEC_IER_Type): HDMI_CEC_CEC_IER_Fields {.inline.} =
   volatileLoad(cast[ptr HDMI_CEC_CEC_IER_Fields](reg.loc))
 
 proc write*(reg: HDMI_CEC_CEC_IER_Type, val: HDMI_CEC_CEC_IER_Fields) {.inline.} =
@@ -83523,7 +83523,7 @@ type
   SDIO_MASK_Fields* = distinct uint32
   SDIO_FIFOCNT_Fields* = distinct uint32
 
-proc read*(reg: SDIO_POWER_Type): SDIO_POWER_Fields {.inline.} =
+proc read*(reg: static SDIO_POWER_Type): SDIO_POWER_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_POWER_Fields](reg.loc))
 
 proc write*(reg: SDIO_POWER_Type, val: SDIO_POWER_Fields) {.inline.} =
@@ -83540,7 +83540,7 @@ template modifyIt*(reg: SDIO_POWER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SDIO_CLKCR_Type): SDIO_CLKCR_Fields {.inline.} =
+proc read*(reg: static SDIO_CLKCR_Type): SDIO_CLKCR_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_CLKCR_Fields](reg.loc))
 
 proc write*(reg: SDIO_CLKCR_Type, val: SDIO_CLKCR_Fields) {.inline.} =
@@ -83563,7 +83563,7 @@ template modifyIt*(reg: SDIO_CLKCR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SDIO_ARG_Type): uint32 {.inline.} =
+proc read*(reg: static SDIO_ARG_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: SDIO_ARG_Type, val: uint32) {.inline.} =
@@ -83575,7 +83575,7 @@ template modifyIt*(reg: SDIO_ARG_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SDIO_CMD_Type): SDIO_CMD_Fields {.inline.} =
+proc read*(reg: static SDIO_CMD_Type): SDIO_CMD_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_CMD_Fields](reg.loc))
 
 proc write*(reg: SDIO_CMD_Type, val: SDIO_CMD_Fields) {.inline.} =
@@ -83600,22 +83600,22 @@ template modifyIt*(reg: SDIO_CMD_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SDIO_RESPCMD_Type): SDIO_RESPCMD_Fields {.inline.} =
+proc read*(reg: static SDIO_RESPCMD_Type): SDIO_RESPCMD_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_RESPCMD_Fields](reg.loc))
 
-proc read*(reg: SDIO_RESP1_Type): uint32 {.inline.} =
+proc read*(reg: static SDIO_RESP1_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
-proc read*(reg: SDIO_RESP2_Type): uint32 {.inline.} =
+proc read*(reg: static SDIO_RESP2_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
-proc read*(reg: SDIO_RESP3_Type): uint32 {.inline.} =
+proc read*(reg: static SDIO_RESP3_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
-proc read*(reg: SDIO_RESP4_Type): uint32 {.inline.} =
+proc read*(reg: static SDIO_RESP4_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
-proc read*(reg: SDIO_DTIMER_Type): uint32 {.inline.} =
+proc read*(reg: static SDIO_DTIMER_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: SDIO_DTIMER_Type, val: uint32) {.inline.} =
@@ -83627,7 +83627,7 @@ template modifyIt*(reg: SDIO_DTIMER_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SDIO_DLEN_Type): SDIO_DLEN_Fields {.inline.} =
+proc read*(reg: static SDIO_DLEN_Type): SDIO_DLEN_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_DLEN_Fields](reg.loc))
 
 proc write*(reg: SDIO_DLEN_Type, val: SDIO_DLEN_Fields) {.inline.} =
@@ -83644,7 +83644,7 @@ template modifyIt*(reg: SDIO_DLEN_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SDIO_DCTRL_Type): SDIO_DCTRL_Fields {.inline.} =
+proc read*(reg: static SDIO_DCTRL_Type): SDIO_DCTRL_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_DCTRL_Fields](reg.loc))
 
 proc write*(reg: SDIO_DCTRL_Type, val: SDIO_DCTRL_Fields) {.inline.} =
@@ -83669,13 +83669,13 @@ template modifyIt*(reg: SDIO_DCTRL_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SDIO_DCOUNT_Type): SDIO_DCOUNT_Fields {.inline.} =
+proc read*(reg: static SDIO_DCOUNT_Type): SDIO_DCOUNT_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_DCOUNT_Fields](reg.loc))
 
-proc read*(reg: SDIO_STA_Type): SDIO_STA_Fields {.inline.} =
+proc read*(reg: static SDIO_STA_Type): SDIO_STA_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_STA_Fields](reg.loc))
 
-proc read*(reg: SDIO_ICR_Type): SDIO_ICR_Fields {.inline.} =
+proc read*(reg: static SDIO_ICR_Type): SDIO_ICR_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_ICR_Fields](reg.loc))
 
 proc write*(reg: SDIO_ICR_Type, val: SDIO_ICR_Fields) {.inline.} =
@@ -83704,7 +83704,7 @@ template modifyIt*(reg: SDIO_ICR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SDIO_MASK_Type): SDIO_MASK_Fields {.inline.} =
+proc read*(reg: static SDIO_MASK_Type): SDIO_MASK_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_MASK_Fields](reg.loc))
 
 proc write*(reg: SDIO_MASK_Type, val: SDIO_MASK_Fields) {.inline.} =
@@ -83744,10 +83744,10 @@ template modifyIt*(reg: SDIO_MASK_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc read*(reg: SDIO_FIFOCNT_Type): SDIO_FIFOCNT_Fields {.inline.} =
+proc read*(reg: static SDIO_FIFOCNT_Type): SDIO_FIFOCNT_Fields {.inline.} =
   volatileLoad(cast[ptr SDIO_FIFOCNT_Fields](reg.loc))
 
-proc read*(reg: SDIO_FIFO_Type): uint32 {.inline.} =
+proc read*(reg: static SDIO_FIFO_Type): uint32 {.inline.} =
   volatileLoad(cast[ptr uint32](reg.loc))
 
 proc write*(reg: SDIO_FIFO_Type, val: uint32) {.inline.} =
