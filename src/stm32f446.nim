@@ -18656,10 +18656,10 @@ template modifyIt*(reg: GPIOA_ODR_Type, op: untyped): untyped =
     op
     reg.write(it)
 
-proc write*(reg: GPIOA_BSRR_Type, val: GPIOA_BSRR_Fields) {.inline.} =
+proc write*(reg: static GPIOA_BSRR_Type, val: GPIOA_BSRR_Fields) {.inline.} =
   volatileStore(cast[ptr GPIOA_BSRR_Fields](reg.loc), val)
 
-proc write*(reg: GPIOA_BSRR_Type, BR15: bool = false, BR14: bool = false, BR13: bool = false, BR12: bool = false, BR11: bool = false, BR10: bool = false, BR9: bool = false, BR8: bool = false, BR7: bool = false, BR6: bool = false, BR5: bool = false, BR4: bool = false, BR3: bool = false, BR2: bool = false, BR1: bool = false, BR0: bool = false, BS15: bool = false, BS14: bool = false, BS13: bool = false, BS12: bool = false, BS11: bool = false, BS10: bool = false, BS9: bool = false, BS8: bool = false, BS7: bool = false, BS6: bool = false, BS5: bool = false, BS4: bool = false, BS3: bool = false, BS2: bool = false, BS1: bool = false, BS0: bool = false) =
+proc write*(reg: static GPIOA_BSRR_Type, BR15: bool = false, BR14: bool = false, BR13: bool = false, BR12: bool = false, BR11: bool = false, BR10: bool = false, BR9: bool = false, BR8: bool = false, BR7: bool = false, BR6: bool = false, BR5: bool = false, BR4: bool = false, BR3: bool = false, BR2: bool = false, BR1: bool = false, BR0: bool = false, BS15: bool = false, BS14: bool = false, BS13: bool = false, BS12: bool = false, BS11: bool = false, BS10: bool = false, BS9: bool = false, BS8: bool = false, BS7: bool = false, BS6: bool = false, BS5: bool = false, BS4: bool = false, BS3: bool = false, BS2: bool = false, BS1: bool = false, BS0: bool = false) =
   var x: uint32
   x.setMask((BR15.uint32 shl 31).masked(31 .. 31))
   x.setMask((BR14.uint32 shl 30).masked(30 .. 30))
