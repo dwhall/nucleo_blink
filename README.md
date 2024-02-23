@@ -23,7 +23,7 @@ when isMainModule:
 This project makes use of these tools:
 
 * [PlatformIO](https://platformio.org/)
-* [nim-platformio](https://github.com/markspanbroek/nim-platformio/)
+* [nim-platformio](https://github.com/dwhall/nim-platformio/)
 * [svd2nim](https://github.com/EmbeddedNim/svd2nim)
 
 I am currently working in forks of the latter two tools, but I
