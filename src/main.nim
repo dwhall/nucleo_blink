@@ -1,11 +1,14 @@
 import stm32f446
 
-proc main() =
-  modifyIt(RCC.AHB1ENR): it.GPIOAEN= true
-  modifyIt(GPIOA.MODER): it.MODER5= 1
+proc main =
+  RCC.AHB1ENR.GPIOAEN(1).write()
+  GPIOA.MODER.MODER5(1).write()
+
+  const gpioA5set = 1'u32 shl 5
+  const gpioA5reset = 1'u32 shl 21
   while true:
-    GPIOA.BSRR.write((1 shl 5).GPIOA_BSRR_Fields)
-    GPIOA.BSRR.write((1 shl 21).GPIOA_BSRR_Fields)
+    GPIOA.BSRR = gpioA5set
+    GPIOA.BSRR = gpioA5reset
 
 when isMainModule:
   main()
