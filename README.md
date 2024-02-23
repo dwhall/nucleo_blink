@@ -9,12 +9,16 @@ microcontroller using software written in the
 ```nim
 import stm32f446
 
-proc main() =
-  modifyIt(RCC.AHB1ENR): it.GPIOAEN = true
-  modifyIt(GPIOA.MODER): it.MODER5 = 1
+proc main =
+  RCC.AHB1ENR.GPIOAEN(1).write()
+  GPIOA.MODER.MODER5(1).write()
+
+  # Use bit-banding to blink GPIO A5 very quickly (dims an LED)
+  const gpioA5set = 1'u32 shl 5
+  const gpioA5reset = 1'u32 shl 21
   while true:
-    GPIOA.BSRR.write((1 shl 5).GPIOA_BSRR_Fields)
-    GPIOA.BSRR.write((1 shl 21).GPIOA_BSRR_Fields)
+    GPIOA.BSRR = gpioA5set
+    GPIOA.BSRR = gpioA5reset
 
 when isMainModule:
   main()
@@ -24,7 +28,7 @@ This project makes use of these tools:
 
 * [PlatformIO](https://platformio.org/)
 * [nim-platformio](https://github.com/dwhall/nim-platformio/)
-* [svd2nim](https://github.com/EmbeddedNim/svd2nim)
+* minisvd2nim - coming soon
 
 I am currently working in forks of the latter two tools, but I
 will get them unified if the original authors so choose.
