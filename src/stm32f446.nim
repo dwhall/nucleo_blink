@@ -7,7 +7,7 @@
 # Input file version:   1.7
 
 #from minisvd2nim import templates
-import templates
+import minisvd2nimpkg/templates
 
 declareDevice(deviceName = STM32F446, mpuPresent = true, fpuPresent = true, nvicPrioBits = 4)
 declarePeripheral(peripheralName = DCMI, baseAddress = 0x50050000'u32, peripheralDesc = "Digital camera interface")
