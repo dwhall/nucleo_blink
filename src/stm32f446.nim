@@ -1,12 +1,11 @@
 # This file is auto-generated.
 # Edits will be lost if the tool is run again.
 #
-# Tool:                 minisvd2nim.exe
-# Tool version:         0.1.0-dev-228f6ae
-# Tool args:            @["tests\\STM32F446_v1_7.svd"]
+# Tool:                 minisvd2nim
+# Tool version:         0.1.0-dev-b9617f8
+# Tool args:            @["STM32F446_v1_7.svd"]
 # Input file version:   1.7
 
-#from minisvd2nim import templates
 import minisvd2nimpkg/templates
 
 declareDevice(deviceName = STM32F446, mpuPresent = true, fpuPresent = true, nvicPrioBits = 4)
