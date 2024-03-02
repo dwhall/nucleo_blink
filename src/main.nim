@@ -1,6 +1,12 @@
 import stm32f446
 
-proc ms_delay*(ms: cint) {.importc.}
+proc ms_delay(ms: int) =
+  var m = ms
+  while m > 0:
+    dec m
+    var x {.volatile.} = 500
+    while x > 0:
+      dec x
 
 proc main =
   RCC.AHB1ENR.GPIOAEN(1).write()
