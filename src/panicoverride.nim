@@ -12,10 +12,13 @@ let EXIT_FAILURE {.importc, header: "<stdlib.h>", nodecl.}: int
 
 {.push stack_trace: off, profiler:off.}
 
-proc panic*(s: string) =
+proc rawoutput(s: string) =
   puts(s.cstring)
   const newline = ord('\n')
   putchar(newline)
-  exit(EXIT_FAILURE)
+
+proc panic*(s: string) =
+  rawoutput(s)
+  #exit(EXIT_FAILURE)
 
 {.pop.}
