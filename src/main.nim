@@ -9,8 +9,9 @@ proc ms_delay(ms: int) =
       dec x
 
 proc main =
-  RCC.AHB1ENR.GPIOAEN(1).write()
-  GPIOA.MODER.MODER5(1).write()
+  # Must use fully-qualified ENABLE because of DCMI.CR.ENABLE
+  RCC.AHB1ENR.GPIOAEN(RCC_AHB1ENR_GPIOAENVal.ENABLE).write()
+  GPIOA.MODER.MODER5(OUTPUT).write()
 
   const gpioA5set = 1'u32 shl 5
   const gpioA5reset = 1'u32 shl 21

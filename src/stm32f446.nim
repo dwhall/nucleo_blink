@@ -2,7 +2,7 @@
 # Edits will be lost if the tool is run again.
 #
 # Tool:                 minisvd2nim
-# Tool version:         0.1.0-dev-b9617f8
+# Tool version:         0.1.0-dev-a0481e2
 # Tool args:            @["STM32F446_v1_7.svd"]
 # Input file version:   1.7
 
@@ -1253,6 +1253,9 @@ declareField(peripheralName = RCC, registerName = AHB1ENR, fieldName = GPIODEN, 
 declareField(peripheralName = RCC, registerName = AHB1ENR, fieldName = GPIOCEN, bitOffset = 2, bitWidth = 1, readAccess = true, writeAccess = true, fieldDesc = "IO port C clock enable")
 declareField(peripheralName = RCC, registerName = AHB1ENR, fieldName = GPIOBEN, bitOffset = 1, bitWidth = 1, readAccess = true, writeAccess = true, fieldDesc = "IO port B clock enable")
 declareField(peripheralName = RCC, registerName = AHB1ENR, fieldName = GPIOAEN, bitOffset = 0, bitWidth = 1, readAccess = true, writeAccess = true, fieldDesc = "IO port A clock enable")
+declareFieldEnum(peripheralName = RCC, registerName = AHB1ENR, fieldName = GPIOAEN, bitOffset = 0, bitWidth = 1):
+  DISABLE = 0
+  ENABLE = 1
 declareRegister(peripheralName = RCC, registerName = AHB2ENR, addressOffset = 0x00000034'u32, readAccess = true, writeAccess = true, registerDesc = "AHB2 peripheral clock enable register")
 declareField(peripheralName = RCC, registerName = AHB2ENR, fieldName = OTGFSEN, bitOffset = 7, bitWidth = 1, readAccess = true, writeAccess = true, fieldDesc = "USB OTG FS clock enable")
 declareField(peripheralName = RCC, registerName = AHB2ENR, fieldName = DCMIEN, bitOffset = 0, bitWidth = 1, readAccess = true, writeAccess = true, fieldDesc = "Camera interface enable")
@@ -2645,6 +2648,11 @@ declareField(peripheralName = GPIOA, registerName = MODER, fieldName = MODER8, b
 declareField(peripheralName = GPIOA, registerName = MODER, fieldName = MODER7, bitOffset = 14, bitWidth = 2, readAccess = true, writeAccess = true, fieldDesc = "Port x configuration bits (y = 0..15)")
 declareField(peripheralName = GPIOA, registerName = MODER, fieldName = MODER6, bitOffset = 12, bitWidth = 2, readAccess = true, writeAccess = true, fieldDesc = "Port x configuration bits (y = 0..15)")
 declareField(peripheralName = GPIOA, registerName = MODER, fieldName = MODER5, bitOffset = 10, bitWidth = 2, readAccess = true, writeAccess = true, fieldDesc = "Port x configuration bits (y = 0..15)")
+declareFieldEnum(peripheralName = GPIOA, registerName = MODER, fieldName = MODER5, bitOffset = 10, bitWidth = 2):
+  INPUT = 0
+  OUTPUT = 1
+  ALT = 2
+  ANALOG = 3
 declareField(peripheralName = GPIOA, registerName = MODER, fieldName = MODER4, bitOffset = 8, bitWidth = 2, readAccess = true, writeAccess = true, fieldDesc = "Port x configuration bits (y = 0..15)")
 declareField(peripheralName = GPIOA, registerName = MODER, fieldName = MODER3, bitOffset = 6, bitWidth = 2, readAccess = true, writeAccess = true, fieldDesc = "Port x configuration bits (y = 0..15)")
 declareField(peripheralName = GPIOA, registerName = MODER, fieldName = MODER2, bitOffset = 4, bitWidth = 2, readAccess = true, writeAccess = true, fieldDesc = "Port x configuration bits (y = 0..15)")
