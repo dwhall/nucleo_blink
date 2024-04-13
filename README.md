@@ -26,17 +26,14 @@ when isMainModule:
 
 This project makes use of these tools:
 
-* [PlatformIO](https://platformio.org/)
-* [nim-platformio](https://github.com/dwhall/nim-platformio/)
-* minisvd2nim - coming soon
+* [PlatformIO](https://platformio.org/) - for the C compiler and platform libs.
+* [nim-platformio](https://github.com/dwhall/nim-platformio/) - to compile Nim to C using PlatformIO build framework.
+* [minisvd2nim](https://github.com/dwhall/minisvd2nim) - to convert the STM32 device SVD (XML) file to Nim source that enables register access by name.
 
-I am currently working in forks of the latter two tools, but I
-will get them unified if the original authors so choose.
-
-The use of `shl` above is a temporary wart that I am working on;
-bits 5 and 21 activate the bit-set and bit-clear functions in the
-BSRR register of the GPIOA peripheral.  That's what makes it blink.
+The two constants in the source code define bit-set and bit-clear values
+that are applied to the BSRR register of the GPIOA peripheral.
+Thek bit-set then bit-clear loop is what makes the LED blink.
 With the MCU running on the internal 12 MHz RC oscillator,
-this code makes the LED blink at 3.3 MHz.  This fast blink frequency
-means you can't see the LED blink with your eyes, you just see an LED
+this code makes the LED blink at 3.3 MHz.  This blink frequency
+is so fast you can't see it blink with your eyes; you just see an LED
 that is dim because it is on less than 50% of the time.
